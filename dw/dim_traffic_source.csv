@@ -1,0 +1,6 @@
+traffic_source_key,source_code,description,is_paid
+1,ads,Publicidad en redes,true
+2,direct,Directo / newsletter,false
+3,referral,Otro sitio / newsletter,false
+4,organic,Buscadores,false
+-1,unknown,Desconocido,false

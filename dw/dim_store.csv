@@ -1,0 +1,6 @@
+store_key,store_id,name,city,province_name,is_physical
+1,1,Tienda BA,La Plata,Buenos Aires,true
+2,2,Tienda CBA,Córdoba,Córdoba,true
+3,3,Tienda SF,Rosario,Santa Fe,true
+4,4,Tienda MZA,Mendoza,Mendoza,true
+-1,,Tienda online (sin tienda física),,,false
