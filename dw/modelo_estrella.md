@@ -207,8 +207,8 @@ erDiagram
     }
     looker_nps {
         BIGINT respuesta_id
-        DATE fecha
-        DATE mes
+        VARCHAR fecha
+        VARCHAR mes
         VARCHAR canal
         VARCHAR provincia
         SMALLINT puntaje
@@ -221,8 +221,8 @@ erDiagram
     looker_productos {
         BIGINT linea_id
         BIGINT pedido_id
-        DATE fecha
-        DATE mes
+        VARCHAR fecha
+        VARCHAR mes
         VARCHAR canal
         VARCHAR provincia
         VARCHAR producto
@@ -234,8 +234,8 @@ erDiagram
     }
     looker_sesiones {
         BIGINT sesion_id
-        DATE fecha
-        DATE mes
+        VARCHAR fecha
+        VARCHAR mes
         INTEGER cliente_id
         INTEGER logueado
         VARCHAR origen
@@ -244,8 +244,8 @@ erDiagram
     }
     looker_ventas {
         BIGINT pedido_id
-        DATE fecha
-        DATE mes
+        VARCHAR fecha
+        VARCHAR mes
         VARCHAR canal
         VARCHAR tienda
         VARCHAR provincia

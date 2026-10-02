@@ -14,6 +14,9 @@
 --   * Mismos nombres de columna en todas las tablas: fecha, canal,
 --     provincia, producto. Looker aplica un control de filtro a todas
 --     las fuentes que tienen un campo con el mismo nombre.
+--   * Fechas como texto AAAAMMDD (20240102): es el formato que Looker
+--     reconoce sin ambigüedad. Con AAAA-MM-DD interpretaba mal las fechas
+--     de 2024 y el filtro de período las dejaba afuera.
 --   * Indicadores numéricos 1/0 (es_venta, es_promotor...) en vez de
 --     booleanos, para poder sumarlos en los campos calculados.
 -- =====================================================================
@@ -25,8 +28,8 @@
 CREATE TABLE looker_ventas AS
 SELECT
     f.order_id                         AS pedido_id,
-    d.date                             AS fecha,
-    d.month_start                      AS mes,
+    strftime(d.date, '%Y%m%d')         AS fecha,     -- AAAAMMDD: formato nativo de Looker
+    strftime(d.month_start, '%Y%m%d')  AS mes,
     c.code                             AS canal,
     s.name                             AS tienda,
     p.name                             AS provincia,
@@ -53,8 +56,8 @@ CREATE TABLE looker_productos AS
 SELECT
     i.order_item_id                    AS linea_id,
     i.order_id                         AS pedido_id,
-    d.date                             AS fecha,
-    d.month_start                      AS mes,
+    strftime(d.date, '%Y%m%d')         AS fecha,     -- AAAAMMDD: formato nativo de Looker
+    strftime(d.month_start, '%Y%m%d')  AS mes,
     c.code                             AS canal,
     p.name                             AS provincia,
     pr.name                            AS producto,
@@ -80,8 +83,8 @@ JOIN dim_product   AS pr ON pr.product_key  = i.product_key;
 CREATE TABLE looker_sesiones AS
 SELECT
     w.session_id                       AS sesion_id,
-    d.date                             AS fecha,
-    d.month_start                      AS mes,
+    strftime(d.date, '%Y%m%d')         AS fecha,     -- AAAAMMDD: formato nativo de Looker
+    strftime(d.month_start, '%Y%m%d')  AS mes,
     dc.customer_id                     AS cliente_id,
     CASE WHEN w.is_logged_in THEN 1 ELSE 0 END AS logueado,
     t.description                      AS origen,
@@ -100,8 +103,8 @@ JOIN dim_device          AS dv ON dv.device_key         = w.device_key;
 CREATE TABLE looker_nps AS
 SELECT
     n.nps_id                           AS respuesta_id,
-    d.date                             AS fecha,
-    d.month_start                      AS mes,
+    strftime(d.date, '%Y%m%d')         AS fecha,     -- AAAAMMDD: formato nativo de Looker
+    strftime(d.month_start, '%Y%m%d')  AS mes,
     c.code                             AS canal,
     dc.province_name                   AS provincia,         -- provincia del cliente (vacía si anónimo)
     n.score                            AS puntaje,
