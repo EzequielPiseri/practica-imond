@@ -129,7 +129,7 @@ Hay dos hechos de ventas porque los KPIs piden dos granos distintos. El pedido t
 - **Miembro "Desconocido" con clave `-1`:** cliente anónimo en sesiones y NPS, tienda en pedidos online ("Tienda online"), y valores faltantes de origen de tráfico y dispositivo. Así ninguna FK de dimensión queda nula y el tablero no pierde filas al relacionar tablas.
 - **Fechas opcionales:** las de pago, despacho y entrega quedan `NULL` si el evento todavía no pasó. Ponerles `-1` equivaldría a inventar una fecha.
 - **Provincia de la venta:** se toma de la dirección de envío. En las compras en tienda esa dirección es la de la tienda (4.443 de 4.683 pedidos offline). Las 240 ventas de tienda enviadas a domicilio se asignan a la provincia del cliente. Ningún pedido quedó sin provincia.
-- **Usuarios Activos:** clientes logueados **distintos** en `web_session` durante el período. El 70 % de las sesiones son anónimas (70.751 de 100.363). La consigna sugiere contar `session_id` para los anónimos, pero eso mezcla dos unidades: un visitante con 10 visitas contaría como 10 usuarios. Por eso las sesiones anónimas se guardan, para analizar tráfico, pero no se cuentan como usuarios. **Consecuencia:** el KPI subestima la audiencia real; es "clientes identificados activos". Además, como es un conteo de distintos, no es sumable: la suma de los usuarios de cada mes no da los usuarios del año.
+- **Usuarios Activos:** clientes logueados **distintos** en `web_session` durante el período. El 70 % de las sesiones son anónimas (70.751 de 100.363). La consigna sugiere contar `session_id` para los anónimos, pero eso mezcla dos unidades: un visitante con 10 visitas contaría como 10 usuarios. Por eso las sesiones anónimas se guardan, para analizar tráfico, pero no se cuentan como usuarios. **Consecuencia:** el KPI subestima la audiencia real; es "clientes identificados activos". Además, como es un conteo de distintos, no es sumable: la suma de los usuarios de cada mes no da los usuarios del año. En el tablero se muestra como **promedio de usuarios activos mensuales (MAU)**, calculado en DuckDB por mes (ver sección Tablero).
 - **NPS:** promotores (9-10) menos detractores (0-6), sobre el total de respuestas, multiplicado por 100. La encuesta no tiene número de pedido, así que el NPS se cruza por cliente, canal y fecha de respuesta, no por pedido.
 - **Datos personales:** `dim_customer` no guarda email ni teléfono porque el tablero no los necesita (minimización de datos).
 - **`dim_customer.province_name`:** la provincia donde el cliente recibe más pedidos, sin contar direcciones de tiendas. Queda vacía para los clientes que solo compraron en tienda.
@@ -384,7 +384,8 @@ GROUP BY d.year_month, p.name, i.product_key;
 | Ventas | $382,4M |
 | Pedidos válidos | 10.998 |
 | Ticket promedio | $34,8K |
-| Usuarios activos (clientes logueados distintos) | 3,08K |
+| Usuarios activos: clientes logueados distintos en todo el período | 3.077 |
+| Usuarios activos mensuales (MAU) promedio — valor de la tarjeta | 771 |
 | NPS | 30 |
 
 ## Validaciones
@@ -405,45 +406,59 @@ Herramienta: **Looker Studio**. Link: _(agregar acá)_.
 
 ### Fuentes de datos
 
-Looker Studio no relaciona tablas entre sí como Power BI: cada CSV es una fuente de datos independiente. Por eso `sql/04_looker.sql` arma una **capa de presentación**: 4 tablas planas derivadas del modelo estrella, cada una con los atributos de sus dimensiones ya unidos. No reemplazan al modelo: si cambia una regla, se cambia en `01` o `02` y estas tablas la heredan.
+Looker Studio no relaciona tablas entre sí como Power BI: cada CSV es una fuente de datos independiente. Por eso `sql/04_looker.sql` arma una **capa de presentación**: tablas planas derivadas del modelo estrella, cada una con los atributos de sus dimensiones ya unidos. No reemplazan al modelo: si cambia una regla, se cambia en `01` o `02` y estas tablas la heredan.
 
-| Fuente (CSV de `dw/`) | Grano | Se usa para |
-|---|---|---|
-| `looker_ventas.csv` | un pedido | Ventas, Ticket Promedio, Ventas por Provincia |
-| `looker_productos.csv` | una línea de pedido | Ranking mensual por producto |
-| `looker_sesiones.csv` | una visita web | Usuarios Activos |
-| `looker_nps.csv` | una respuesta de encuesta | NPS |
+| Fuente en Looker | CSV de `dw/` | Grano | Se usa para |
+|---|---|---|---|
+| tp_ventas | `looker_ventas.csv` | un pedido | Ventas, Ticket Promedio, Ventas por Provincia |
+| tp_productos | `looker_productos.csv` | una línea de pedido | Ranking mensual por producto |
+| tp_usuarios_mes | `looker_usuarios_mes.csv` | un mes | Usuarios Activos (MAU) |
+| tp_nps | `looker_nps.csv` | una respuesta de encuesta | NPS |
 
-Se cargan con el conector **Subir archivos (File Upload)**. Las cuatro comparten los nombres de columna `fecha`, `canal`, `provincia` y `producto` (según corresponda), así un mismo control de filtro afecta a todas las fuentes que tienen ese campo.
+`looker_sesiones.csv` (una visita web) queda disponible para analizar tráfico por origen y dispositivo.
+
+Se cargan con el conector **Subida de archivos CSV**.
+
+**Fechas.** Se exportan como texto `AAAAMMDD` (`20240102`). Con el formato `AAAA-MM-DD`, Looker interpretaba mal las fechas de 2024 y el filtro de período las dejaba afuera. Como Looker igual las detecta como número, en cada fuente se crean dos campos de tipo fecha:
+
+| Campo | Fórmula |
+|---|---|
+| Día | `PARSE_DATE("%Y%m%d", CAST(fecha AS TEXT))` |
+| Mes (fecha) | `PARSE_DATE("%Y%m%d", CAST(mes AS TEXT))` |
+
+Todos los gráficos usan **Día** como dimensión del período y **Mes (fecha)** como eje de las series mensuales.
 
 ### Campos calculados
 
 | Fuente | Campo | Fórmula |
 |---|---|---|
-| looker_ventas | Ventas | `SUM(monto_venta)` |
-| looker_ventas | Pedidos válidos | `SUM(es_venta)` |
-| looker_ventas | Ticket Promedio | `SUM(monto_venta) / SUM(es_venta)` |
-| looker_sesiones | Usuarios Activos | `COUNT_DISTINCT(cliente_id)`, con un filtro `logueado = 1` en el gráfico |
-| looker_nps | NPS | `(SUM(es_promotor) - SUM(es_detractor)) / COUNT(respuesta_id) * 100` |
-| looker_productos | Ventas producto | `SUM(monto_venta_linea)` |
+| tp_ventas | Ventas | `SUM(monto_venta)` |
+| tp_ventas | Pedidos válidos | `SUM(es_venta)` |
+| tp_ventas | Ticket Promedio | `SUM(monto_venta) / SUM(es_venta)` |
+| tp_usuarios_mes | Usuarios Activos (MAU promedio) | `AVG(usuarios_activos)` |
+| tp_nps | NPS | `(SUM(es_promotor) - SUM(es_detractor)) / COUNT(respuesta_id) * 100` |
+| tp_productos | Ventas producto | `SUM(monto_venta_linea)` |
+
+**Por qué Usuarios Activos se precalcula por mes.** Contar clientes distintos en Looker (`COUNT_DISTINCT`) con un filtro de período da un resultado incorrecto: Looker cuenta los distintos de cada día y suma los días ("reagregación errónea"), así que un cliente que entra 10 días cuenta 10 veces. Con el período completo daba 28.764 en lugar de 3.077. Por eso el conteo distinto se hace en DuckDB, por mes (`looker_usuarios_mes`), y la tarjeta muestra el **promedio de usuarios activos mensuales (MAU)** del período elegido, que sí se puede reagregar correctamente. Además, MAU es la métrica estándar de audiencia activa en negocios digitales.
 
 ### Vistas
 
 | Visual | Fuente | Dimensión | Métrica |
 |---|---|---|---|
-| Tarjeta Ventas ($M) + serie temporal | looker_ventas | `mes` | Ventas |
-| Tarjeta Usuarios Activos (nK) + serie | looker_sesiones | `mes` | Usuarios Activos |
-| Tarjeta Ticket Promedio ($K) | looker_ventas | — | Ticket Promedio |
-| Tarjeta NPS + tendencia | looker_nps | `mes`, desglose `canal` | NPS |
-| Mapa geográfico o barras: Ventas por Provincia | looker_ventas | `provincia_iso` (tipo *Subdivisión de país, 1.er nivel*) | Ventas |
-| Columnas: Ranking por producto | looker_productos | `mes`, desglose `producto` | Ventas producto |
+| Tarjeta Ventas ($M) + serie temporal | tp_ventas | Mes (fecha) | Ventas |
+| Tarjeta Usuarios Activos + serie | tp_usuarios_mes | Mes (fecha) | Usuarios Activos (MAU promedio) |
+| Tarjeta Ticket Promedio ($K) | tp_ventas | — | Ticket Promedio |
+| Tarjeta NPS + tendencia | tp_nps | Mes (fecha), desglose `canal` | NPS |
+| Mapa geográfico o barras: Ventas por Provincia | tp_ventas | `provincia_iso` (tipo *Subdivisión de país, 1.er nivel*) | Ventas |
+| Columnas: Ranking por producto | tp_productos | Mes (fecha), desglose `producto` | Ventas producto |
 
-Controles: período (sobre `fecha`) y listas desplegables de `canal`, `provincia` y `producto`.
+Controles: período (sobre **Día**) y listas desplegables de `canal`, `provincia` y `producto`.
 
 ### Cómo afectan los filtros (decisión de diseño)
 
 - **Producto** solo filtra el Ranking. Ventas y Ticket se miden por pedido, y un pedido puede tener los dos productos: asignarle su IVA y su envío a uno solo sería arbitrario.
 - **Canal** y **provincia** no filtran Usuarios Activos: las visitas web son todas del canal online y no tienen ubicación.
+- El filtro de período afecta a Usuarios Activos **por mes completo**: como el dato es mensual, elegir del 15 al 20 de un mes muestra el MAU de ese mes.
 - En el NPS, `provincia` es la del cliente, así que las respuestas anónimas no aparecen al filtrar por provincia.
 
 ## Hallazgos

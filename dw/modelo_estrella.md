@@ -242,6 +242,12 @@ erDiagram
         VARCHAR dispositivo
         INTEGER duracion_segundos
     }
+    looker_usuarios_mes {
+        VARCHAR mes
+        BIGINT usuarios_activos
+        BIGINT sesiones
+        HUGEINT sesiones_logueadas
+    }
     looker_ventas {
         BIGINT pedido_id
         VARCHAR fecha

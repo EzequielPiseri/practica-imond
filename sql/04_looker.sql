@@ -119,8 +119,36 @@ JOIN dim_channel       AS c  ON c.channel_key   = n.channel_key
 JOIN dim_customer      AS dc ON dc.customer_key = n.customer_key;
 
 
+-- ---------------------------------------------------------------------
+-- looker_usuarios_mes — un mes (KPI Usuarios Activos = MAU)
+-- ---------------------------------------------------------------------
+-- Looker Studio no calcula bien COUNT_DISTINCT con un filtro de período:
+-- cuenta clientes distintos por DÍA y suma los días ("reagregación
+-- errónea"), así que un cliente que entra 10 días cuenta 10 veces.
+-- Solución: el conteo distinto se hace acá, en DuckDB, por mes. En Looker
+-- la tarjeta muestra el PROMEDIO de usuarios activos mensuales (MAU) del
+-- período elegido; un promedio sí se puede reagregar sin error.
+
+CREATE TABLE looker_usuarios_mes AS
+SELECT
+    strftime(d.month_start, '%Y%m%d')                          AS mes,
+    COUNT(DISTINCT w.customer_key) FILTER (WHERE w.is_logged_in) AS usuarios_activos,
+    COUNT(*)                                                    AS sesiones,
+    SUM(CASE WHEN w.is_logged_in THEN 1 ELSE 0 END)             AS sesiones_logueadas
+FROM fact_web_session AS w
+JOIN dim_date AS d ON d.date_key = w.date_key
+GROUP BY d.month_start
+ORDER BY d.month_start;
+
+
 -- Control: las tablas planas tienen las mismas filas que sus hechos
 SELECT 'looker_ventas' AS tabla, (SELECT COUNT(*) FROM looker_ventas) AS filas, (SELECT COUNT(*) FROM fact_sales_order) AS hecho
 UNION ALL SELECT 'looker_productos', (SELECT COUNT(*) FROM looker_productos), (SELECT COUNT(*) FROM fact_sales_order_item)
 UNION ALL SELECT 'looker_sesiones',  (SELECT COUNT(*) FROM looker_sesiones),  (SELECT COUNT(*) FROM fact_web_session)
 UNION ALL SELECT 'looker_nps',       (SELECT COUNT(*) FROM looker_nps),       (SELECT COUNT(*) FROM fact_nps_response);
+
+-- Control: MAU promedio del período completo y de 2024
+SELECT
+    ROUND(AVG(usuarios_activos), 1)                                   AS mau_promedio_total,
+    ROUND(AVG(usuarios_activos) FILTER (WHERE mes LIKE '2024%'), 1)   AS mau_promedio_2024
+FROM looker_usuarios_mes;
