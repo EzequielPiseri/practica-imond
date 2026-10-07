@@ -187,3 +187,55 @@ FROM fact_nps_response AS n
 JOIN dim_channel AS c ON c.channel_key = n.channel_key
 GROUP BY c.code, n.nps_group
 ORDER BY canal, n.nps_group;
+
+-- C7. NPS online vs. demora de entrega, mes a mes
+-- El NPS se toma por mes de respuesta y la demora por mes de entrega
+-- (la encuesta llega 7 días después de recibir el pedido).
+WITH nps_online AS (
+    SELECT d.month_start                                   AS mes,
+           COUNT(*)                                        AS respuestas,
+           ROUND((SUM(n.is_promoter) - SUM(n.is_detractor)) * 100.0 / COUNT(*), 1) AS nps_online
+    FROM fact_nps_response AS n
+    JOIN dim_date    AS d ON d.date_key    = n.date_key
+    JOIN dim_channel AS c ON c.channel_key = n.channel_key
+    WHERE c.code = 'ONLINE'
+    GROUP BY d.month_start
+),
+entregas AS (
+    SELECT d.month_start                                   AS mes,
+           COUNT(*)                                        AS envios_entregados,
+           ROUND(AVG(s.days_to_deliver), 1)                AS dias_despacho_a_entrega
+    FROM fact_shipment AS s
+    JOIN dim_date AS d ON d.date_key = s.delivered_date_key
+    WHERE s.shipment_status = 'DELIVERED'
+    GROUP BY d.month_start
+)
+SELECT strftime(n.mes, '%Y-%m') AS mes, n.respuestas, n.nps_online,
+       e.envios_entregados, e.dias_despacho_a_entrega
+FROM nps_online AS n
+LEFT JOIN entregas AS e ON e.mes = n.mes
+ORDER BY n.mes;
+
+-- C8. ¿El crecimiento viene de más compras o de compras más caras?
+-- Mismo período en los dos años (enero a septiembre), porque 2025 termina en septiembre.
+SELECT
+    d.year                                              AS anio,
+    ROUND(SUM(f.sales_amount) / 1e6, 1)                 AS ventas_millones,
+    COUNT(*)                                            AS pedidos_validos,
+    COUNT(DISTINCT f.customer_key) FILTER (WHERE f.customer_key <> -1) AS clientes_identificados,
+    ROUND(SUM(f.sales_amount) / COUNT(*) / 1e3, 2)      AS ticket_miles
+FROM fact_sales_order AS f
+JOIN dim_date AS d ON d.date_key = f.order_date_key
+WHERE f.is_sale AND d.month <= 9
+GROUP BY d.year
+ORDER BY d.year;
+
+-- C9. Visitas por dispositivo
+SELECT
+    dv.description                                      AS dispositivo,
+    COUNT(*)                                            AS sesiones,
+    ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 1)  AS pct
+FROM fact_web_session AS w
+JOIN dim_device AS dv ON dv.device_key = w.device_key
+GROUP BY dv.description
+ORDER BY sesiones DESC;
