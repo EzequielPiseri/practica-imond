@@ -154,7 +154,8 @@ INSERT INTO dim_store VALUES (-1, NULL, 'Tienda online (sin tienda física)', NU
 -- ---------------------------------------------------------------------
 -- No se guardan email ni teléfono: son datos personales que el tablero
 -- no necesita (minimización de datos). La provincia es la de la
--- dirección más reciente del cliente que no sea de una tienda.
+-- dirección de envío más usada por el cliente, sin contar tiendas
+-- (si empata, la del pedido más reciente).
 
 CREATE TABLE dim_customer (
     customer_key   INTEGER PRIMARY KEY,
@@ -245,8 +246,9 @@ CREATE TABLE dim_traffic_source (
 
 INSERT INTO dim_traffic_source VALUES
     (1, 'ads',      'Publicidad en redes',            TRUE),
-    (2, 'direct',   'Directo / newsletter',           FALSE),
-    (3, 'referral', 'Otro sitio / newsletter',        FALSE),
+    -- direct y referral incluyen el tráfico del newsletter (README del generador)
+    (2, 'direct',   'Directo (incl. newsletter)',     FALSE),
+    (3, 'referral', 'Referidos (incl. newsletter)',   FALSE),
     (4, 'organic',  'Buscadores',                     FALSE),
     (-1, 'unknown', 'Desconocido',                    FALSE);
 
