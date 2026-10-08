@@ -6,7 +6,7 @@ Se transforman los datos transaccionales de EcoBottle AR (`raw/`) en un **modelo
 
 - **Consigna:** [Práctica](https://docs.google.com/document/d/15RNP3FVqLjO4jzh80AAkK6mUR5DOLqPxLjQxqvdzrYg/edit?usp=sharing)
 - **Repositorio original:** [AugustoCarmona/practica-imond](https://github.com/AugustoCarmona/practica-imond)
-- **Tablero (Looker Studio):** _(agregar acá el link y las capturas)_
+- **Tablero (Power BI):** [`tablero/EcoBottle_tablero.pbix`](./tablero/EcoBottle_tablero.pbix), con capturas en la sección [Tablero](#tablero)
 
 ## Contenido
 
@@ -19,6 +19,7 @@ Se transforman los datos transaccionales de EcoBottle AR (`raw/`) en un **modelo
 7. [Validaciones](#validaciones)
 8. [Tablero](#tablero)
 9. [Hallazgos](#hallazgos)
+10. [Anexo: versión en Looker Studio](#anexo-versión-en-looker-studio)
 
 ## Estructura del repositorio
 
@@ -28,9 +29,13 @@ sql/
   01_dimensiones.sql     11 dimensiones
   02_hechos.sql          6 tablas de hechos + 1 agregado
   03_consultas.sql       validaciones, KPIs y consultas de hallazgos
-  04_looker.sql          tablas planas para Looker Studio (capa de presentación)
+  04_looker.sql          tablas planas para Looker Studio (versión alternativa del tablero)
 dw/                      data warehouse exportado en CSV (fuente del tablero)
   modelo_estrella.md     diagrama completo del modelo (generado)
+tablero/
+  EcoBottle_tablero.pbix tablero en Power BI
+  tema_ecobottle.json    tema de colores y tipografía del tablero
+img/                     capturas del tablero
 run_sql.py               ejecuta los SQL, arma warehouse.duckdb y exporta dw/
 requirements.txt         dependencias (DuckDB)
 assets/DER.png           diagrama de las tablas de origen
@@ -129,7 +134,7 @@ Hay dos hechos de ventas porque los KPIs piden dos granos distintos. El pedido t
 - **Miembro "Desconocido" con clave `-1`:** cliente anónimo en sesiones y NPS, tienda en pedidos online ("Tienda online"), y valores faltantes de origen de tráfico y dispositivo. Así ninguna FK de dimensión queda nula y el tablero no pierde filas al relacionar tablas.
 - **Fechas opcionales:** las de pago, despacho y entrega quedan `NULL` si el evento todavía no pasó. Ponerles `-1` equivaldría a inventar una fecha.
 - **Provincia de la venta:** se toma de la dirección de envío. En las compras en tienda esa dirección es la de la tienda (4.443 de 4.683 pedidos offline). Las 240 ventas de tienda enviadas a domicilio se asignan a la provincia del cliente. Ningún pedido quedó sin provincia.
-- **Usuarios Activos:** clientes logueados **distintos** en `web_session` durante el período. El 70 % de las sesiones son anónimas (70.751 de 100.363). La consigna sugiere contar `session_id` para los anónimos, pero eso mezcla dos unidades: un visitante con 10 visitas contaría como 10 usuarios. Por eso las sesiones anónimas se guardan, para analizar tráfico, pero no se cuentan como usuarios. **Consecuencia:** el KPI subestima la audiencia real; es "clientes identificados activos". Además, como es un conteo de distintos, no es sumable: la suma de los usuarios de cada mes no da los usuarios del año. En el tablero se muestra como **promedio de usuarios activos mensuales (MAU)**, calculado en DuckDB por mes (ver sección Tablero).
+- **Usuarios Activos:** clientes logueados **distintos** en `web_session` durante el período. El 70 % de las sesiones son anónimas (70.751 de 100.363). La consigna sugiere contar `session_id` para los anónimos, pero eso mezcla dos unidades: un visitante con 10 visitas contaría como 10 usuarios. Por eso las sesiones anónimas se guardan, para analizar tráfico, pero no se cuentan como usuarios. **Consecuencia:** el KPI subestima la audiencia real; es "clientes identificados activos". Además, como es un conteo de distintos, no es sumable: la suma de los usuarios de cada mes no da los usuarios del año. En Power BI no es un problema, porque `DISTINCTCOUNT` se calcula sobre el período filtrado: la tarjeta muestra los clientes distintos del período y la serie muestra los de cada mes (MAU). En la versión de Looker Studio se muestra el MAU promedio (ver [Anexo](#anexo-versión-en-looker-studio)).
 - **NPS:** promotores (9-10) menos detractores (0-6), sobre el total de respuestas, multiplicado por 100. La encuesta no tiene número de pedido, así que el NPS se cruza por cliente, canal y fecha de respuesta, no por pedido.
 - **Datos personales:** `dim_customer` no guarda email ni teléfono porque el tablero no los necesita (minimización de datos).
 - **`dim_customer.province_name`:** la provincia donde el cliente recibe más pedidos, sin contar direcciones de tiendas. Queda vacía para los clientes que solo compraron en tienda.
@@ -384,8 +389,8 @@ GROUP BY d.year_month, p.name, i.product_key;
 | Ventas | $382,4M |
 | Pedidos válidos | 10.998 |
 | Ticket promedio | $34,8K |
-| Usuarios activos: clientes logueados distintos en todo el período | 3.077 |
-| Usuarios activos mensuales (MAU) promedio — valor de la tarjeta | 771 |
+| Usuarios activos: clientes logueados distintos en todo el período (tarjeta de Power BI) | 3.077 |
+| Usuarios activos mensuales (MAU) promedio (tarjeta de Looker) | 771 |
 | NPS | 30 |
 
 ## Validaciones
@@ -402,9 +407,119 @@ La parte A de `03_consultas.sql` verifica que el modelo cuadre con `raw/`:
 
 ## Tablero
 
-Herramienta: **Looker Studio**. Link: _(agregar acá)_.
+Herramienta: **Power BI Desktop**. Archivo: [`tablero/EcoBottle_tablero.pbix`](./tablero/EcoBottle_tablero.pbix). Tiene dos páginas, **Resumen** y **Clientes**, con un menú lateral compartido (navegación, filtros y botón para borrarlos).
 
-### Fuentes de datos
+![Página Resumen](./img/resumen.png)
+
+![Página Resumen filtrada en 2025, con la comparación contra el año anterior](./img/resumen_2025.png)
+
+![Página Clientes](./img/clientes.png)
+
+### Carga y modelo
+
+- Se importan los CSV del modelo estrella de `dw/` (dimensiones y hechos). Las tablas `looker_*` no se usan en Power BI.
+- **Configuración regional de importación: Inglés (Estados Unidos).** Los CSV usan punto decimal; con la configuración en español, Power BI lee `34812.50` como 3.481.250.
+- **Detección automática de relaciones y "Fecha/hora automática": desactivadas.** Las relaciones se crean a mano, siguiendo las FK del diagrama: 10 relaciones 1 a N, de la dimensión al hecho, todas activas y con filtro en una sola dirección. Así el modelo de Power BI es el mismo modelo estrella del DW.
+- Tema propio: [`tablero/tema_ecobottle.json`](./tablero/tema_ecobottle.json), con los colores del logo.
+
+### Medidas DAX principales
+
+```dax
+Ventas           = SUM ( fact_sales_order[sales_amount] )
+
+Pedidos válidos  = CALCULATE ( COUNTROWS ( fact_sales_order ), fact_sales_order[sales_amount] > 0 )
+
+Ticket Promedio  = DIVIDE ( [Ventas], [Pedidos válidos] )
+
+Usuarios Activos = CALCULATE ( DISTINCTCOUNT ( fact_web_session[customer_key] ),
+                       fact_web_session[customer_key] <> -1 )
+
+NPS              = DIVIDE ( SUM ( fact_nps_response[is_promoter] ) - SUM ( fact_nps_response[is_detractor] ),
+                       COUNTROWS ( fact_nps_response ) ) * 100
+
+Sesiones         = COUNTROWS ( fact_web_session )
+```
+
+La regla "solo PAID y FULFILLED son venta" no se repite en DAX: ya viene resuelta en `sales_amount` e `is_sale` desde el DW.
+
+`Usuarios Activos` excluye la clave `-1` (visitante anónimo). En los datos, una sesión tiene cliente conocido si y solo si está logueada (29.612 sesiones), así que es equivalente a filtrar por `is_logged_in`.
+
+### Comparación contra el año anterior
+
+Cada tarjeta muestra la variación contra el mismo período del año anterior (por ejemplo, **▲ +16,6 % vs año anterior**), en verde si sube más de 1 %, en rojo si baja más de 1 % y en ámbar si queda estable. El NPS se compara en **puntos**, no en porcentaje, porque ya es un puntaje.
+
+```dax
+Ventas PA =
+VAR ini = MIN ( dim_date[date] )
+VAR fin = MIN ( MAX ( dim_date[date] ), DATE ( 2025, 9, 30 ) )
+RETURN
+IF ( EDATE ( ini, -12 ) < DATE ( 2024, 1, 1 ), BLANK (),
+    CALCULATE ( [Ventas], REMOVEFILTERS ( dim_date ),
+        dim_date[date] >= EDATE ( ini, -12 ),
+        dim_date[date] <= EDATE ( fin, -12 ) ) )
+```
+
+Decisiones:
+
+- **Se corta en el último dato (30/09/2025).** El calendario llega a octubre de 2025, pero los datos terminan en septiembre. Sin el corte, "2025" (9 meses con datos) se compararía con enero–octubre de 2024 y siempre parecería que cae.
+- **Sin año anterior, no hay comparación.** Para 2024 o sin filtro de año, la tarjeta dice "Sin año anterior para comparar" en gris, en lugar de mostrar un 0 % que se leería como "no cambió".
+- La misma lógica se repite para Usuarios Activos, Ticket Promedio y NPS (medidas `* PA`, `* vs PA` para el texto y `* vs PA Color` para el color).
+
+### Vistas
+
+Los títulos son preguntas de negocio, para que cada gráfico diga qué responde.
+
+| Página | Visual | Datos | KPI de la consigna |
+|---|---|---|---|
+| Resumen | Tarjetas con comparación | Ventas, Usuarios Activos, Ticket Promedio, NPS | Ventas ($M), Usuarios (nK), Ticket ($K), NPS |
+| Resumen | ¿Qué producto vende más cada mes? (columnas) | `year_month` × producto, ventas de línea | Ranking mensual por producto |
+| Resumen | ¿Dónde vendemos más? (barras) | provincia, Ventas | Ventas por provincia |
+| Resumen | ¿Qué opinan los clientes? (anillo) | promotores / pasivos / detractores, NPS al centro | NPS |
+| Resumen | ¿Por qué canal crece la venta? (líneas) | mes × canal, Ventas | Serie temporal de Ventas |
+| Clientes | Tarjetas con comparación | Usuarios Activos, NPS | Usuarios, NPS |
+| Clientes | ¿Cuántos clientes nos visitan cada mes? (línea) | mes, Usuarios Activos | Serie temporal de Usuarios |
+| Clientes | ¿Mejora la opinión de los clientes? (líneas, línea de referencia en 0) | mes × canal, NPS | Tendencia de NPS |
+| Clientes | ¿De dónde llegan las visitas? (barras) | origen de tráfico, Sesiones | Contexto de Usuarios |
+| Clientes | ¿Desde qué dispositivo nos visitan? (barras) | dispositivo, Sesiones | Contexto de Usuarios |
+
+Las series usan eje de fechas **continuo**, que respeta la distancia real entre meses; el detalle de cada mes se ve al pasar el mouse.
+
+### Filtros y cómo afectan (decisión de diseño)
+
+| Filtro | Páginas | Afecta a |
+|---|---|---|
+| Año (botones 2024 / 2025) | Resumen y Clientes, sincronizado | Todo |
+| Mes | Resumen y Clientes, sincronizado | Todo |
+| Canal | Resumen y Clientes, sincronizado | Ventas, Ticket, productos, provincias y NPS. **No** a Usuarios ni Sesiones |
+| Provincia | Resumen | Ventas, Ticket y productos (provincia del pedido) |
+| Producto | Resumen | Solo el gráfico de productos |
+
+- **Producto** solo filtra el gráfico de productos. Ventas y Ticket se miden por pedido, y un pedido puede tener los dos productos: asignarle su IVA y su envío a uno solo sería arbitrario.
+- **Canal** y **Provincia** no filtran Usuarios ni Sesiones: todas las visitas son web y no tienen ubicación. En la página Clientes, una nota debajo del filtro lo aclara.
+- **Provincia** no filtra el NPS: la encuesta no tiene pedido, así que no hay provincia de venta para la respuesta.
+- **Borrar filtros** usa la acción "Borrar todas las segmentaciones" (en Power BI Desktop, los botones se activan con Ctrl + clic).
+
+## Hallazgos
+
+Las consultas están en la parte C de `03_consultas.sql`. Se distinguen **hechos**, que salen directo de los datos, de **interpretaciones**, que son hipótesis para validar.
+
+1. **En julio y agosto de 2024 el NPS online se desplomó por la demora del correo.** *(Hecho, consulta C7)* El tiempo de despacho a entrega pasó de 3,2–3,9 días (enero a junio) a 7,4 días en julio y 8,0 en agosto. En esos mismos meses el NPS online cayó de 29,2 (junio) a −6,0 (julio) y −26,5 (agosto). Se recuperó cuando volvieron los tiempos normales: −1,9 en septiembre y 31,9 en octubre. El NPS de las tiendas físicas, que no usan envío, no cayó (46,2 en agosto). Los comentarios más repetidos de los detractores online de esos dos meses son "El envío demoró y nadie me avisó", "Tardó mucho más de lo esperado" y "Llegó con la caja dañada". Todos los envíos van por un único correo (Correo Argentino). *(Interpretación, confianza alta)* La caída se explica por la demora de entrega, no por el producto: coinciden las fechas, el canal sin envío funciona como grupo de control y los comentarios lo dicen textualmente. No se puede probar respuesta por respuesta porque la encuesta no tiene número de pedido. **Recomendación:** tener un segundo correo como alternativa y avisar al cliente cuando el envío se demora; "nadie me avisó" sugiere que la falta de aviso empeora la opinión tanto como la demora.
+
+2. **La venta crece por más clientes, no por compras más caras, y todo el crecimiento es online.** *(Hecho, consulta C8)* Comparando enero a septiembre de cada año, las ventas subieron 16,6 % ($146,3M a $170,6M). Los pedidos válidos subieron 16,9 % (4.196 a 4.906) y los clientes identificados que compraron, 39 % (1.624 a 2.264). El ticket promedio quedó estable ($34,87K a $34,78K, −0,3 %). Las ventas online pasaron de $81,2M a $105,3M (+30 %) y las tiendas quedaron planas ($65,1M contra $65,3M). *(Interpretación)* El negocio crece captando clientes por el canal online, no subiendo precios ni el gasto por compra. Como los clientes crecieron más que los pedidos, cada cliente compró en promedio menos veces (2,6 a 2,2 pedidos), lo que es esperable si muchos son nuevos; conviene seguir la recompra. Si las tiendas justifican su costo no se puede evaluar: no hay datos de costos.
+
+3. **El NPS online es más bajo que el de las tiendas y varía por provincia.** *(Hecho)* NPS del período: tiendas físicas 40,9 contra online 24,0. Por provincia del cliente, el NPS online es 35 en Buenos Aires y entre 14 y 19 en Córdoba, Mendoza y Santa Fe; Buenos Aires también tiene los envíos más rápidos (4,0 días del pedido a la puerta, contra 5,7 a 6,0 en las otras). *(Interpretación)* Por sí sola, esta es una correlación entre 4 provincias. Pero el hallazgo 1 muestra el mismo mecanismo en el tiempo, con un grupo de control, así que la hipótesis "la demora del envío baja el NPS" queda bastante respaldada.
+
+4. **Mercado Pago rechaza el doble que la tarjeta.** *(Hecho)* Fallan el 9,8 % de los pagos por pasarela contra el 4,0 % con tarjeta. Las cancelaciones suman 658 pedidos, $22,5M que no se concretaron. *(Interpretación)* Es un punto concreto para recuperar ventas: reintentos o un medio alternativo al momento del rechazo.
+
+5. **Los usuarios activos se duplicaron; la mayoría del tráfico es anónimo y desde el celular.** *(Hecho, consultas B3, C4 y C9)* Los clientes logueados por mes pasaron de 424 (01/2024) a 1.041 (09/2025), y la proporción de sesiones logueadas subió del 21 % al 34 %. El 61,9 % de las visitas es desde el celular, 32,3 % desde computadora y 5,8 % desde tablet. *(Interpretación)* Parte del crecimiento del KPI puede deberse a que más gente inicia sesión, no a que haya más audiencia: el KPI mide clientes identificados, no visitantes. Con 6 de cada 10 visitas desde el celular, la experiencia móvil (incluido el pago) es prioritaria.
+
+6. **Los productos se reparten casi parejo.** *(Hecho)* Sport B lidera en pesos en 12 de los 21 meses, por su precio más alto ($15.000 contra $12.000). Classic A vende más unidades en 15 de los 21 meses. El puesto 1 alterna mes a mes. *(Interpretación)* Con dos productos, un "top N" dice poco: por eso el tablero muestra los dos productos lado a lado cada mes en lugar de solo el primero.
+
+**Ideas para sumar al tablero:** días de entrega por mes junto al NPS online (alerta temprana del hallazgo 1), tasa de conversión de sesión a pedido por origen de tráfico (requiere vincular sesión y pedido, que hoy no se puede), y tasa de rechazo de pago por medio. Para medir el NPS por pedido, agregar `order_id` a la encuesta.
+
+## Anexo: versión en Looker Studio
+
+La consigna menciona Looker Studio en los entregables, así que el repositorio también deja preparada esa versión. Los KPIs dan los mismos valores en las dos herramientas.
 
 Looker Studio no relaciona tablas entre sí como Power BI: cada CSV es una fuente de datos independiente. Por eso `sql/04_looker.sql` arma una **capa de presentación**: tablas planas derivadas del modelo estrella, cada una con los atributos de sus dimensiones ya unidos. No reemplazan al modelo: si cambia una regla, se cambia en `01` o `02` y estas tablas la heredan.
 
@@ -415,64 +530,10 @@ Looker Studio no relaciona tablas entre sí como Power BI: cada CSV es una fuent
 | tp_usuarios_mes | `looker_usuarios_mes.csv` | un mes | Usuarios Activos (MAU) |
 | tp_nps | `looker_nps.csv` | una respuesta de encuesta | NPS |
 
-`looker_sesiones.csv` (una visita web) queda disponible para analizar tráfico por origen y dispositivo.
+`looker_sesiones.csv` (una visita web) queda disponible para analizar tráfico por origen y dispositivo. Se cargan con el conector **Subida de archivos CSV**.
 
-Se cargan con el conector **Subida de archivos CSV**.
+**Fechas.** Se exportan como texto `AAAAMMDD` (`20240102`). Con el formato `AAAA-MM-DD`, Looker interpretaba mal las fechas de 2024 y el filtro de período las dejaba afuera. En cada fuente se crean dos campos de tipo fecha: **Día** = `PARSE_DATE("%Y%m%d", CAST(fecha AS TEXT))` y **Mes (fecha)** = `PARSE_DATE("%Y%m%d", CAST(mes AS TEXT))`.
 
-**Fechas.** Se exportan como texto `AAAAMMDD` (`20240102`). Con el formato `AAAA-MM-DD`, Looker interpretaba mal las fechas de 2024 y el filtro de período las dejaba afuera. Como Looker igual las detecta como número, en cada fuente se crean dos campos de tipo fecha:
+**Campos calculados:** Ventas = `SUM(monto_venta)`; Ticket Promedio = `SUM(monto_venta) / SUM(es_venta)`; Usuarios Activos = `AVG(usuarios_activos)`; NPS = `(SUM(es_promotor) - SUM(es_detractor)) / COUNT(respuesta_id) * 100`; Ventas producto = `SUM(monto_venta_linea)`.
 
-| Campo | Fórmula |
-|---|---|
-| Día | `PARSE_DATE("%Y%m%d", CAST(fecha AS TEXT))` |
-| Mes (fecha) | `PARSE_DATE("%Y%m%d", CAST(mes AS TEXT))` |
-
-Todos los gráficos usan **Día** como dimensión del período y **Mes (fecha)** como eje de las series mensuales.
-
-### Campos calculados
-
-| Fuente | Campo | Fórmula |
-|---|---|---|
-| tp_ventas | Ventas | `SUM(monto_venta)` |
-| tp_ventas | Pedidos válidos | `SUM(es_venta)` |
-| tp_ventas | Ticket Promedio | `SUM(monto_venta) / SUM(es_venta)` |
-| tp_usuarios_mes | Usuarios Activos (MAU promedio) | `AVG(usuarios_activos)` |
-| tp_nps | NPS | `(SUM(es_promotor) - SUM(es_detractor)) / COUNT(respuesta_id) * 100` |
-| tp_productos | Ventas producto | `SUM(monto_venta_linea)` |
-
-**Por qué Usuarios Activos se precalcula por mes.** Contar clientes distintos en Looker (`COUNT_DISTINCT`) con un filtro de período da un resultado incorrecto: Looker cuenta los distintos de cada día y suma los días ("reagregación errónea"), así que un cliente que entra 10 días cuenta 10 veces. Con el período completo daba 28.764 en lugar de 3.077. Por eso el conteo distinto se hace en DuckDB, por mes (`looker_usuarios_mes`), y la tarjeta muestra el **promedio de usuarios activos mensuales (MAU)** del período elegido, que sí se puede reagregar correctamente. Además, MAU es la métrica estándar de audiencia activa en negocios digitales.
-
-### Vistas
-
-| Visual | Fuente | Dimensión | Métrica |
-|---|---|---|---|
-| Tarjeta Ventas ($M) + serie temporal | tp_ventas | Mes (fecha) | Ventas |
-| Tarjeta Usuarios Activos + serie | tp_usuarios_mes | Mes (fecha) | Usuarios Activos (MAU promedio) |
-| Tarjeta Ticket Promedio ($K) | tp_ventas | — | Ticket Promedio |
-| Tarjeta NPS + tendencia | tp_nps | Mes (fecha), desglose `canal` | NPS |
-| Mapa geográfico o barras: Ventas por Provincia | tp_ventas | `provincia_iso` (tipo *Subdivisión de país, 1.er nivel*) | Ventas |
-| Columnas: Ranking por producto | tp_productos | Mes (fecha), desglose `producto` | Ventas producto |
-
-Controles: período (sobre **Día**) y listas desplegables de `canal`, `provincia` y `producto`.
-
-### Cómo afectan los filtros (decisión de diseño)
-
-- **Producto** solo filtra el Ranking. Ventas y Ticket se miden por pedido, y un pedido puede tener los dos productos: asignarle su IVA y su envío a uno solo sería arbitrario.
-- **Canal** y **provincia** no filtran Usuarios Activos: las visitas web son todas del canal online y no tienen ubicación.
-- El filtro de período afecta a Usuarios Activos **por mes completo**: como el dato es mensual, elegir del 15 al 20 de un mes muestra el MAU de ese mes.
-- En el NPS, `provincia` es la del cliente, así que las respuestas anónimas no aparecen al filtrar por provincia.
-
-## Hallazgos
-
-Las consultas están en la parte C de `03_consultas.sql`. Se distinguen **hechos**, que salen directo de los datos, de **interpretaciones**, que son hipótesis para validar.
-
-1. **El crecimiento viene todo del canal online.** *(Hecho)* De enero a septiembre, las ventas online pasaron de $81,2M (2024) a $105,3M (2025), un 30 % más. Las tiendas quedaron planas: $65,1M contra $65,3M. *(Interpretación)* El canal online es el motor del negocio. Conviene revisar si las tiendas justifican su costo, algo que estos datos no permiten evaluar porque no hay costos.
-
-2. **El NPS online es más bajo y varía mucho por provincia.** *(Hecho)* Entre los promotores, el canal offline tiene 52,6 % y el online 42,9 %. Por provincia del cliente, el NPS online es 35 en Buenos Aires y entre 14 y 19 en Córdoba, Mendoza y Santa Fe. Buenos Aires también tiene los envíos más rápidos: 4,0 días del pedido a la puerta, contra 5,7 a 6,0 días en las otras provincias. *(Interpretación)* Es consistente con que la demora del envío empeore la satisfacción. **Pero es una correlación entre 4 provincias**, y la encuesta no tiene número de pedido, así que no se puede vincular cada respuesta con su envío. Para confirmarlo habría que agregar `order_id` a la encuesta.
-
-3. **Mercado Pago rechaza el doble que la tarjeta.** *(Hecho)* Fallan el 9,8 % de los pagos por pasarela contra el 4,0 % con tarjeta. Las cancelaciones suman 658 pedidos, $22,5M que no se concretaron. *(Interpretación)* Es un punto concreto para recuperar ventas: reintentos o un medio alternativo al momento del rechazo.
-
-4. **Los usuarios activos se duplicaron, pero la mayoría del tráfico es anónimo.** *(Hecho)* Los clientes logueados por mes pasaron de 424 (01/2024) a 1.041 (09/2025), y la proporción de sesiones logueadas subió del 21 % al 34 %. *(Interpretación)* Parte del crecimiento del KPI puede deberse a que más gente inicia sesión, no a que haya más audiencia. El KPI mide clientes identificados, no visitantes.
-
-5. **Los productos se reparten casi parejo.** *(Hecho)* Sport B lidera en pesos en 12 de los 21 meses, por su precio más alto ($15.000 contra $12.000). Classic A vende más unidades en 15 de los 21 meses. El puesto 1 alterna mes a mes. *(Interpretación)* Con dos productos, un "top N" dice poco: sería más informativo mostrar la participación de cada uno.
-
-**Ideas para sumar al tablero:** tasa de conversión de sesión a pedido por origen de tráfico (requiere vincular sesión y pedido, que hoy no se puede), un indicador de días a la puerta por provincia junto al NPS, y la tasa de rechazo de pago por medio.
+**Por qué en Looker Usuarios Activos se precalcula por mes.** `COUNT_DISTINCT` con un filtro de período da un resultado incorrecto: Looker cuenta los distintos de cada día y suma los días ("reagregación errónea"), así que un cliente que entra 10 días cuenta 10 veces. Con el período completo daba 28.764 en lugar de 3.077. Por eso el conteo distinto se hace en DuckDB, por mes (`looker_usuarios_mes`), y la tarjeta muestra el **promedio de usuarios activos mensuales (MAU)** del período, que sí se puede reagregar. Power BI no tiene este problema, porque calcula `DISTINCTCOUNT` sobre el período filtrado.
