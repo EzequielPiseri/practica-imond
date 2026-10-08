@@ -1,0 +1,107 @@
+{
+  "name": "EcoBottle AR v3",
+  "dataColors": [
+    "#1F4D3B",
+    "#7DB043",
+    "#C8842A",
+    "#4F8FA8",
+    "#9C6B98",
+    "#D9655B",
+    "#6B7A78",
+    "#E3B23C"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#15211F",
+  "tableAccent": "#1F4D3B",
+  "good": "#3E8E41",
+  "neutral": "#D9A21B",
+  "bad": "#C0392B",
+  "maximum": "#1F4D3B",
+  "center": "#7DB043",
+  "minimum": "#E6F0DC",
+  "textClasses": {
+    "callout": {
+      "fontSize": 30,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#15211F"
+    },
+    "title": {
+      "fontSize": 14,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#15211F"
+    },
+    "header": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#15211F"
+    },
+    "label": {
+      "fontSize": 11,
+      "fontFace": "Segoe UI",
+      "color": "#4A5654"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#DCE3E2"
+              }
+            },
+            "radius": 10
+          }
+        ],
+        "title": [
+          {
+            "show": true,
+            "fontColor": {
+              "solid": {
+                "color": "#15211F"
+              }
+            },
+            "fontSize": 14,
+            "bold": true
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F2F5F5"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F2F5F5"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
