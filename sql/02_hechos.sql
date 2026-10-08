@@ -311,4 +311,5 @@ SELECT
     sales_amount,
     RANK() OVER (PARTITION BY month_date_key ORDER BY sales_amount DESC),
     sales_amount / SUM(sales_amount) OVER (PARTITION BY month_date_key)
-FROM monthly;
+FROM monthly
+ORDER BY month_date_key, product_key;   -- orden fijo: el CSV exportado sale igual en cada corrida
