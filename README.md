@@ -427,7 +427,7 @@ Herramienta: **Power BI Desktop**. Archivo: [`tablero/EcoBottle_tablero.pbix`](.
 ```dax
 Ventas           = SUM ( fact_sales_order[sales_amount] )
 
-Pedidos válidos  = CALCULATE ( COUNTROWS ( fact_sales_order ), fact_sales_order[sales_amount] > 0 )
+Pedidos válidos  = CALCULATE ( COUNTROWS ( fact_sales_order ), fact_sales_order[is_sale] = TRUE () )
 
 Ticket Promedio  = DIVIDE ( [Ventas], [Pedidos válidos] )
 
