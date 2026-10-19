@@ -2,7 +2,9 @@
 -- 03_consultas.sql — Validaciones del modelo y consultas de KPIs
 -- =====================================================================
 -- Parte A: validaciones (el modelo cuadra contra raw/).
--- Parte B: los 6 KPIs del tablero, calculados desde el modelo estrella.
+-- Parte B: los KPIs del tablero, calculados desde el modelo estrella con
+--          las columnas de medida de 02_hechos.sql (las mismas que usa el
+--          tablero con Suma, Promedio o Recuento distinto).
 -- Parte C: consultas exploratorias para hallazgos.
 -- =====================================================================
 
@@ -39,21 +41,47 @@ JOIN (SELECT order_id, SUM(line_total) AS s FROM fact_sales_order_item GROUP BY 
   USING (order_id)
 WHERE i.s <> f.subtotal;
 
+-- A5. Las columnas de medida dan lo mismo que las fórmulas de cada KPI,
+--     en total y por canal (todo TRUE = el tablero puede agregarlas sin DAX)
+SELECT
+    c.code                                                                        AS canal,
+    SUM(f.sale_count) = COUNT(*) FILTER (WHERE f.is_sale)                         AS pedidos_ok,
+    ABS(AVG(f.ticket_amount) - SUM(f.sales_amount) / SUM(f.sale_count)) < 0.01    AS ticket_ok,
+    SUM(f.sales_net_amount) = SUM(f.sales_amount) - SUM(f.tax_amount) FILTER (WHERE f.is_sale) AS ventas_sin_iva_ok,
+    (SELECT ABS(AVG(n.nps_points)
+                - (SUM(n.is_promoter) - SUM(n.is_detractor)) * 100.0 / COUNT(*)) < 0.0001
+       FROM fact_nps_response AS n WHERE n.channel_key = c.channel_key)           AS nps_ok
+FROM fact_sales_order AS f
+JOIN dim_channel AS c ON c.channel_key = f.channel_key
+GROUP BY c.code, c.channel_key
+ORDER BY canal;
+
 
 -- =====================================================================
 -- PARTE B — KPIs DEL TABLERO
 -- =====================================================================
 
--- B1. Tarjetas del período completo: Ventas ($M), Ticket ($K), Usuarios (nK), NPS
+-- B1. Tarjetas del período completo, con las columnas de medida
 SELECT
-    ROUND(SUM(f.sales_amount) / 1e6, 1)                                   AS ventas_millones,
-    COUNT(*) FILTER (WHERE f.is_sale)                                     AS pedidos_validos,
-    ROUND(SUM(f.sales_amount) / COUNT(*) FILTER (WHERE f.is_sale) / 1e3, 1) AS ticket_promedio_miles,
-    (SELECT ROUND(COUNT(DISTINCT customer_key) / 1e3, 2)
-       FROM fact_web_session WHERE customer_key <> -1)                    AS usuarios_activos_miles,
-    (SELECT ROUND((SUM(is_promoter) - SUM(is_detractor)) * 100.0 / COUNT(*), 1)
-       FROM fact_nps_response)                                            AS nps
+    ROUND(SUM(f.sales_amount) / 1e6, 1)                     AS ventas_millones,          -- SUMA
+    ROUND(SUM(f.sales_net_amount) / 1e6, 1)                 AS ventas_sin_iva_millones,  -- SUMA
+    SUM(f.sale_count)                                       AS pedidos_validos,          -- SUMA
+    ROUND(AVG(f.ticket_amount) / 1e3, 1)                    AS ticket_miles,             -- PROMEDIO
+    ROUND(AVG(f.ticket_net_amount) / 1e3, 1)                AS ticket_sin_iva_miles,     -- PROMEDIO
+    (SELECT ROUND(COUNT(DISTINCT active_customer_key) / 1e3, 2)
+       FROM fact_web_session)                               AS usuarios_activos_miles,   -- RECUENTO DISTINTO
+    (SELECT ROUND(AVG(nps_points), 1) FROM fact_nps_response) AS nps                     -- PROMEDIO
 FROM fact_sales_order AS f;
+
+-- B1b. Desglose de la venta: de la venta neta de producto al total cobrado
+SELECT
+    ROUND(SUM(subtotal)         / 1e6, 1) AS subtotal_productos_millones,
+    ROUND(SUM(tax_amount)       / 1e6, 1) AS iva_millones,
+    ROUND(SUM(shipping_fee)     / 1e6, 1) AS envio_millones,
+    ROUND(SUM(sales_net_amount) / 1e6, 1) AS ventas_sin_iva_millones,   -- subtotal + envío
+    ROUND(SUM(sales_amount)     / 1e6, 1) AS ventas_con_iva_millones    -- subtotal + IVA + envío
+FROM fact_sales_order
+WHERE is_sale;
 
 -- B2. Serie mensual: ventas, pedidos y ticket promedio, por canal
 SELECT
@@ -78,6 +106,17 @@ FROM fact_web_session AS w
 JOIN dim_date AS d ON d.date_key = w.date_key
 GROUP BY ALL
 ORDER BY d.year_month;
+
+-- B3b. Usuarios activos: las dos formas de contarlos
+-- El KPI del tablero cuenta clientes logueados distintos. La consigna
+-- sugiere sumar además las sesiones anónimas: se muestra para comparar,
+-- pero mezcla personas con visitas (un anónimo que vuelve 10 veces cuenta 10).
+SELECT
+    COUNT(DISTINCT active_customer_key)                         AS clientes_identificados,
+    COUNT(*) FILTER (WHERE active_customer_key IS NULL)         AS sesiones_anonimas,
+    COUNT(DISTINCT active_customer_key)
+      + COUNT(*) FILTER (WHERE active_customer_key IS NULL)     AS total_combinado
+FROM fact_web_session;
 
 -- B4. NPS por mes y canal
 SELECT
