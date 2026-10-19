@@ -133,6 +133,7 @@ erDiagram
         INTEGER is_detractor
         BOOLEAN has_comment
         VARCHAR comment
+        INTEGER nps_points
     }
     fact_payment {
         BIGINT payment_id PK
@@ -163,6 +164,10 @@ erDiagram
         DECIMAL shipping_fee
         DECIMAL total_amount
         DECIMAL sales_amount
+        INTEGER sale_count
+        DECIMAL sales_net_amount
+        DECIMAL ticket_amount
+        DECIMAL ticket_net_amount
     }
     fact_sales_order_item {
         BIGINT order_item_id PK
@@ -204,6 +209,7 @@ erDiagram
         INTEGER device_key FK
         BOOLEAN is_logged_in
         INTEGER duration_seconds
+        INTEGER active_customer_key
     }
     looker_nps {
         BIGINT respuesta_id
