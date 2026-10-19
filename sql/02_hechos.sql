@@ -16,6 +16,20 @@
 --
 -- Las claves de fechas opcionales (pago, envío, entrega) quedan NULL
 -- cuando el evento todavía no ocurrió: un -1 ahí sería una fecha falsa.
+--
+-- COLUMNAS DE MEDIDA (los KPIs se calculan en SQL, no en DAX):
+-- cada KPI tiene una columna preparada para que el tablero solo use una
+-- agregación estándar (Suma, Promedio o Recuento distinto) y el resultado
+-- sea correcto con cualquier filtro:
+--   Ventas con IVA     SUMA     fact_sales_order.sales_amount
+--   Ventas sin IVA     SUMA     fact_sales_order.sales_net_amount
+--   Pedidos válidos    SUMA     fact_sales_order.sale_count
+--   Ticket con IVA     PROMEDIO fact_sales_order.ticket_amount      (NULL si no es venta)
+--   Ticket sin IVA     PROMEDIO fact_sales_order.ticket_net_amount  (NULL si no es venta)
+--   Usuarios activos   RECUENTO DISTINTO fact_web_session.active_customer_key
+--   NPS                PROMEDIO fact_nps_response.nps_points
+-- "Sin IVA" = total_amount - tax_amount: se descuenta el impuesto y se
+-- mantiene el envío, que es ingreso de la empresa.
 -- =====================================================================
 
 
@@ -44,7 +58,12 @@ CREATE TABLE fact_sales_order (
     tax_amount          DECIMAL(12, 2) NOT NULL,
     shipping_fee        DECIMAL(12, 2) NOT NULL,
     total_amount        DECIMAL(12, 2) NOT NULL,
-    sales_amount        DECIMAL(12, 2) NOT NULL   -- total_amount si is_sale, si no 0
+    sales_amount        DECIMAL(12, 2) NOT NULL,  -- total_amount si is_sale, si no 0
+    -- Columnas de medida (ver encabezado)
+    sale_count          INTEGER NOT NULL,         -- 1 si is_sale, si no 0      -> SUMA = pedidos válidos
+    sales_net_amount    DECIMAL(12, 2) NOT NULL,  -- total - IVA si is_sale, si no 0 -> SUMA = ventas sin IVA
+    ticket_amount       DECIMAL(12, 2),           -- total si is_sale, si no NULL    -> PROMEDIO = ticket
+    ticket_net_amount   DECIMAL(12, 2)            -- total - IVA si is_sale, si no NULL -> PROMEDIO = ticket sin IVA
 );
 
 INSERT INTO fact_sales_order
@@ -73,7 +92,13 @@ SELECT
     o.tax_amount,
     o.shipping_fee,
     o.total_amount,
-    CASE WHEN st.is_sale THEN o.total_amount ELSE 0 END
+    CASE WHEN st.is_sale THEN o.total_amount ELSE 0 END,
+    CASE WHEN st.is_sale THEN 1 ELSE 0 END,
+    CASE WHEN st.is_sale THEN o.total_amount - o.tax_amount ELSE 0 END,
+    -- NULL (no 0) en los pedidos que no son venta: el promedio ignora los
+    -- NULL, así que PROMEDIO(ticket_amount) = ventas / pedidos válidos.
+    CASE WHEN st.is_sale THEN o.total_amount END,
+    CASE WHEN st.is_sale THEN o.total_amount - o.tax_amount END
 FROM raw.sales_order AS o
 JOIN items                     AS i  ON i.order_id     = o.order_id
 JOIN dim_channel               AS ch ON ch.channel_id  = o.channel_id
@@ -217,7 +242,9 @@ CREATE TABLE fact_web_session (
     traffic_source_key  INTEGER NOT NULL REFERENCES dim_traffic_source (traffic_source_key),
     device_key          INTEGER NOT NULL REFERENCES dim_device (device_key),
     is_logged_in        BOOLEAN NOT NULL,
-    duration_seconds    INTEGER            -- NULL si la sesión no tiene fin registrado
+    duration_seconds    INTEGER,           -- NULL si la sesión no tiene fin registrado
+    active_customer_key INTEGER            -- customer_key si está logueado, NULL si es anónimo
+                                           -- -> RECUENTO DISTINTO = usuarios activos
 );
 
 INSERT INTO fact_web_session
@@ -228,7 +255,8 @@ SELECT
     COALESCE(ts.traffic_source_key, -1),
     COALESCE(dv.device_key, -1),
     w.customer_id IS NOT NULL,
-    date_diff('second', w.started_at, w.ended_at)
+    date_diff('second', w.started_at, w.ended_at),
+    CASE WHEN w.customer_id IS NOT NULL THEN dc.customer_key END
 FROM raw.web_session          AS w
 LEFT JOIN dim_customer        AS dc ON dc.customer_id = w.customer_id
 LEFT JOIN dim_traffic_source  AS ts ON ts.source_code = w.source
@@ -238,8 +266,9 @@ LEFT JOIN dim_device          AS dv ON dv.device_code = w.device;
 -- ---------------------------------------------------------------------
 -- fact_nps_response — GRANO: una respuesta a la encuesta
 -- ---------------------------------------------------------------------
--- NPS = %promotores - %detractores. Con los flags 1/0 el cálculo en
--- Power BI es: (SUM(is_promoter) - SUM(is_detractor)) / COUNT(*) * 100.
+-- NPS = %promotores - %detractores. nps_points vale +100 (promotor),
+-- 0 (pasivo) o -100 (detractor), así que su PROMEDIO es exactamente el NPS:
+-- (P*100 - D*100) / N = %promotores - %detractores, con cualquier filtro.
 
 CREATE TABLE fact_nps_response (
     nps_id         BIGINT  PRIMARY KEY,
@@ -252,7 +281,8 @@ CREATE TABLE fact_nps_response (
     is_passive     INTEGER NOT NULL,   -- 1 si score 7-8
     is_detractor   INTEGER NOT NULL,   -- 1 si score 0-6
     has_comment    BOOLEAN NOT NULL,
-    comment        VARCHAR
+    comment        VARCHAR,
+    nps_points     INTEGER NOT NULL    -- +100 / 0 / -100 -> PROMEDIO = NPS
 );
 
 INSERT INTO fact_nps_response
@@ -269,7 +299,8 @@ SELECT
     CASE WHEN n.score BETWEEN 7 AND 8 THEN 1 ELSE 0 END,
     CASE WHEN n.score <= 6 THEN 1 ELSE 0 END,
     n.comment IS NOT NULL AND trim(n.comment) <> '',
-    n.comment
+    n.comment,
+    CASE WHEN n.score >= 9 THEN 100 WHEN n.score <= 6 THEN -100 ELSE 0 END
 FROM raw.nps_response   AS n
 JOIN dim_channel        AS ch ON ch.channel_id  = n.channel_id
 LEFT JOIN dim_customer  AS dc ON dc.customer_id = n.customer_id;
