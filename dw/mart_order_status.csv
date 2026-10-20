@@ -1,0 +1,1040 @@
+period_type,period,channel,province,status_code,status_description,is_sale,orders,total_amount
+month,2024-01,OFFLINE,Buenos Aires,CANCELLED,Cancelado,false,1,36300.00
+month,2024-01,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,73,2457954.00
+month,2024-01,OFFLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,3,83490.00
+month,2024-01,OFFLINE,Córdoba,FULFILLED,Entregado,true,52,1763091.00
+month,2024-01,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,2,45060.00
+month,2024-01,OFFLINE,Mendoza,FULFILLED,Entregado,true,40,1274433.00
+month,2024-01,OFFLINE,Santa Fe,CANCELLED,Cancelado,false,1,32670.00
+month,2024-01,OFFLINE,Santa Fe,FULFILLED,Entregado,true,44,1667670.00
+month,2024-01,OFFLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,1,83490.00
+month,2024-01,OFFLINE,Todas,CANCELLED,Cancelado,false,2,68970.00
+month,2024-01,OFFLINE,Todas,FULFILLED,Entregado,true,209,7163148.00
+month,2024-01,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,6,212040.00
+month,2024-01,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,15,484666.50
+month,2024-01,ONLINE,Buenos Aires,FULFILLED,Entregado,true,93,3174915.00
+month,2024-01,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,3,107670.00
+month,2024-01,ONLINE,Córdoba,CANCELLED,Cancelado,false,7,176754.00
+month,2024-01,ONLINE,Córdoba,FULFILLED,Entregado,true,64,2528650.50
+month,2024-01,ONLINE,Mendoza,CANCELLED,Cancelado,false,2,114330.00
+month,2024-01,ONLINE,Mendoza,FULFILLED,Entregado,true,29,1132185.00
+month,2024-01,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,1,19950.00
+month,2024-01,ONLINE,Santa Fe,CANCELLED,Cancelado,false,6,210646.50
+month,2024-01,ONLINE,Santa Fe,FULFILLED,Entregado,true,65,1966566.00
+month,2024-01,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,7,337515.00
+month,2024-01,ONLINE,Todas,CANCELLED,Cancelado,false,30,986397.00
+month,2024-01,ONLINE,Todas,FULFILLED,Entregado,true,251,8802316.50
+month,2024-01,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,11,465135.00
+month,2024-01,Todos,Buenos Aires,CANCELLED,Cancelado,false,16,520966.50
+month,2024-01,Todos,Buenos Aires,FULFILLED,Entregado,true,166,5632869.00
+month,2024-01,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,6,191160.00
+month,2024-01,Todos,Córdoba,CANCELLED,Cancelado,false,7,176754.00
+month,2024-01,Todos,Córdoba,FULFILLED,Entregado,true,116,4291741.50
+month,2024-01,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,2,45060.00
+month,2024-01,Todos,Mendoza,CANCELLED,Cancelado,false,2,114330.00
+month,2024-01,Todos,Mendoza,FULFILLED,Entregado,true,69,2406618.00
+month,2024-01,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,1,19950.00
+month,2024-01,Todos,Santa Fe,CANCELLED,Cancelado,false,7,243316.50
+month,2024-01,Todos,Santa Fe,FULFILLED,Entregado,true,109,3634236.00
+month,2024-01,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,8,421005.00
+month,2024-01,Todos,Todas,CANCELLED,Cancelado,false,32,1055367.00
+month,2024-01,Todos,Todas,FULFILLED,Entregado,true,460,15965464.50
+month,2024-01,Todos,Todas,REFUNDED,Entregado y reembolsado,false,17,677175.00
+month,2024-02,OFFLINE,Buenos Aires,CANCELLED,Cancelado,false,1,29040.00
+month,2024-02,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,77,3043039.50
+month,2024-02,OFFLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,1,14520.00
+month,2024-02,OFFLINE,Córdoba,CANCELLED,Cancelado,false,1,37800.00
+month,2024-02,OFFLINE,Córdoba,FULFILLED,Entregado,true,51,1832835.00
+month,2024-02,OFFLINE,Mendoza,FULFILLED,Entregado,true,45,1422189.00
+month,2024-02,OFFLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,2,47190.00
+month,2024-02,OFFLINE,Santa Fe,FULFILLED,Entregado,true,56,2070877.50
+month,2024-02,OFFLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,3,45423.00
+month,2024-02,OFFLINE,Todas,CANCELLED,Cancelado,false,2,66840.00
+month,2024-02,OFFLINE,Todas,FULFILLED,Entregado,true,229,8368941.00
+month,2024-02,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,6,107133.00
+month,2024-02,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,7,164490.00
+month,2024-02,ONLINE,Buenos Aires,FULFILLED,Entregado,true,104,3966750.00
+month,2024-02,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,6,140602.50
+month,2024-02,ONLINE,Córdoba,CANCELLED,Cancelado,false,7,194130.00
+month,2024-02,ONLINE,Córdoba,FULFILLED,Entregado,true,81,2625576.00
+month,2024-02,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,1,48690.00
+month,2024-02,ONLINE,Mendoza,CANCELLED,Cancelado,false,3,96150.00
+month,2024-02,ONLINE,Mendoza,FULFILLED,Entregado,true,38,1313035.50
+month,2024-02,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,2,50790.00
+month,2024-02,ONLINE,Santa Fe,CANCELLED,Cancelado,false,8,393732.00
+month,2024-02,ONLINE,Santa Fe,FULFILLED,Entregado,true,61,2103577.50
+month,2024-02,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,2,108900.00
+month,2024-02,ONLINE,Todas,CANCELLED,Cancelado,false,25,848502.00
+month,2024-02,ONLINE,Todas,FULFILLED,Entregado,true,284,10008939.00
+month,2024-02,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,11,348982.50
+month,2024-02,Todos,Buenos Aires,CANCELLED,Cancelado,false,8,193530.00
+month,2024-02,Todos,Buenos Aires,FULFILLED,Entregado,true,181,7009789.50
+month,2024-02,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,7,155122.50
+month,2024-02,Todos,Córdoba,CANCELLED,Cancelado,false,8,231930.00
+month,2024-02,Todos,Córdoba,FULFILLED,Entregado,true,132,4458411.00
+month,2024-02,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,1,48690.00
+month,2024-02,Todos,Mendoza,CANCELLED,Cancelado,false,3,96150.00
+month,2024-02,Todos,Mendoza,FULFILLED,Entregado,true,83,2735224.50
+month,2024-02,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,4,97980.00
+month,2024-02,Todos,Santa Fe,CANCELLED,Cancelado,false,8,393732.00
+month,2024-02,Todos,Santa Fe,FULFILLED,Entregado,true,117,4174455.00
+month,2024-02,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,5,154323.00
+month,2024-02,Todos,Todas,CANCELLED,Cancelado,false,27,915342.00
+month,2024-02,Todos,Todas,FULFILLED,Entregado,true,513,18377880.00
+month,2024-02,Todos,Todas,REFUNDED,Entregado y reembolsado,false,17,456115.50
+month,2024-03,OFFLINE,Buenos Aires,CANCELLED,Cancelado,false,2,50820.00
+month,2024-03,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,67,2381976.00
+month,2024-03,OFFLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,1,36300.00
+month,2024-03,OFFLINE,Córdoba,CANCELLED,Cancelado,false,1,36300.00
+month,2024-03,OFFLINE,Córdoba,FULFILLED,Entregado,true,66,2204910.00
+month,2024-03,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,3,95880.00
+month,2024-03,OFFLINE,Mendoza,FULFILLED,Entregado,true,35,1085295.00
+month,2024-03,OFFLINE,Santa Fe,CANCELLED,Cancelado,false,1,29040.00
+month,2024-03,OFFLINE,Santa Fe,FULFILLED,Entregado,true,61,2078586.00
+month,2024-03,OFFLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,1,32670.00
+month,2024-03,OFFLINE,Todas,CANCELLED,Cancelado,false,4,116160.00
+month,2024-03,OFFLINE,Todas,FULFILLED,Entregado,true,229,7750767.00
+month,2024-03,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,5,164850.00
+month,2024-03,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,9,199560.00
+month,2024-03,ONLINE,Buenos Aires,FULFILLED,Entregado,true,111,3823638.00
+month,2024-03,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,4,91920.00
+month,2024-03,ONLINE,Córdoba,CANCELLED,Cancelado,false,4,97476.00
+month,2024-03,ONLINE,Córdoba,FULFILLED,Entregado,true,52,1969246.50
+month,2024-03,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,2,61080.00
+month,2024-03,ONLINE,Mendoza,CANCELLED,Cancelado,false,2,61680.00
+month,2024-03,ONLINE,Mendoza,FULFILLED,Entregado,true,30,1131822.00
+month,2024-03,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,1,65340.00
+month,2024-03,ONLINE,Santa Fe,CANCELLED,Cancelado,false,10,318420.00
+month,2024-03,ONLINE,Santa Fe,FULFILLED,Entregado,true,60,2433000.00
+month,2024-03,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,2,32040.00
+month,2024-03,ONLINE,Todas,CANCELLED,Cancelado,false,25,677136.00
+month,2024-03,ONLINE,Todas,FULFILLED,Entregado,true,253,9357706.50
+month,2024-03,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,9,250380.00
+month,2024-03,Todos,Buenos Aires,CANCELLED,Cancelado,false,11,250380.00
+month,2024-03,Todos,Buenos Aires,FULFILLED,Entregado,true,178,6205614.00
+month,2024-03,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,5,128220.00
+month,2024-03,Todos,Córdoba,CANCELLED,Cancelado,false,5,133776.00
+month,2024-03,Todos,Córdoba,FULFILLED,Entregado,true,118,4174156.50
+month,2024-03,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,5,156960.00
+month,2024-03,Todos,Mendoza,CANCELLED,Cancelado,false,2,61680.00
+month,2024-03,Todos,Mendoza,FULFILLED,Entregado,true,65,2217117.00
+month,2024-03,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,1,65340.00
+month,2024-03,Todos,Santa Fe,CANCELLED,Cancelado,false,11,347460.00
+month,2024-03,Todos,Santa Fe,FULFILLED,Entregado,true,121,4511586.00
+month,2024-03,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,3,64710.00
+month,2024-03,Todos,Todas,CANCELLED,Cancelado,false,29,793296.00
+month,2024-03,Todos,Todas,FULFILLED,Entregado,true,482,17108473.50
+month,2024-03,Todos,Todas,REFUNDED,Entregado y reembolsado,false,14,415230.00
+month,2024-04,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,49,1601526.00
+month,2024-04,OFFLINE,Córdoba,FULFILLED,Entregado,true,41,1505457.00
+month,2024-04,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,1,14520.00
+month,2024-04,OFFLINE,Mendoza,FULFILLED,Entregado,true,42,1402995.00
+month,2024-04,OFFLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,1,32670.00
+month,2024-04,OFFLINE,Santa Fe,FULFILLED,Entregado,true,62,2303235.00
+month,2024-04,OFFLINE,Todas,FULFILLED,Entregado,true,194,6813213.00
+month,2024-04,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,2,47190.00
+month,2024-04,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,8,269760.00
+month,2024-04,ONLINE,Buenos Aires,FULFILLED,Entregado,true,101,3364210.50
+month,2024-04,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,6,205650.00
+month,2024-04,ONLINE,Córdoba,CANCELLED,Cancelado,false,3,111900.00
+month,2024-04,ONLINE,Córdoba,FULFILLED,Entregado,true,50,1734786.00
+month,2024-04,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,1,27636.00
+month,2024-04,ONLINE,Mendoza,CANCELLED,Cancelado,false,2,78030.00
+month,2024-04,ONLINE,Mendoza,FULFILLED,Entregado,true,32,1117861.50
+month,2024-04,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,1,45360.00
+month,2024-04,ONLINE,Santa Fe,CANCELLED,Cancelado,false,6,149844.00
+month,2024-04,ONLINE,Santa Fe,FULFILLED,Entregado,true,61,2213737.50
+month,2024-04,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,1,37800.00
+month,2024-04,ONLINE,Todas,CANCELLED,Cancelado,false,19,609534.00
+month,2024-04,ONLINE,Todas,FULFILLED,Entregado,true,244,8430595.50
+month,2024-04,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,9,316446.00
+month,2024-04,Todos,Buenos Aires,CANCELLED,Cancelado,false,8,269760.00
+month,2024-04,Todos,Buenos Aires,FULFILLED,Entregado,true,150,4965736.50
+month,2024-04,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,6,205650.00
+month,2024-04,Todos,Córdoba,CANCELLED,Cancelado,false,3,111900.00
+month,2024-04,Todos,Córdoba,FULFILLED,Entregado,true,91,3240243.00
+month,2024-04,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,2,42156.00
+month,2024-04,Todos,Mendoza,CANCELLED,Cancelado,false,2,78030.00
+month,2024-04,Todos,Mendoza,FULFILLED,Entregado,true,74,2520856.50
+month,2024-04,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,2,78030.00
+month,2024-04,Todos,Santa Fe,CANCELLED,Cancelado,false,6,149844.00
+month,2024-04,Todos,Santa Fe,FULFILLED,Entregado,true,123,4516972.50
+month,2024-04,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,1,37800.00
+month,2024-04,Todos,Todas,CANCELLED,Cancelado,false,19,609534.00
+month,2024-04,Todos,Todas,FULFILLED,Entregado,true,438,15243808.50
+month,2024-04,Todos,Todas,REFUNDED,Entregado y reembolsado,false,11,363636.00
+month,2024-05,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,55,2002278.00
+month,2024-05,OFFLINE,Córdoba,CANCELLED,Cancelado,false,1,18150.00
+month,2024-05,OFFLINE,Córdoba,FULFILLED,Entregado,true,54,2053854.00
+month,2024-05,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,1,14520.00
+month,2024-05,OFFLINE,Mendoza,CANCELLED,Cancelado,false,1,16335.00
+month,2024-05,OFFLINE,Mendoza,FULFILLED,Entregado,true,37,1229814.00
+month,2024-05,OFFLINE,Santa Fe,CANCELLED,Cancelado,false,1,43560.00
+month,2024-05,OFFLINE,Santa Fe,FULFILLED,Entregado,true,43,1545339.00
+month,2024-05,OFFLINE,Todas,CANCELLED,Cancelado,false,3,78045.00
+month,2024-05,OFFLINE,Todas,FULFILLED,Entregado,true,189,6831285.00
+month,2024-05,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,1,14520.00
+month,2024-05,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,11,349620.00
+month,2024-05,ONLINE,Buenos Aires,FULFILLED,Entregado,true,121,3958954.50
+month,2024-05,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,4,95328.00
+month,2024-05,ONLINE,Córdoba,CANCELLED,Cancelado,false,6,130920.00
+month,2024-05,ONLINE,Córdoba,FULFILLED,Entregado,true,59,1900341.00
+month,2024-05,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,3,87216.00
+month,2024-05,ONLINE,Mendoza,CANCELLED,Cancelado,false,3,108870.00
+month,2024-05,ONLINE,Mendoza,FULFILLED,Entregado,true,39,1325346.00
+month,2024-05,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,2,52620.00
+month,2024-05,ONLINE,Santa Fe,CANCELLED,Cancelado,false,8,234738.00
+month,2024-05,ONLINE,Santa Fe,FULFILLED,Entregado,true,66,2316579.00
+month,2024-05,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,5,90168.00
+month,2024-05,ONLINE,Todas,CANCELLED,Cancelado,false,28,824148.00
+month,2024-05,ONLINE,Todas,FULFILLED,Entregado,true,285,9501220.50
+month,2024-05,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,14,325332.00
+month,2024-05,Todos,Buenos Aires,CANCELLED,Cancelado,false,11,349620.00
+month,2024-05,Todos,Buenos Aires,FULFILLED,Entregado,true,176,5961232.50
+month,2024-05,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,4,95328.00
+month,2024-05,Todos,Córdoba,CANCELLED,Cancelado,false,7,149070.00
+month,2024-05,Todos,Córdoba,FULFILLED,Entregado,true,113,3954195.00
+month,2024-05,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,4,101736.00
+month,2024-05,Todos,Mendoza,CANCELLED,Cancelado,false,4,125205.00
+month,2024-05,Todos,Mendoza,FULFILLED,Entregado,true,76,2555160.00
+month,2024-05,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,2,52620.00
+month,2024-05,Todos,Santa Fe,CANCELLED,Cancelado,false,9,278298.00
+month,2024-05,Todos,Santa Fe,FULFILLED,Entregado,true,109,3861918.00
+month,2024-05,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,5,90168.00
+month,2024-05,Todos,Todas,CANCELLED,Cancelado,false,31,902193.00
+month,2024-05,Todos,Todas,FULFILLED,Entregado,true,474,16332505.50
+month,2024-05,Todos,Todas,REFUNDED,Entregado y reembolsado,false,15,339852.00
+month,2024-06,OFFLINE,Buenos Aires,CANCELLED,Cancelado,false,1,14520.00
+month,2024-06,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,75,2781891.00
+month,2024-06,OFFLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,2,112530.00
+month,2024-06,OFFLINE,Córdoba,CANCELLED,Cancelado,false,1,43560.00
+month,2024-06,OFFLINE,Córdoba,FULFILLED,Entregado,true,76,2597676.00
+month,2024-06,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,2,65340.00
+month,2024-06,OFFLINE,Mendoza,CANCELLED,Cancelado,false,1,16335.00
+month,2024-06,OFFLINE,Mendoza,FULFILLED,Entregado,true,43,1535656.50
+month,2024-06,OFFLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,2,29040.00
+month,2024-06,OFFLINE,Santa Fe,FULFILLED,Entregado,true,56,1829301.00
+month,2024-06,OFFLINE,Todas,CANCELLED,Cancelado,false,3,74415.00
+month,2024-06,OFFLINE,Todas,FULFILLED,Entregado,true,250,8744524.50
+month,2024-06,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,6,206910.00
+month,2024-06,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,6,148770.00
+month,2024-06,ONLINE,Buenos Aires,FULFILLED,Entregado,true,125,4974529.50
+month,2024-06,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,2,124620.00
+month,2024-06,ONLINE,Córdoba,CANCELLED,Cancelado,false,5,189630.00
+month,2024-06,ONLINE,Córdoba,FULFILLED,Entregado,true,64,2228278.50
+month,2024-06,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,1,34170.00
+month,2024-06,ONLINE,Mendoza,CANCELLED,Cancelado,false,6,133494.00
+month,2024-06,ONLINE,Mendoza,FULFILLED,Entregado,true,46,1311645.00
+month,2024-06,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,1,38100.00
+month,2024-06,ONLINE,Santa Fe,CANCELLED,Cancelado,false,6,400036.50
+month,2024-06,ONLINE,Santa Fe,FULFILLED,Entregado,true,70,2485570.50
+month,2024-06,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,5,262908.00
+month,2024-06,ONLINE,Todas,CANCELLED,Cancelado,false,23,871930.50
+month,2024-06,ONLINE,Todas,FULFILLED,Entregado,true,305,11000023.50
+month,2024-06,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,9,459798.00
+month,2024-06,Todos,Buenos Aires,CANCELLED,Cancelado,false,7,163290.00
+month,2024-06,Todos,Buenos Aires,FULFILLED,Entregado,true,200,7756420.50
+month,2024-06,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,4,237150.00
+month,2024-06,Todos,Córdoba,CANCELLED,Cancelado,false,6,233190.00
+month,2024-06,Todos,Córdoba,FULFILLED,Entregado,true,140,4825954.50
+month,2024-06,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,3,99510.00
+month,2024-06,Todos,Mendoza,CANCELLED,Cancelado,false,7,149829.00
+month,2024-06,Todos,Mendoza,FULFILLED,Entregado,true,89,2847301.50
+month,2024-06,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,3,67140.00
+month,2024-06,Todos,Santa Fe,CANCELLED,Cancelado,false,6,400036.50
+month,2024-06,Todos,Santa Fe,FULFILLED,Entregado,true,126,4314871.50
+month,2024-06,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,5,262908.00
+month,2024-06,Todos,Todas,CANCELLED,Cancelado,false,26,946345.50
+month,2024-06,Todos,Todas,FULFILLED,Entregado,true,555,19744548.00
+month,2024-06,Todos,Todas,REFUNDED,Entregado y reembolsado,false,15,666708.00
+month,2024-07,OFFLINE,Buenos Aires,CANCELLED,Cancelado,false,1,14520.00
+month,2024-07,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,56,1976505.00
+month,2024-07,OFFLINE,Córdoba,FULFILLED,Entregado,true,48,1771803.00
+month,2024-07,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,2,29040.00
+month,2024-07,OFFLINE,Mendoza,FULFILLED,Entregado,true,40,1280982.00
+month,2024-07,OFFLINE,Santa Fe,FULFILLED,Entregado,true,41,1191195.00
+month,2024-07,OFFLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,1,14520.00
+month,2024-07,OFFLINE,Todas,CANCELLED,Cancelado,false,1,14520.00
+month,2024-07,OFFLINE,Todas,FULFILLED,Entregado,true,185,6220485.00
+month,2024-07,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,3,43560.00
+month,2024-07,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,3,304234.50
+month,2024-07,ONLINE,Buenos Aires,FULFILLED,Entregado,true,92,3249985.50
+month,2024-07,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,3,68940.00
+month,2024-07,ONLINE,Córdoba,CANCELLED,Cancelado,false,10,211383.00
+month,2024-07,ONLINE,Córdoba,FULFILLED,Entregado,true,35,1094118.00
+month,2024-07,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,3,48060.00
+month,2024-07,ONLINE,Mendoza,CANCELLED,Cancelado,false,2,70770.00
+month,2024-07,ONLINE,Mendoza,FULFILLED,Entregado,true,24,1159182.00
+month,2024-07,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,3,51138.00
+month,2024-07,ONLINE,Santa Fe,CANCELLED,Cancelado,false,5,190404.00
+month,2024-07,ONLINE,Santa Fe,FULFILLED,Entregado,true,51,1887534.00
+month,2024-07,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,5,164268.00
+month,2024-07,ONLINE,Todas,CANCELLED,Cancelado,false,20,776791.50
+month,2024-07,ONLINE,Todas,FULFILLED,Entregado,true,202,7390819.50
+month,2024-07,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,14,332406.00
+month,2024-07,Todos,Buenos Aires,CANCELLED,Cancelado,false,4,318754.50
+month,2024-07,Todos,Buenos Aires,FULFILLED,Entregado,true,148,5226490.50
+month,2024-07,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,3,68940.00
+month,2024-07,Todos,Córdoba,CANCELLED,Cancelado,false,10,211383.00
+month,2024-07,Todos,Córdoba,FULFILLED,Entregado,true,83,2865921.00
+month,2024-07,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,5,77100.00
+month,2024-07,Todos,Mendoza,CANCELLED,Cancelado,false,2,70770.00
+month,2024-07,Todos,Mendoza,FULFILLED,Entregado,true,64,2440164.00
+month,2024-07,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,3,51138.00
+month,2024-07,Todos,Santa Fe,CANCELLED,Cancelado,false,5,190404.00
+month,2024-07,Todos,Santa Fe,FULFILLED,Entregado,true,92,3078729.00
+month,2024-07,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,6,178788.00
+month,2024-07,Todos,Todas,CANCELLED,Cancelado,false,21,791311.50
+month,2024-07,Todos,Todas,FULFILLED,Entregado,true,387,13611304.50
+month,2024-07,Todos,Todas,REFUNDED,Entregado y reembolsado,false,17,375966.00
+month,2024-08,OFFLINE,Buenos Aires,CANCELLED,Cancelado,false,2,32670.00
+month,2024-08,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,54,1952436.00
+month,2024-08,OFFLINE,Córdoba,CANCELLED,Cancelado,false,1,50820.00
+month,2024-08,OFFLINE,Córdoba,FULFILLED,Entregado,true,48,1575516.00
+month,2024-08,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,1,54450.00
+month,2024-08,OFFLINE,Mendoza,FULFILLED,Entregado,true,49,1869420.00
+month,2024-08,OFFLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,1,101640.00
+month,2024-08,OFFLINE,Santa Fe,FULFILLED,Entregado,true,48,1520436.00
+month,2024-08,OFFLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,2,79860.00
+month,2024-08,OFFLINE,Todas,CANCELLED,Cancelado,false,3,83490.00
+month,2024-08,OFFLINE,Todas,FULFILLED,Entregado,true,199,6917808.00
+month,2024-08,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,4,235950.00
+month,2024-08,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,4,123390.00
+month,2024-08,ONLINE,Buenos Aires,FULFILLED,Entregado,true,116,4007770.50
+month,2024-08,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,7,263730.00
+month,2024-08,ONLINE,Córdoba,CANCELLED,Cancelado,false,4,111270.00
+month,2024-08,ONLINE,Córdoba,FULFILLED,Entregado,true,55,1854100.50
+month,2024-08,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,3,144570.00
+month,2024-08,ONLINE,Mendoza,CANCELLED,Cancelado,false,2,70770.00
+month,2024-08,ONLINE,Mendoza,FULFILLED,Entregado,true,22,767656.50
+month,2024-08,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,2,79830.00
+month,2024-08,ONLINE,Santa Fe,CANCELLED,Cancelado,false,5,179514.00
+month,2024-08,ONLINE,Santa Fe,FULFILLED,Entregado,true,52,1457208.00
+month,2024-08,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,7,162960.00
+month,2024-08,ONLINE,Todas,CANCELLED,Cancelado,false,15,484944.00
+month,2024-08,ONLINE,Todas,FULFILLED,Entregado,true,245,8086735.50
+month,2024-08,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,19,651090.00
+month,2024-08,Todos,Buenos Aires,CANCELLED,Cancelado,false,6,156060.00
+month,2024-08,Todos,Buenos Aires,FULFILLED,Entregado,true,170,5960206.50
+month,2024-08,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,7,263730.00
+month,2024-08,Todos,Córdoba,CANCELLED,Cancelado,false,5,162090.00
+month,2024-08,Todos,Córdoba,FULFILLED,Entregado,true,103,3429616.50
+month,2024-08,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,4,199020.00
+month,2024-08,Todos,Mendoza,CANCELLED,Cancelado,false,2,70770.00
+month,2024-08,Todos,Mendoza,FULFILLED,Entregado,true,71,2637076.50
+month,2024-08,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,3,181470.00
+month,2024-08,Todos,Santa Fe,CANCELLED,Cancelado,false,5,179514.00
+month,2024-08,Todos,Santa Fe,FULFILLED,Entregado,true,100,2977644.00
+month,2024-08,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,9,242820.00
+month,2024-08,Todos,Todas,CANCELLED,Cancelado,false,18,568434.00
+month,2024-08,Todos,Todas,FULFILLED,Entregado,true,444,15004543.50
+month,2024-08,Todos,Todas,REFUNDED,Entregado y reembolsado,false,23,887040.00
+month,2024-09,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,57,1970082.00
+month,2024-09,OFFLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,3,58080.00
+month,2024-09,OFFLINE,Córdoba,CANCELLED,Cancelado,false,1,36300.00
+month,2024-09,OFFLINE,Córdoba,FULFILLED,Entregado,true,50,1576242.00
+month,2024-09,OFFLINE,Mendoza,FULFILLED,Entregado,true,45,1265721.00
+month,2024-09,OFFLINE,Santa Fe,FULFILLED,Entregado,true,43,1499553.00
+month,2024-09,OFFLINE,Todas,CANCELLED,Cancelado,false,1,36300.00
+month,2024-09,OFFLINE,Todas,FULFILLED,Entregado,true,195,6311598.00
+month,2024-09,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,3,58080.00
+month,2024-09,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,10,425850.00
+month,2024-09,ONLINE,Buenos Aires,FULFILLED,Entregado,true,102,3575002.50
+month,2024-09,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,3,111300.00
+month,2024-09,ONLINE,Córdoba,CANCELLED,Cancelado,false,4,167850.00
+month,2024-09,ONLINE,Córdoba,FULFILLED,Entregado,true,58,1915543.50
+month,2024-09,ONLINE,Mendoza,CANCELLED,Cancelado,false,1,19042.50
+month,2024-09,ONLINE,Mendoza,FULFILLED,Entregado,true,25,871807.50
+month,2024-09,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,3,172410.00
+month,2024-09,ONLINE,Santa Fe,CANCELLED,Cancelado,false,3,108270.00
+month,2024-09,ONLINE,Santa Fe,FULFILLED,Entregado,true,63,2245836.00
+month,2024-09,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,2,61080.00
+month,2024-09,ONLINE,Todas,CANCELLED,Cancelado,false,18,721012.50
+month,2024-09,ONLINE,Todas,FULFILLED,Entregado,true,248,8608189.50
+month,2024-09,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,8,344790.00
+month,2024-09,Todos,Buenos Aires,CANCELLED,Cancelado,false,10,425850.00
+month,2024-09,Todos,Buenos Aires,FULFILLED,Entregado,true,159,5545084.50
+month,2024-09,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,6,169380.00
+month,2024-09,Todos,Córdoba,CANCELLED,Cancelado,false,5,204150.00
+month,2024-09,Todos,Córdoba,FULFILLED,Entregado,true,108,3491785.50
+month,2024-09,Todos,Mendoza,CANCELLED,Cancelado,false,1,19042.50
+month,2024-09,Todos,Mendoza,FULFILLED,Entregado,true,70,2137528.50
+month,2024-09,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,3,172410.00
+month,2024-09,Todos,Santa Fe,CANCELLED,Cancelado,false,3,108270.00
+month,2024-09,Todos,Santa Fe,FULFILLED,Entregado,true,106,3745389.00
+month,2024-09,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,2,61080.00
+month,2024-09,Todos,Todas,CANCELLED,Cancelado,false,19,757312.50
+month,2024-09,Todos,Todas,FULFILLED,Entregado,true,443,14919787.50
+month,2024-09,Todos,Todas,REFUNDED,Entregado y reembolsado,false,11,402870.00
+month,2024-10,OFFLINE,Buenos Aires,CANCELLED,Cancelado,false,1,14520.00
+month,2024-10,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,65,2319540.00
+month,2024-10,OFFLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,1,39204.00
+month,2024-10,OFFLINE,Córdoba,CANCELLED,Cancelado,false,3,141570.00
+month,2024-10,OFFLINE,Córdoba,FULFILLED,Entregado,true,53,1748485.50
+month,2024-10,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,2,56991.00
+month,2024-10,OFFLINE,Mendoza,CANCELLED,Cancelado,false,1,83490.00
+month,2024-10,OFFLINE,Mendoza,FULFILLED,Entregado,true,46,1678845.00
+month,2024-10,OFFLINE,Santa Fe,FULFILLED,Entregado,true,57,1683108.00
+month,2024-10,OFFLINE,Todas,CANCELLED,Cancelado,false,5,239580.00
+month,2024-10,OFFLINE,Todas,FULFILLED,Entregado,true,221,7429978.50
+month,2024-10,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,3,96195.00
+month,2024-10,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,14,558900.00
+month,2024-10,ONLINE,Buenos Aires,FULFILLED,Entregado,true,116,3818778.00
+month,2024-10,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,3,108870.00
+month,2024-10,ONLINE,Córdoba,CANCELLED,Cancelado,false,4,149700.00
+month,2024-10,ONLINE,Córdoba,FULFILLED,Entregado,true,74,2533000.50
+month,2024-10,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,1,30540.00
+month,2024-10,ONLINE,Mendoza,CANCELLED,Cancelado,false,7,188655.00
+month,2024-10,ONLINE,Mendoza,FULFILLED,Entregado,true,50,1999756.50
+month,2024-10,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,1,54450.00
+month,2024-10,ONLINE,Santa Fe,CANCELLED,Cancelado,false,9,262470.00
+month,2024-10,ONLINE,Santa Fe,FULFILLED,Entregado,true,78,2492488.50
+month,2024-10,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,4,96750.00
+month,2024-10,ONLINE,Todas,CANCELLED,Cancelado,false,34,1159725.00
+month,2024-10,ONLINE,Todas,FULFILLED,Entregado,true,318,10844023.50
+month,2024-10,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,9,290610.00
+month,2024-10,Todos,Buenos Aires,CANCELLED,Cancelado,false,15,573420.00
+month,2024-10,Todos,Buenos Aires,FULFILLED,Entregado,true,181,6138318.00
+month,2024-10,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,4,148074.00
+month,2024-10,Todos,Córdoba,CANCELLED,Cancelado,false,7,291270.00
+month,2024-10,Todos,Córdoba,FULFILLED,Entregado,true,127,4281486.00
+month,2024-10,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,3,87531.00
+month,2024-10,Todos,Mendoza,CANCELLED,Cancelado,false,8,272145.00
+month,2024-10,Todos,Mendoza,FULFILLED,Entregado,true,96,3678601.50
+month,2024-10,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,1,54450.00
+month,2024-10,Todos,Santa Fe,CANCELLED,Cancelado,false,9,262470.00
+month,2024-10,Todos,Santa Fe,FULFILLED,Entregado,true,135,4175596.50
+month,2024-10,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,4,96750.00
+month,2024-10,Todos,Todas,CANCELLED,Cancelado,false,39,1399305.00
+month,2024-10,Todos,Todas,FULFILLED,Entregado,true,539,18274002.00
+month,2024-10,Todos,Todas,REFUNDED,Entregado y reembolsado,false,12,386805.00
+month,2024-11,OFFLINE,Buenos Aires,CANCELLED,Cancelado,false,1,30603.00
+month,2024-11,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,71,1984743.00
+month,2024-11,OFFLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,1,14520.00
+month,2024-11,OFFLINE,Córdoba,CANCELLED,Cancelado,false,1,32670.00
+month,2024-11,OFFLINE,Córdoba,FULFILLED,Entregado,true,44,1751341.50
+month,2024-11,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,3,83490.00
+month,2024-11,OFFLINE,Mendoza,FULFILLED,Entregado,true,35,1356864.00
+month,2024-11,OFFLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,1,19950.00
+month,2024-11,OFFLINE,Santa Fe,CANCELLED,Cancelado,false,1,18150.00
+month,2024-11,OFFLINE,Santa Fe,FULFILLED,Entregado,true,55,1729428.00
+month,2024-11,OFFLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,1,36300.00
+month,2024-11,OFFLINE,Todas,CANCELLED,Cancelado,false,3,81423.00
+month,2024-11,OFFLINE,Todas,FULFILLED,Entregado,true,205,6822376.50
+month,2024-11,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,6,154260.00
+month,2024-11,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,17,608812.50
+month,2024-11,ONLINE,Buenos Aires,FULFILLED,Entregado,true,157,5075121.00
+month,2024-11,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,2,44034.00
+month,2024-11,ONLINE,Córdoba,CANCELLED,Cancelado,false,6,247080.00
+month,2024-11,ONLINE,Córdoba,FULFILLED,Entregado,true,88,2779488.00
+month,2024-11,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,1,43197.00
+month,2024-11,ONLINE,Mendoza,CANCELLED,Cancelado,false,5,125916.00
+month,2024-11,ONLINE,Mendoza,FULFILLED,Entregado,true,53,1762611.00
+month,2024-11,ONLINE,Santa Fe,CANCELLED,Cancelado,false,10,262240.50
+month,2024-11,ONLINE,Santa Fe,FULFILLED,Entregado,true,69,2309302.50
+month,2024-11,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,3,114937.50
+month,2024-11,ONLINE,Todas,CANCELLED,Cancelado,false,38,1244049.00
+month,2024-11,ONLINE,Todas,FULFILLED,Entregado,true,367,11926522.50
+month,2024-11,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,6,202168.50
+month,2024-11,Todos,Buenos Aires,CANCELLED,Cancelado,false,18,639415.50
+month,2024-11,Todos,Buenos Aires,FULFILLED,Entregado,true,228,7059864.00
+month,2024-11,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,3,58554.00
+month,2024-11,Todos,Córdoba,CANCELLED,Cancelado,false,7,279750.00
+month,2024-11,Todos,Córdoba,FULFILLED,Entregado,true,132,4530829.50
+month,2024-11,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,4,126687.00
+month,2024-11,Todos,Mendoza,CANCELLED,Cancelado,false,5,125916.00
+month,2024-11,Todos,Mendoza,FULFILLED,Entregado,true,88,3119475.00
+month,2024-11,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,1,19950.00
+month,2024-11,Todos,Santa Fe,CANCELLED,Cancelado,false,11,280390.50
+month,2024-11,Todos,Santa Fe,FULFILLED,Entregado,true,124,4038730.50
+month,2024-11,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,4,151237.50
+month,2024-11,Todos,Todas,CANCELLED,Cancelado,false,41,1325472.00
+month,2024-11,Todos,Todas,FULFILLED,Entregado,true,572,18748899.00
+month,2024-11,Todos,Todas,REFUNDED,Entregado y reembolsado,false,12,356428.50
+month,2024-12,OFFLINE,Buenos Aires,CANCELLED,Cancelado,false,2,61710.00
+month,2024-12,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,104,3610005.00
+month,2024-12,OFFLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,2,32670.00
+month,2024-12,OFFLINE,Córdoba,CANCELLED,Cancelado,false,2,29040.00
+month,2024-12,OFFLINE,Córdoba,FULFILLED,Entregado,true,94,2909637.00
+month,2024-12,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,3,94380.00
+month,2024-12,OFFLINE,Mendoza,CANCELLED,Cancelado,false,1,14520.00
+month,2024-12,OFFLINE,Mendoza,FULFILLED,Entregado,true,61,2176881.00
+month,2024-12,OFFLINE,Santa Fe,CANCELLED,Cancelado,false,2,83490.00
+month,2024-12,OFFLINE,Santa Fe,FULFILLED,Entregado,true,53,2007075.00
+month,2024-12,OFFLINE,Todas,CANCELLED,Cancelado,false,7,188760.00
+month,2024-12,OFFLINE,Todas,FULFILLED,Entregado,true,312,10703598.00
+month,2024-12,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,5,127050.00
+month,2024-12,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,17,504783.00
+month,2024-12,ONLINE,Buenos Aires,FULFILLED,Entregado,true,212,8184262.50
+month,2024-12,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,8,275860.50
+month,2024-12,ONLINE,Córdoba,CANCELLED,Cancelado,false,10,281394.00
+month,2024-12,ONLINE,Córdoba,FULFILLED,Entregado,true,89,3347172.00
+month,2024-12,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,4,206280.00
+month,2024-12,ONLINE,Mendoza,CANCELLED,Cancelado,false,10,372847.50
+month,2024-12,ONLINE,Mendoza,FULFILLED,Entregado,true,68,2438898.00
+month,2024-12,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,2,39900.00
+month,2024-12,ONLINE,Santa Fe,CANCELLED,Cancelado,false,10,414519.00
+month,2024-12,ONLINE,Santa Fe,FULFILLED,Entregado,true,104,3774571.50
+month,2024-12,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,7,249124.50
+month,2024-12,ONLINE,Todas,CANCELLED,Cancelado,false,47,1573543.50
+month,2024-12,ONLINE,Todas,FULFILLED,Entregado,true,473,17744904.00
+month,2024-12,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,21,771165.00
+month,2024-12,Todos,Buenos Aires,CANCELLED,Cancelado,false,19,566493.00
+month,2024-12,Todos,Buenos Aires,FULFILLED,Entregado,true,316,11794267.50
+month,2024-12,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,10,308530.50
+month,2024-12,Todos,Córdoba,CANCELLED,Cancelado,false,12,310434.00
+month,2024-12,Todos,Córdoba,FULFILLED,Entregado,true,183,6256809.00
+month,2024-12,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,7,300660.00
+month,2024-12,Todos,Mendoza,CANCELLED,Cancelado,false,11,387367.50
+month,2024-12,Todos,Mendoza,FULFILLED,Entregado,true,129,4615779.00
+month,2024-12,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,2,39900.00
+month,2024-12,Todos,Santa Fe,CANCELLED,Cancelado,false,12,498009.00
+month,2024-12,Todos,Santa Fe,FULFILLED,Entregado,true,157,5781646.50
+month,2024-12,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,7,249124.50
+month,2024-12,Todos,Todas,CANCELLED,Cancelado,false,54,1762303.50
+month,2024-12,Todos,Todas,FULFILLED,Entregado,true,785,28448502.00
+month,2024-12,Todos,Todas,REFUNDED,Entregado y reembolsado,false,26,898215.00
+month,2025-01,OFFLINE,Buenos Aires,CANCELLED,Cancelado,false,1,14520.00
+month,2025-01,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,83,2931810.00
+month,2025-01,OFFLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,2,32670.00
+month,2025-01,OFFLINE,Córdoba,FULFILLED,Entregado,true,64,2345850.00
+month,2025-01,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,1,36300.00
+month,2025-01,OFFLINE,Mendoza,FULFILLED,Entregado,true,42,1598985.00
+month,2025-01,OFFLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,1,79860.00
+month,2025-01,OFFLINE,Santa Fe,CANCELLED,Cancelado,false,2,103455.00
+month,2025-01,OFFLINE,Santa Fe,FULFILLED,Entregado,true,68,2268942.00
+month,2025-01,OFFLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,2,65340.00
+month,2025-01,OFFLINE,Todas,CANCELLED,Cancelado,false,3,117975.00
+month,2025-01,OFFLINE,Todas,FULFILLED,Entregado,true,257,9145587.00
+month,2025-01,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,6,214170.00
+month,2025-01,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,13,638719.50
+month,2025-01,ONLINE,Buenos Aires,FULFILLED,Entregado,true,142,4507663.50
+month,2025-01,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,3,124620.00
+month,2025-01,ONLINE,Córdoba,CANCELLED,Cancelado,false,8,239190.00
+month,2025-01,ONLINE,Córdoba,FULFILLED,Entregado,true,71,2332155.00
+month,2025-01,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,4,138810.00
+month,2025-01,ONLINE,Mendoza,CANCELLED,Cancelado,false,8,259636.50
+month,2025-01,ONLINE,Mendoza,FULFILLED,Entregado,true,50,2020614.00
+month,2025-01,ONLINE,Santa Fe,CANCELLED,Cancelado,false,6,181740.00
+month,2025-01,ONLINE,Santa Fe,FULFILLED,Entregado,true,71,2570635.50
+month,2025-01,ONLINE,Todas,CANCELLED,Cancelado,false,35,1319286.00
+month,2025-01,ONLINE,Todas,FULFILLED,Entregado,true,334,11431068.00
+month,2025-01,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,7,263430.00
+month,2025-01,Todos,Buenos Aires,CANCELLED,Cancelado,false,14,653239.50
+month,2025-01,Todos,Buenos Aires,FULFILLED,Entregado,true,225,7439473.50
+month,2025-01,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,5,157290.00
+month,2025-01,Todos,Córdoba,CANCELLED,Cancelado,false,8,239190.00
+month,2025-01,Todos,Córdoba,FULFILLED,Entregado,true,135,4678005.00
+month,2025-01,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,5,175110.00
+month,2025-01,Todos,Mendoza,CANCELLED,Cancelado,false,8,259636.50
+month,2025-01,Todos,Mendoza,FULFILLED,Entregado,true,92,3619599.00
+month,2025-01,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,1,79860.00
+month,2025-01,Todos,Santa Fe,CANCELLED,Cancelado,false,8,285195.00
+month,2025-01,Todos,Santa Fe,FULFILLED,Entregado,true,139,4839577.50
+month,2025-01,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,2,65340.00
+month,2025-01,Todos,Todas,CANCELLED,Cancelado,false,38,1437261.00
+month,2025-01,Todos,Todas,FULFILLED,Entregado,true,591,20576655.00
+month,2025-01,Todos,Todas,REFUNDED,Entregado y reembolsado,false,13,477600.00
+month,2025-02,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,87,3035376.00
+month,2025-02,OFFLINE,Córdoba,FULFILLED,Entregado,true,69,2376160.50
+month,2025-02,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,1,50820.00
+month,2025-02,OFFLINE,Mendoza,FULFILLED,Entregado,true,50,1687557.00
+month,2025-02,OFFLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,1,47190.00
+month,2025-02,OFFLINE,Santa Fe,FULFILLED,Entregado,true,59,2045964.00
+month,2025-02,OFFLINE,Todas,FULFILLED,Entregado,true,265,9145057.50
+month,2025-02,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,2,98010.00
+month,2025-02,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,15,522600.00
+month,2025-02,ONLINE,Buenos Aires,FULFILLED,Entregado,true,153,5229459.00
+month,2025-02,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,3,158490.00
+month,2025-02,ONLINE,Córdoba,CANCELLED,Cancelado,false,5,240498.00
+month,2025-02,ONLINE,Córdoba,FULFILLED,Entregado,true,75,2837547.00
+month,2025-02,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,1,72600.00
+month,2025-02,ONLINE,Mendoza,CANCELLED,Cancelado,false,10,349086.00
+month,2025-02,ONLINE,Mendoza,FULFILLED,Entregado,true,49,1786615.50
+month,2025-02,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,1,30840.00
+month,2025-02,ONLINE,Santa Fe,CANCELLED,Cancelado,false,6,108462.00
+month,2025-02,ONLINE,Santa Fe,FULFILLED,Entregado,true,66,2655433.50
+month,2025-02,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,3,144570.00
+month,2025-02,ONLINE,Todas,CANCELLED,Cancelado,false,36,1220646.00
+month,2025-02,ONLINE,Todas,FULFILLED,Entregado,true,343,12509055.00
+month,2025-02,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,8,406500.00
+month,2025-02,Todos,Buenos Aires,CANCELLED,Cancelado,false,15,522600.00
+month,2025-02,Todos,Buenos Aires,FULFILLED,Entregado,true,240,8264835.00
+month,2025-02,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,3,158490.00
+month,2025-02,Todos,Córdoba,CANCELLED,Cancelado,false,5,240498.00
+month,2025-02,Todos,Córdoba,FULFILLED,Entregado,true,144,5213707.50
+month,2025-02,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,2,123420.00
+month,2025-02,Todos,Mendoza,CANCELLED,Cancelado,false,10,349086.00
+month,2025-02,Todos,Mendoza,FULFILLED,Entregado,true,99,3474172.50
+month,2025-02,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,2,78030.00
+month,2025-02,Todos,Santa Fe,CANCELLED,Cancelado,false,6,108462.00
+month,2025-02,Todos,Santa Fe,FULFILLED,Entregado,true,125,4701397.50
+month,2025-02,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,3,144570.00
+month,2025-02,Todos,Todas,CANCELLED,Cancelado,false,36,1220646.00
+month,2025-02,Todos,Todas,FULFILLED,Entregado,true,608,21654112.50
+month,2025-02,Todos,Todas,REFUNDED,Entregado y reembolsado,false,10,504510.00
+month,2025-03,OFFLINE,Buenos Aires,CANCELLED,Cancelado,false,1,50820.00
+month,2025-03,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,80,2791551.00
+month,2025-03,OFFLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,2,29040.00
+month,2025-03,OFFLINE,Córdoba,FULFILLED,Entregado,true,63,2178822.00
+month,2025-03,OFFLINE,Mendoza,FULFILLED,Entregado,true,50,1710804.00
+month,2025-03,OFFLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,4,85290.00
+month,2025-03,OFFLINE,Santa Fe,FULFILLED,Entregado,true,51,1572564.00
+month,2025-03,OFFLINE,Todas,CANCELLED,Cancelado,false,1,50820.00
+month,2025-03,OFFLINE,Todas,FULFILLED,Entregado,true,244,8253741.00
+month,2025-03,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,6,114330.00
+month,2025-03,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,16,610950.00
+month,2025-03,ONLINE,Buenos Aires,FULFILLED,Entregado,true,140,4755682.50
+month,2025-03,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,5,93120.00
+month,2025-03,ONLINE,Córdoba,CANCELLED,Cancelado,false,3,102510.00
+month,2025-03,ONLINE,Córdoba,FULFILLED,Entregado,true,65,2456653.50
+month,2025-03,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,3,140940.00
+month,2025-03,ONLINE,Mendoza,CANCELLED,Cancelado,false,5,148936.50
+month,2025-03,ONLINE,Mendoza,FULFILLED,Entregado,true,64,2133040.50
+month,2025-03,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,2,34455.00
+month,2025-03,ONLINE,Santa Fe,CANCELLED,Cancelado,false,5,215040.00
+month,2025-03,ONLINE,Santa Fe,FULFILLED,Entregado,true,68,2386050.00
+month,2025-03,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,2,103140.00
+month,2025-03,ONLINE,Todas,CANCELLED,Cancelado,false,29,1077436.50
+month,2025-03,ONLINE,Todas,FULFILLED,Entregado,true,337,11731426.50
+month,2025-03,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,12,371655.00
+month,2025-03,Todos,Buenos Aires,CANCELLED,Cancelado,false,17,661770.00
+month,2025-03,Todos,Buenos Aires,FULFILLED,Entregado,true,220,7547233.50
+month,2025-03,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,7,122160.00
+month,2025-03,Todos,Córdoba,CANCELLED,Cancelado,false,3,102510.00
+month,2025-03,Todos,Córdoba,FULFILLED,Entregado,true,128,4635475.50
+month,2025-03,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,3,140940.00
+month,2025-03,Todos,Mendoza,CANCELLED,Cancelado,false,5,148936.50
+month,2025-03,Todos,Mendoza,FULFILLED,Entregado,true,114,3843844.50
+month,2025-03,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,6,119745.00
+month,2025-03,Todos,Santa Fe,CANCELLED,Cancelado,false,5,215040.00
+month,2025-03,Todos,Santa Fe,FULFILLED,Entregado,true,119,3958614.00
+month,2025-03,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,2,103140.00
+month,2025-03,Todos,Todas,CANCELLED,Cancelado,false,30,1128256.50
+month,2025-03,Todos,Todas,FULFILLED,Entregado,true,581,19985167.50
+month,2025-03,Todos,Todas,REFUNDED,Entregado y reembolsado,false,18,485985.00
+month,2025-04,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,67,2487609.00
+month,2025-04,OFFLINE,Córdoba,FULFILLED,Entregado,true,50,1495245.00
+month,2025-04,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,2,243210.00
+month,2025-04,OFFLINE,Mendoza,CANCELLED,Cancelado,false,2,58443.00
+month,2025-04,OFFLINE,Mendoza,FULFILLED,Entregado,true,28,899136.00
+month,2025-04,OFFLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,2,30855.00
+month,2025-04,OFFLINE,Santa Fe,FULFILLED,Entregado,true,40,1199811.00
+month,2025-04,OFFLINE,Todas,CANCELLED,Cancelado,false,2,58443.00
+month,2025-04,OFFLINE,Todas,FULFILLED,Entregado,true,185,6081801.00
+month,2025-04,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,4,274065.00
+month,2025-04,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,19,562248.00
+month,2025-04,ONLINE,Buenos Aires,FULFILLED,Entregado,true,129,4419211.50
+month,2025-04,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,7,232260.00
+month,2025-04,ONLINE,Córdoba,CANCELLED,Cancelado,false,12,448192.50
+month,2025-04,ONLINE,Córdoba,FULFILLED,Entregado,true,68,2479752.00
+month,2025-04,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,4,136680.00
+month,2025-04,ONLINE,Mendoza,CANCELLED,Cancelado,false,4,152778.00
+month,2025-04,ONLINE,Mendoza,FULFILLED,Entregado,true,35,1178740.50
+month,2025-04,ONLINE,Santa Fe,CANCELLED,Cancelado,false,9,306030.00
+month,2025-04,ONLINE,Santa Fe,FULFILLED,Entregado,true,78,2901397.50
+month,2025-04,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,2,103140.00
+month,2025-04,ONLINE,Todas,CANCELLED,Cancelado,false,44,1469248.50
+month,2025-04,ONLINE,Todas,FULFILLED,Entregado,true,310,10979101.50
+month,2025-04,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,13,472080.00
+month,2025-04,Todos,Buenos Aires,CANCELLED,Cancelado,false,19,562248.00
+month,2025-04,Todos,Buenos Aires,FULFILLED,Entregado,true,196,6906820.50
+month,2025-04,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,7,232260.00
+month,2025-04,Todos,Córdoba,CANCELLED,Cancelado,false,12,448192.50
+month,2025-04,Todos,Córdoba,FULFILLED,Entregado,true,118,3974997.00
+month,2025-04,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,6,379890.00
+month,2025-04,Todos,Mendoza,CANCELLED,Cancelado,false,6,211221.00
+month,2025-04,Todos,Mendoza,FULFILLED,Entregado,true,63,2077876.50
+month,2025-04,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,2,30855.00
+month,2025-04,Todos,Santa Fe,CANCELLED,Cancelado,false,9,306030.00
+month,2025-04,Todos,Santa Fe,FULFILLED,Entregado,true,118,4101208.50
+month,2025-04,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,2,103140.00
+month,2025-04,Todos,Todas,CANCELLED,Cancelado,false,46,1527691.50
+month,2025-04,Todos,Todas,FULFILLED,Entregado,true,495,17060902.50
+month,2025-04,Todos,Todas,REFUNDED,Entregado y reembolsado,false,17,746145.00
+month,2025-05,OFFLINE,Buenos Aires,CANCELLED,Cancelado,false,1,49005.00
+month,2025-05,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,59,1852470.00
+month,2025-05,OFFLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,1,16335.00
+month,2025-05,OFFLINE,Córdoba,CANCELLED,Cancelado,false,3,78045.00
+month,2025-05,OFFLINE,Córdoba,FULFILLED,Entregado,true,51,1669944.00
+month,2025-05,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,1,43560.00
+month,2025-05,OFFLINE,Mendoza,FULFILLED,Entregado,true,31,1180809.00
+month,2025-05,OFFLINE,Santa Fe,CANCELLED,Cancelado,false,1,45060.00
+month,2025-05,OFFLINE,Santa Fe,FULFILLED,Entregado,true,54,2117379.00
+month,2025-05,OFFLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,2,94380.00
+month,2025-05,OFFLINE,Todas,CANCELLED,Cancelado,false,5,172110.00
+month,2025-05,OFFLINE,Todas,FULFILLED,Entregado,true,195,6820602.00
+month,2025-05,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,4,154275.00
+month,2025-05,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,20,599152.50
+month,2025-05,ONLINE,Buenos Aires,FULFILLED,Entregado,true,179,5382310.50
+month,2025-05,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,2,37752.00
+month,2025-05,ONLINE,Córdoba,CANCELLED,Cancelado,false,4,79956.00
+month,2025-05,ONLINE,Córdoba,FULFILLED,Entregado,true,83,2906064.00
+month,2025-05,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,2,31266.00
+month,2025-05,ONLINE,Mendoza,CANCELLED,Cancelado,false,3,65310.00
+month,2025-05,ONLINE,Mendoza,FULFILLED,Entregado,true,50,1555807.50
+month,2025-05,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,3,132858.00
+month,2025-05,ONLINE,Santa Fe,CANCELLED,Cancelado,false,5,183774.00
+month,2025-05,ONLINE,Santa Fe,FULFILLED,Entregado,true,81,2908471.50
+month,2025-05,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,3,50190.00
+month,2025-05,ONLINE,Todas,CANCELLED,Cancelado,false,32,928192.50
+month,2025-05,ONLINE,Todas,FULFILLED,Entregado,true,393,12752653.50
+month,2025-05,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,10,252066.00
+month,2025-05,Todos,Buenos Aires,CANCELLED,Cancelado,false,21,648157.50
+month,2025-05,Todos,Buenos Aires,FULFILLED,Entregado,true,238,7234780.50
+month,2025-05,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,3,54087.00
+month,2025-05,Todos,Córdoba,CANCELLED,Cancelado,false,7,158001.00
+month,2025-05,Todos,Córdoba,FULFILLED,Entregado,true,134,4576008.00
+month,2025-05,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,3,74826.00
+month,2025-05,Todos,Mendoza,CANCELLED,Cancelado,false,3,65310.00
+month,2025-05,Todos,Mendoza,FULFILLED,Entregado,true,81,2736616.50
+month,2025-05,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,3,132858.00
+month,2025-05,Todos,Santa Fe,CANCELLED,Cancelado,false,6,228834.00
+month,2025-05,Todos,Santa Fe,FULFILLED,Entregado,true,135,5025850.50
+month,2025-05,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,5,144570.00
+month,2025-05,Todos,Todas,CANCELLED,Cancelado,false,37,1100302.50
+month,2025-05,Todos,Todas,FULFILLED,Entregado,true,588,19573255.50
+month,2025-05,Todos,Todas,REFUNDED,Entregado y reembolsado,false,14,406341.00
+month,2025-06,OFFLINE,Buenos Aires,CANCELLED,Cancelado,false,2,119790.00
+month,2025-06,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,64,2765193.00
+month,2025-06,OFFLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,1,18150.00
+month,2025-06,OFFLINE,Córdoba,CANCELLED,Cancelado,false,1,54450.00
+month,2025-06,OFFLINE,Córdoba,FULFILLED,Entregado,true,67,2062032.00
+month,2025-06,OFFLINE,Mendoza,FULFILLED,Entregado,true,43,1395009.00
+month,2025-06,OFFLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,1,68970.00
+month,2025-06,OFFLINE,Santa Fe,FULFILLED,Entregado,true,59,1877265.00
+month,2025-06,OFFLINE,Todas,CANCELLED,Cancelado,false,3,174240.00
+month,2025-06,OFFLINE,Todas,FULFILLED,Entregado,true,233,8099499.00
+month,2025-06,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,2,87120.00
+month,2025-06,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,9,378660.00
+month,2025-06,ONLINE,Buenos Aires,FULFILLED,Entregado,true,133,5684719.50
+month,2025-06,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,2,62658.00
+month,2025-06,ONLINE,Córdoba,CANCELLED,Cancelado,false,7,272490.00
+month,2025-06,ONLINE,Córdoba,FULFILLED,Entregado,true,63,2334723.00
+month,2025-06,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,3,73470.00
+month,2025-06,ONLINE,Mendoza,CANCELLED,Cancelado,false,6,217710.00
+month,2025-06,ONLINE,Mendoza,FULFILLED,Entregado,true,59,2262070.50
+month,2025-06,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,1,19950.00
+month,2025-06,ONLINE,Santa Fe,CANCELLED,Cancelado,false,3,130050.00
+month,2025-06,ONLINE,Santa Fe,FULFILLED,Entregado,true,74,2829475.50
+month,2025-06,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,1,54450.00
+month,2025-06,ONLINE,Todas,CANCELLED,Cancelado,false,25,998910.00
+month,2025-06,ONLINE,Todas,FULFILLED,Entregado,true,329,13110988.50
+month,2025-06,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,7,210528.00
+month,2025-06,Todos,Buenos Aires,CANCELLED,Cancelado,false,11,498450.00
+month,2025-06,Todos,Buenos Aires,FULFILLED,Entregado,true,197,8449912.50
+month,2025-06,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,3,80808.00
+month,2025-06,Todos,Córdoba,CANCELLED,Cancelado,false,8,326940.00
+month,2025-06,Todos,Córdoba,FULFILLED,Entregado,true,130,4396755.00
+month,2025-06,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,3,73470.00
+month,2025-06,Todos,Mendoza,CANCELLED,Cancelado,false,6,217710.00
+month,2025-06,Todos,Mendoza,FULFILLED,Entregado,true,102,3657079.50
+month,2025-06,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,2,88920.00
+month,2025-06,Todos,Santa Fe,CANCELLED,Cancelado,false,3,130050.00
+month,2025-06,Todos,Santa Fe,FULFILLED,Entregado,true,133,4706740.50
+month,2025-06,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,1,54450.00
+month,2025-06,Todos,Todas,CANCELLED,Cancelado,false,28,1173150.00
+month,2025-06,Todos,Todas,FULFILLED,Entregado,true,562,21210487.50
+month,2025-06,Todos,Todas,REFUNDED,Entregado y reembolsado,false,9,297648.00
+month,2025-07,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,40,1244112.00
+month,2025-07,OFFLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,3,87120.00
+month,2025-07,OFFLINE,Córdoba,FULFILLED,Entregado,true,51,1551969.00
+month,2025-07,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,1,76230.00
+month,2025-07,OFFLINE,Mendoza,FULFILLED,Entregado,true,40,1266114.00
+month,2025-07,OFFLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,1,16320.00
+month,2025-07,OFFLINE,Santa Fe,FULFILLED,Entregado,true,39,1324272.00
+month,2025-07,OFFLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,2,89661.00
+month,2025-07,OFFLINE,Todas,FULFILLED,Entregado,true,170,5386467.00
+month,2025-07,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,7,269331.00
+month,2025-07,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,4,162120.00
+month,2025-07,ONLINE,Buenos Aires,FULFILLED,Entregado,true,121,3969937.50
+month,2025-07,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,1,30240.00
+month,2025-07,ONLINE,Córdoba,CANCELLED,Cancelado,false,8,581451.00
+month,2025-07,ONLINE,Córdoba,FULFILLED,Entregado,true,50,1551940.50
+month,2025-07,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,1,19650.00
+month,2025-07,ONLINE,Mendoza,CANCELLED,Cancelado,false,3,63480.00
+month,2025-07,ONLINE,Mendoza,FULFILLED,Entregado,true,40,1358214.00
+month,2025-07,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,1,19950.00
+month,2025-07,ONLINE,Santa Fe,CANCELLED,Cancelado,false,6,188685.00
+month,2025-07,ONLINE,Santa Fe,FULFILLED,Entregado,true,62,2430240.00
+month,2025-07,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,2,110400.00
+month,2025-07,ONLINE,Todas,CANCELLED,Cancelado,false,21,995736.00
+month,2025-07,ONLINE,Todas,FULFILLED,Entregado,true,273,9310332.00
+month,2025-07,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,5,180240.00
+month,2025-07,Todos,Buenos Aires,CANCELLED,Cancelado,false,4,162120.00
+month,2025-07,Todos,Buenos Aires,FULFILLED,Entregado,true,161,5214049.50
+month,2025-07,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,4,117360.00
+month,2025-07,Todos,Córdoba,CANCELLED,Cancelado,false,8,581451.00
+month,2025-07,Todos,Córdoba,FULFILLED,Entregado,true,101,3103909.50
+month,2025-07,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,2,95880.00
+month,2025-07,Todos,Mendoza,CANCELLED,Cancelado,false,3,63480.00
+month,2025-07,Todos,Mendoza,FULFILLED,Entregado,true,80,2624328.00
+month,2025-07,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,2,36270.00
+month,2025-07,Todos,Santa Fe,CANCELLED,Cancelado,false,6,188685.00
+month,2025-07,Todos,Santa Fe,FULFILLED,Entregado,true,101,3754512.00
+month,2025-07,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,4,200061.00
+month,2025-07,Todos,Todas,CANCELLED,Cancelado,false,21,995736.00
+month,2025-07,Todos,Todas,FULFILLED,Entregado,true,443,14696799.00
+month,2025-07,Todos,Todas,REFUNDED,Entregado y reembolsado,false,12,449571.00
+month,2025-08,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,58,1981587.00
+month,2025-08,OFFLINE,Córdoba,CANCELLED,Cancelado,false,2,43560.00
+month,2025-08,OFFLINE,Córdoba,FULFILLED,Entregado,true,53,1622610.00
+month,2025-08,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,4,134310.00
+month,2025-08,OFFLINE,Mendoza,CANCELLED,Cancelado,false,1,14520.00
+month,2025-08,OFFLINE,Mendoza,FULFILLED,Entregado,true,46,1703166.00
+month,2025-08,OFFLINE,Santa Fe,CANCELLED,Cancelado,false,2,94380.00
+month,2025-08,OFFLINE,Santa Fe,FULFILLED,Entregado,true,54,1778070.00
+month,2025-08,OFFLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,1,29040.00
+month,2025-08,OFFLINE,Todas,CANCELLED,Cancelado,false,5,152460.00
+month,2025-08,OFFLINE,Todas,FULFILLED,Entregado,true,211,7085433.00
+month,2025-08,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,5,163350.00
+month,2025-08,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,18,672922.50
+month,2025-08,ONLINE,Buenos Aires,FULFILLED,Entregado,true,136,4677274.50
+month,2025-08,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,6,258900.00
+month,2025-08,ONLINE,Córdoba,CANCELLED,Cancelado,false,5,82278.00
+month,2025-08,ONLINE,Córdoba,FULFILLED,Entregado,true,80,2799261.00
+month,2025-08,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,2,88620.00
+month,2025-08,ONLINE,Mendoza,CANCELLED,Cancelado,false,2,74400.00
+month,2025-08,ONLINE,Mendoza,FULFILLED,Entregado,true,47,2056566.00
+month,2025-08,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,1,87120.00
+month,2025-08,ONLINE,Santa Fe,CANCELLED,Cancelado,false,9,265059.00
+month,2025-08,ONLINE,Santa Fe,FULFILLED,Entregado,true,77,2608371.00
+month,2025-08,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,4,124290.00
+month,2025-08,ONLINE,Todas,CANCELLED,Cancelado,false,34,1094659.50
+month,2025-08,ONLINE,Todas,FULFILLED,Entregado,true,340,12141472.50
+month,2025-08,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,13,558930.00
+month,2025-08,Todos,Buenos Aires,CANCELLED,Cancelado,false,18,672922.50
+month,2025-08,Todos,Buenos Aires,FULFILLED,Entregado,true,194,6658861.50
+month,2025-08,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,6,258900.00
+month,2025-08,Todos,Córdoba,CANCELLED,Cancelado,false,7,125838.00
+month,2025-08,Todos,Córdoba,FULFILLED,Entregado,true,133,4421871.00
+month,2025-08,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,6,222930.00
+month,2025-08,Todos,Mendoza,CANCELLED,Cancelado,false,3,88920.00
+month,2025-08,Todos,Mendoza,FULFILLED,Entregado,true,93,3759732.00
+month,2025-08,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,1,87120.00
+month,2025-08,Todos,Santa Fe,CANCELLED,Cancelado,false,11,359439.00
+month,2025-08,Todos,Santa Fe,FULFILLED,Entregado,true,131,4386441.00
+month,2025-08,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,5,153330.00
+month,2025-08,Todos,Todas,CANCELLED,Cancelado,false,39,1247119.50
+month,2025-08,Todos,Todas,FULFILLED,Entregado,true,551,19226905.50
+month,2025-08,Todos,Todas,REFUNDED,Entregado y reembolsado,false,18,722280.00
+month,2025-09,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,45,1503546.00
+month,2025-09,OFFLINE,Buenos Aires,PAID,"Pagado, sin entregar",true,1,15720.00
+month,2025-09,OFFLINE,Córdoba,FULFILLED,Entregado,true,47,1617939.00
+month,2025-09,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,2,54450.00
+month,2025-09,OFFLINE,Mendoza,CANCELLED,Cancelado,false,1,65340.00
+month,2025-09,OFFLINE,Mendoza,FULFILLED,Entregado,true,36,1160874.00
+month,2025-09,OFFLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,1,18150.00
+month,2025-09,OFFLINE,Santa Fe,FULFILLED,Entregado,true,34,1004517.00
+month,2025-09,OFFLINE,Todas,CANCELLED,Cancelado,false,1,65340.00
+month,2025-09,OFFLINE,Todas,FULFILLED,Entregado,true,162,5286876.00
+month,2025-09,OFFLINE,Todas,PAID,"Pagado, sin entregar",true,1,15720.00
+month,2025-09,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,3,72600.00
+month,2025-09,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,11,296340.00
+month,2025-09,ONLINE,Buenos Aires,CREATED,"Creado, sin pagar",false,1,15720.00
+month,2025-09,ONLINE,Buenos Aires,FULFILLED,Entregado,true,111,3763239.00
+month,2025-09,ONLINE,Buenos Aires,PAID,"Pagado, sin entregar",true,17,444888.00
+month,2025-09,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,5,169350.00
+month,2025-09,ONLINE,Córdoba,CANCELLED,Cancelado,false,3,98880.00
+month,2025-09,ONLINE,Córdoba,FULFILLED,Entregado,true,66,2584515.00
+month,2025-09,ONLINE,Córdoba,PAID,"Pagado, sin entregar",true,19,530844.00
+month,2025-09,ONLINE,Mendoza,CANCELLED,Cancelado,false,3,52590.00
+month,2025-09,ONLINE,Mendoza,FULFILLED,Entregado,true,38,1474404.00
+month,2025-09,ONLINE,Mendoza,PAID,"Pagado, sin entregar",true,9,289372.50
+month,2025-09,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,3,114300.00
+month,2025-09,ONLINE,Santa Fe,CANCELLED,Cancelado,false,9,297318.00
+month,2025-09,ONLINE,Santa Fe,FULFILLED,Entregado,true,50,1667641.50
+month,2025-09,ONLINE,Santa Fe,PAID,"Pagado, sin entregar",true,14,589132.50
+month,2025-09,ONLINE,Todas,CANCELLED,Cancelado,false,26,745128.00
+month,2025-09,ONLINE,Todas,CREATED,"Creado, sin pagar",false,1,15720.00
+month,2025-09,ONLINE,Todas,FULFILLED,Entregado,true,265,9489799.50
+month,2025-09,ONLINE,Todas,PAID,"Pagado, sin entregar",true,59,1854237.00
+month,2025-09,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,8,283650.00
+month,2025-09,Todos,Buenos Aires,CANCELLED,Cancelado,false,11,296340.00
+month,2025-09,Todos,Buenos Aires,CREATED,"Creado, sin pagar",false,1,15720.00
+month,2025-09,Todos,Buenos Aires,FULFILLED,Entregado,true,156,5266785.00
+month,2025-09,Todos,Buenos Aires,PAID,"Pagado, sin entregar",true,18,460608.00
+month,2025-09,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,5,169350.00
+month,2025-09,Todos,Córdoba,CANCELLED,Cancelado,false,3,98880.00
+month,2025-09,Todos,Córdoba,FULFILLED,Entregado,true,113,4202454.00
+month,2025-09,Todos,Córdoba,PAID,"Pagado, sin entregar",true,19,530844.00
+month,2025-09,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,2,54450.00
+month,2025-09,Todos,Mendoza,CANCELLED,Cancelado,false,4,117930.00
+month,2025-09,Todos,Mendoza,FULFILLED,Entregado,true,74,2635278.00
+month,2025-09,Todos,Mendoza,PAID,"Pagado, sin entregar",true,9,289372.50
+month,2025-09,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,4,132450.00
+month,2025-09,Todos,Santa Fe,CANCELLED,Cancelado,false,9,297318.00
+month,2025-09,Todos,Santa Fe,FULFILLED,Entregado,true,84,2672158.50
+month,2025-09,Todos,Santa Fe,PAID,"Pagado, sin entregar",true,14,589132.50
+month,2025-09,Todos,Todas,CANCELLED,Cancelado,false,27,810468.00
+month,2025-09,Todos,Todas,CREATED,"Creado, sin pagar",false,1,15720.00
+month,2025-09,Todos,Todas,FULFILLED,Entregado,true,427,14776675.50
+month,2025-09,Todos,Todas,PAID,"Pagado, sin entregar",true,60,1869957.00
+month,2025-09,Todos,Todas,REFUNDED,Entregado y reembolsado,false,11,356250.00
+total,Todo,OFFLINE,Buenos Aires,CANCELLED,Cancelado,false,17,518838.00
+total,Todo,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,1386,48675229.50
+total,Todo,OFFLINE,Buenos Aires,PAID,"Pagado, sin entregar",true,1,15720.00
+total,Todo,OFFLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,23,574629.00
+total,Todo,OFFLINE,Córdoba,CANCELLED,Cancelado,false,18,602265.00
+total,Todo,OFFLINE,Córdoba,FULFILLED,Entregado,true,1192,40211419.50
+total,Todo,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,32,1192551.00
+total,Todo,OFFLINE,Mendoza,CANCELLED,Cancelado,false,8,268983.00
+total,Todo,OFFLINE,Mendoza,FULFILLED,Entregado,true,884,30181549.50
+total,Todo,OFFLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,18,577125.00
+total,Todo,OFFLINE,Santa Fe,CANCELLED,Cancelado,false,11,449805.00
+total,Todo,OFFLINE,Santa Fe,FULFILLED,Entregado,true,1077,36314587.50
+total,Todo,OFFLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,16,570684.00
+total,Todo,OFFLINE,Todas,CANCELLED,Cancelado,false,54,1839891.00
+total,Todo,OFFLINE,Todas,FULFILLED,Entregado,true,4539,155382786.00
+total,Todo,OFFLINE,Todas,PAID,"Pagado, sin entregar",true,1,15720.00
+total,Todo,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,89,2914989.00
+total,Todo,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,246,8586549.00
+total,Todo,ONLINE,Buenos Aires,CREATED,"Creado, sin pagar",false,1,15720.00
+total,Todo,ONLINE,Buenos Aires,FULFILLED,Entregado,true,2694,93563415.00
+total,Todo,ONLINE,Buenos Aires,PAID,"Pagado, sin entregar",true,17,444888.00
+total,Todo,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,85,2805915.00
+total,Todo,ONLINE,Córdoba,CANCELLED,Cancelado,false,125,4214932.50
+total,Todo,ONLINE,Córdoba,FULFILLED,Entregado,true,1390,48792912.00
+total,Todo,ONLINE,Córdoba,PAID,"Pagado, sin entregar",true,19,530844.00
+total,Todo,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,40,1433475.00
+total,Todo,ONLINE,Mendoza,CANCELLED,Cancelado,false,89,2824482.00
+total,Todo,ONLINE,Mendoza,FULFILLED,Entregado,true,888,32157879.00
+total,Todo,ONLINE,Mendoza,PAID,"Pagado, sin entregar",true,9,289372.50
+total,Todo,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,31,1109361.00
+total,Todo,ONLINE,Santa Fe,CANCELLED,Cancelado,false,144,5000992.50
+total,Todo,ONLINE,Santa Fe,FULFILLED,Entregado,true,1427,50643687.00
+total,Todo,ONLINE,Santa Fe,PAID,"Pagado, sin entregar",true,14,589132.50
+total,Todo,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,67,2408631.00
+total,Todo,ONLINE,Todas,CANCELLED,Cancelado,false,604,20626956.00
+total,Todo,ONLINE,Todas,CREATED,"Creado, sin pagar",false,1,15720.00
+total,Todo,ONLINE,Todas,FULFILLED,Entregado,true,6399,225157893.00
+total,Todo,ONLINE,Todas,PAID,"Pagado, sin entregar",true,59,1854237.00
+total,Todo,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,223,7757382.00
+total,Todo,Todos,Buenos Aires,CANCELLED,Cancelado,false,263,9105387.00
+total,Todo,Todos,Buenos Aires,CREATED,"Creado, sin pagar",false,1,15720.00
+total,Todo,Todos,Buenos Aires,FULFILLED,Entregado,true,4080,142238644.50
+total,Todo,Todos,Buenos Aires,PAID,"Pagado, sin entregar",true,18,460608.00
+total,Todo,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,108,3380544.00
+total,Todo,Todos,Córdoba,CANCELLED,Cancelado,false,143,4817197.50
+total,Todo,Todos,Córdoba,FULFILLED,Entregado,true,2582,89004331.50
+total,Todo,Todos,Córdoba,PAID,"Pagado, sin entregar",true,19,530844.00
+total,Todo,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,72,2626026.00
+total,Todo,Todos,Mendoza,CANCELLED,Cancelado,false,97,3093465.00
+total,Todo,Todos,Mendoza,FULFILLED,Entregado,true,1772,62339428.50
+total,Todo,Todos,Mendoza,PAID,"Pagado, sin entregar",true,9,289372.50
+total,Todo,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,49,1686486.00
+total,Todo,Todos,Santa Fe,CANCELLED,Cancelado,false,155,5450797.50
+total,Todo,Todos,Santa Fe,FULFILLED,Entregado,true,2504,86958274.50
+total,Todo,Todos,Santa Fe,PAID,"Pagado, sin entregar",true,14,589132.50
+total,Todo,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,83,2979315.00
+total,Todo,Todos,Todas,CANCELLED,Cancelado,false,658,22466847.00
+total,Todo,Todos,Todas,CREATED,"Creado, sin pagar",false,1,15720.00
+total,Todo,Todos,Todas,FULFILLED,Entregado,true,10938,380540679.00
+total,Todo,Todos,Todas,PAID,"Pagado, sin entregar",true,60,1869957.00
+total,Todo,Todos,Todas,REFUNDED,Entregado y reembolsado,false,312,10672371.00
+year,2024,OFFLINE,Buenos Aires,CANCELLED,Cancelado,false,12,284703.00
+year,2024,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,803,28081975.50
+year,2024,OFFLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,14,391314.00
+year,2024,OFFLINE,Córdoba,CANCELLED,Cancelado,false,12,426210.00
+year,2024,OFFLINE,Córdoba,FULFILLED,Entregado,true,677,23290848.00
+year,2024,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,20,553671.00
+year,2024,OFFLINE,Mendoza,CANCELLED,Cancelado,false,4,130680.00
+year,2024,OFFLINE,Mendoza,FULFILLED,Entregado,true,518,17579095.50
+year,2024,OFFLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,7,230490.00
+year,2024,OFFLINE,Santa Fe,CANCELLED,Cancelado,false,6,206910.00
+year,2024,OFFLINE,Santa Fe,FULFILLED,Entregado,true,619,21125803.50
+year,2024,OFFLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,9,292263.00
+year,2024,OFFLINE,Todas,CANCELLED,Cancelado,false,34,1048503.00
+year,2024,OFFLINE,Todas,FULFILLED,Entregado,true,2617,90077722.50
+year,2024,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,50,1467738.00
+year,2024,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,121,4142836.50
+year,2024,ONLINE,Buenos Aires,FULFILLED,Entregado,true,1450,51173917.50
+year,2024,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,51,1638525.00
+year,2024,ONLINE,Córdoba,CANCELLED,Cancelado,false,70,2069487.00
+year,2024,ONLINE,Córdoba,FULFILLED,Entregado,true,769,26510301.00
+year,2024,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,20,731439.00
+year,2024,ONLINE,Mendoza,CANCELLED,Cancelado,false,45,1440555.00
+year,2024,ONLINE,Mendoza,FULFILLED,Entregado,true,456,16331806.50
+year,2024,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,19,669888.00
+year,2024,ONLINE,Santa Fe,CANCELLED,Cancelado,false,86,3124834.50
+year,2024,ONLINE,Santa Fe,FULFILLED,Entregado,true,800,27685971.00
+year,2024,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,50,1718451.00
+year,2024,ONLINE,Todas,CANCELLED,Cancelado,false,322,10777713.00
+year,2024,ONLINE,Todas,FULFILLED,Entregado,true,3475,121701996.00
+year,2024,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,140,4758303.00
+year,2024,Todos,Buenos Aires,CANCELLED,Cancelado,false,133,4427539.50
+year,2024,Todos,Buenos Aires,FULFILLED,Entregado,true,2253,79255893.00
+year,2024,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,65,2029839.00
+year,2024,Todos,Córdoba,CANCELLED,Cancelado,false,82,2495697.00
+year,2024,Todos,Córdoba,FULFILLED,Entregado,true,1446,49801149.00
+year,2024,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,40,1285110.00
+year,2024,Todos,Mendoza,CANCELLED,Cancelado,false,49,1571235.00
+year,2024,Todos,Mendoza,FULFILLED,Entregado,true,974,33910902.00
+year,2024,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,26,900378.00
+year,2024,Todos,Santa Fe,CANCELLED,Cancelado,false,92,3331744.50
+year,2024,Todos,Santa Fe,FULFILLED,Entregado,true,1419,48811774.50
+year,2024,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,59,2010714.00
+year,2024,Todos,Todas,CANCELLED,Cancelado,false,356,11826216.00
+year,2024,Todos,Todas,FULFILLED,Entregado,true,6092,211779718.50
+year,2024,Todos,Todas,REFUNDED,Entregado y reembolsado,false,190,6226041.00
+year,2025,OFFLINE,Buenos Aires,CANCELLED,Cancelado,false,5,234135.00
+year,2025,OFFLINE,Buenos Aires,FULFILLED,Entregado,true,583,20593254.00
+year,2025,OFFLINE,Buenos Aires,PAID,"Pagado, sin entregar",true,1,15720.00
+year,2025,OFFLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,9,183315.00
+year,2025,OFFLINE,Córdoba,CANCELLED,Cancelado,false,6,176055.00
+year,2025,OFFLINE,Córdoba,FULFILLED,Entregado,true,515,16920571.50
+year,2025,OFFLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,12,638880.00
+year,2025,OFFLINE,Mendoza,CANCELLED,Cancelado,false,4,138303.00
+year,2025,OFFLINE,Mendoza,FULFILLED,Entregado,true,366,12602454.00
+year,2025,OFFLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,11,346635.00
+year,2025,OFFLINE,Santa Fe,CANCELLED,Cancelado,false,5,242895.00
+year,2025,OFFLINE,Santa Fe,FULFILLED,Entregado,true,458,15188784.00
+year,2025,OFFLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,7,278421.00
+year,2025,OFFLINE,Todas,CANCELLED,Cancelado,false,20,791388.00
+year,2025,OFFLINE,Todas,FULFILLED,Entregado,true,1922,65305063.50
+year,2025,OFFLINE,Todas,PAID,"Pagado, sin entregar",true,1,15720.00
+year,2025,OFFLINE,Todas,REFUNDED,Entregado y reembolsado,false,39,1447251.00
+year,2025,ONLINE,Buenos Aires,CANCELLED,Cancelado,false,125,4443712.50
+year,2025,ONLINE,Buenos Aires,CREATED,"Creado, sin pagar",false,1,15720.00
+year,2025,ONLINE,Buenos Aires,FULFILLED,Entregado,true,1244,42389497.50
+year,2025,ONLINE,Buenos Aires,PAID,"Pagado, sin entregar",true,17,444888.00
+year,2025,ONLINE,Buenos Aires,REFUNDED,Entregado y reembolsado,false,34,1167390.00
+year,2025,ONLINE,Córdoba,CANCELLED,Cancelado,false,55,2145445.50
+year,2025,ONLINE,Córdoba,FULFILLED,Entregado,true,621,22282611.00
+year,2025,ONLINE,Córdoba,PAID,"Pagado, sin entregar",true,19,530844.00
+year,2025,ONLINE,Córdoba,REFUNDED,Entregado y reembolsado,false,20,702036.00
+year,2025,ONLINE,Mendoza,CANCELLED,Cancelado,false,44,1383927.00
+year,2025,ONLINE,Mendoza,FULFILLED,Entregado,true,432,15826072.50
+year,2025,ONLINE,Mendoza,PAID,"Pagado, sin entregar",true,9,289372.50
+year,2025,ONLINE,Mendoza,REFUNDED,Entregado y reembolsado,false,12,439473.00
+year,2025,ONLINE,Santa Fe,CANCELLED,Cancelado,false,58,1876158.00
+year,2025,ONLINE,Santa Fe,FULFILLED,Entregado,true,627,22957716.00
+year,2025,ONLINE,Santa Fe,PAID,"Pagado, sin entregar",true,14,589132.50
+year,2025,ONLINE,Santa Fe,REFUNDED,Entregado y reembolsado,false,17,690180.00
+year,2025,ONLINE,Todas,CANCELLED,Cancelado,false,282,9849243.00
+year,2025,ONLINE,Todas,CREATED,"Creado, sin pagar",false,1,15720.00
+year,2025,ONLINE,Todas,FULFILLED,Entregado,true,2924,103455897.00
+year,2025,ONLINE,Todas,PAID,"Pagado, sin entregar",true,59,1854237.00
+year,2025,ONLINE,Todas,REFUNDED,Entregado y reembolsado,false,83,2999079.00
+year,2025,Todos,Buenos Aires,CANCELLED,Cancelado,false,130,4677847.50
+year,2025,Todos,Buenos Aires,CREATED,"Creado, sin pagar",false,1,15720.00
+year,2025,Todos,Buenos Aires,FULFILLED,Entregado,true,1827,62982751.50
+year,2025,Todos,Buenos Aires,PAID,"Pagado, sin entregar",true,18,460608.00
+year,2025,Todos,Buenos Aires,REFUNDED,Entregado y reembolsado,false,43,1350705.00
+year,2025,Todos,Córdoba,CANCELLED,Cancelado,false,61,2321500.50
+year,2025,Todos,Córdoba,FULFILLED,Entregado,true,1136,39203182.50
+year,2025,Todos,Córdoba,PAID,"Pagado, sin entregar",true,19,530844.00
+year,2025,Todos,Córdoba,REFUNDED,Entregado y reembolsado,false,32,1340916.00
+year,2025,Todos,Mendoza,CANCELLED,Cancelado,false,48,1522230.00
+year,2025,Todos,Mendoza,FULFILLED,Entregado,true,798,28428526.50
+year,2025,Todos,Mendoza,PAID,"Pagado, sin entregar",true,9,289372.50
+year,2025,Todos,Mendoza,REFUNDED,Entregado y reembolsado,false,23,786108.00
+year,2025,Todos,Santa Fe,CANCELLED,Cancelado,false,63,2119053.00
+year,2025,Todos,Santa Fe,FULFILLED,Entregado,true,1085,38146500.00
+year,2025,Todos,Santa Fe,PAID,"Pagado, sin entregar",true,14,589132.50
+year,2025,Todos,Santa Fe,REFUNDED,Entregado y reembolsado,false,24,968601.00
+year,2025,Todos,Todas,CANCELLED,Cancelado,false,302,10640631.00
+year,2025,Todos,Todas,CREATED,"Creado, sin pagar",false,1,15720.00
+year,2025,Todos,Todas,FULFILLED,Entregado,true,4846,168760960.50
+year,2025,Todos,Todas,PAID,"Pagado, sin entregar",true,60,1869957.00
+year,2025,Todos,Todas,REFUNDED,Entregado y reembolsado,false,122,4446330.00

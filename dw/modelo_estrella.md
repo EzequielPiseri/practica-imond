@@ -269,4 +269,33 @@ erDiagram
         DECIMAL monto_total
         DECIMAL monto_venta
     }
+    mart_order_status {
+        VARCHAR period_type
+        VARCHAR period
+        VARCHAR channel
+        VARCHAR province
+        VARCHAR status_code
+        VARCHAR status_description
+        BOOLEAN is_sale
+        BIGINT orders
+        DECIMAL total_amount
+    }
+    mart_sales_kpi {
+        VARCHAR period_type
+        VARCHAR period
+        VARCHAR channel
+        VARCHAR province
+        BIGINT orders_total
+        HUGEINT sale_orders
+        HUGEINT non_sale_orders
+        DOUBLE sale_order_share
+        DECIMAL sales_amount
+        DECIMAL sales_net_amount
+        DECIMAL sales_tax_amount
+        DECIMAL sales_shipping_amount
+        DECIMAL non_sale_amount
+        DOUBLE ticket_amount
+        DOUBLE ticket_net_amount
+        DOUBLE ticket_no_shipping
+    }
 ```
