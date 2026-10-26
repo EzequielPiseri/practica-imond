@@ -1,0 +1,25 @@
+period,period_type,period_label,period_start,sort_order
+Todo,total,Todo el período,,1
+2024,year,2024,2024-01-01,2
+2025,year,2025,2025-01-01,3
+2024-01,month,Enero 2024,2024-01-01,4
+2024-02,month,Febrero 2024,2024-02-01,5
+2024-03,month,Marzo 2024,2024-03-01,6
+2024-04,month,Abril 2024,2024-04-01,7
+2024-05,month,Mayo 2024,2024-05-01,8
+2024-06,month,Junio 2024,2024-06-01,9
+2024-07,month,Julio 2024,2024-07-01,10
+2024-08,month,Agosto 2024,2024-08-01,11
+2024-09,month,Septiembre 2024,2024-09-01,12
+2024-10,month,Octubre 2024,2024-10-01,13
+2024-11,month,Noviembre 2024,2024-11-01,14
+2024-12,month,Diciembre 2024,2024-12-01,15
+2025-01,month,Enero 2025,2025-01-01,16
+2025-02,month,Febrero 2025,2025-02-01,17
+2025-03,month,Marzo 2025,2025-03-01,18
+2025-04,month,Abril 2025,2025-04-01,19
+2025-05,month,Mayo 2025,2025-05-01,20
+2025-06,month,Junio 2025,2025-06-01,21
+2025-07,month,Julio 2025,2025-07-01,22
+2025-08,month,Agosto 2025,2025-08-01,23
+2025-09,month,Septiembre 2025,2025-09-01,24

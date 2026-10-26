@@ -269,6 +269,63 @@ erDiagram
         DECIMAL monto_total
         DECIMAL monto_venta
     }
+    mart_customer_kpi {
+        VARCHAR period_type
+        VARCHAR period
+        BIGINT active_users
+        BIGINT sessions
+        BIGINT logged_sessions
+        DOUBLE logged_share
+    }
+    mart_dim_channel {
+        VARCHAR channel
+        VARCHAR channel_label
+        INTEGER sort_order
+    }
+    mart_dim_period {
+        VARCHAR period
+        VARCHAR period_type
+        VARCHAR period_label
+        DATE period_start
+        BIGINT sort_order
+    }
+    mart_dim_province {
+        VARCHAR province
+        BIGINT sort_order
+    }
+    mart_growth {
+        INTEGER sort_order
+        VARCHAR kpi
+        DOUBLE value_2024
+        DOUBLE value_2025
+        DOUBLE change
+        VARCHAR change_unit
+        VARCHAR label_2024
+        VARCHAR label_2025
+        VARCHAR label_change
+        VARCHAR change_color
+    }
+    mart_nps_group {
+        VARCHAR period_type
+        VARCHAR period
+        VARCHAR channel
+        VARCHAR nps_group
+        INTEGER sort_order
+        HUGEINT responses
+        DOUBLE share
+    }
+    mart_nps_kpi {
+        VARCHAR period_type
+        VARCHAR period
+        VARCHAR channel
+        BIGINT responses
+        HUGEINT promoters
+        HUGEINT passives
+        HUGEINT detractors
+        DOUBLE promoter_share
+        DOUBLE detractor_share
+        DOUBLE nps
+    }
     mart_order_status {
         VARCHAR period_type
         VARCHAR period
@@ -297,5 +354,24 @@ erDiagram
         DOUBLE ticket_amount
         DOUBLE ticket_net_amount
         DOUBLE ticket_no_shipping
+    }
+    mart_sales_product {
+        VARCHAR period_type
+        VARCHAR period
+        VARCHAR channel
+        VARCHAR province
+        VARCHAR product
+        HUGEINT units
+        DECIMAL sales_line_amount
+        BIGINT rank_in_period
+        DOUBLE share_of_period
+    }
+    mart_session_mix {
+        VARCHAR period_type
+        VARCHAR period
+        VARCHAR breakdown
+        VARCHAR label
+        BIGINT sessions
+        DOUBLE share
     }
 ```

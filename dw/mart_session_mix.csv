@@ -1,0 +1,169 @@
+period_type,period,breakdown,label,sessions,share
+month,2024-01,Dispositivo,Celular,2484,0.6076
+month,2024-01,Dispositivo,Computadora,1331,0.3256
+month,2024-01,Dispositivo,Tablet,273,0.0668
+month,2024-01,Origen,Directo (incl. newsletter),1177,0.2879
+month,2024-01,Origen,Buscadores,1140,0.2789
+month,2024-01,Origen,Publicidad en redes,1001,0.2449
+month,2024-01,Origen,Referidos (incl. newsletter),770,0.1884
+month,2024-02,Dispositivo,Celular,2369,0.6067
+month,2024-02,Dispositivo,Computadora,1318,0.3375
+month,2024-02,Dispositivo,Tablet,218,0.0558
+month,2024-02,Origen,Directo (incl. newsletter),1230,0.315
+month,2024-02,Origen,Buscadores,1040,0.2663
+month,2024-02,Origen,Publicidad en redes,932,0.2387
+month,2024-02,Origen,Referidos (incl. newsletter),703,0.18
+month,2024-03,Dispositivo,Celular,2533,0.6233
+month,2024-03,Dispositivo,Computadora,1309,0.3221
+month,2024-03,Dispositivo,Tablet,222,0.0546
+month,2024-03,Origen,Directo (incl. newsletter),1258,0.3095
+month,2024-03,Origen,Publicidad en redes,1048,0.2579
+month,2024-03,Origen,Buscadores,1034,0.2544
+month,2024-03,Origen,Referidos (incl. newsletter),724,0.1781
+month,2024-04,Dispositivo,Celular,2322,0.6184
+month,2024-04,Dispositivo,Computadora,1217,0.3241
+month,2024-04,Dispositivo,Tablet,216,0.0575
+month,2024-04,Origen,Directo (incl. newsletter),1171,0.3119
+month,2024-04,Origen,Buscadores,1009,0.2687
+month,2024-04,Origen,Publicidad en redes,926,0.2466
+month,2024-04,Origen,Referidos (incl. newsletter),649,0.1728
+month,2024-05,Dispositivo,Celular,2733,0.6344
+month,2024-05,Dispositivo,Computadora,1331,0.309
+month,2024-05,Dispositivo,Tablet,244,0.0566
+month,2024-05,Origen,Directo (incl. newsletter),1255,0.2913
+month,2024-05,Origen,Publicidad en redes,1231,0.2857
+month,2024-05,Origen,Buscadores,1072,0.2488
+month,2024-05,Origen,Referidos (incl. newsletter),750,0.1741
+month,2024-06,Dispositivo,Celular,2663,0.6139
+month,2024-06,Dispositivo,Computadora,1444,0.3329
+month,2024-06,Dispositivo,Tablet,231,0.0533
+month,2024-06,Origen,Directo (incl. newsletter),1311,0.3022
+month,2024-06,Origen,Buscadores,1138,0.2623
+month,2024-06,Origen,Publicidad en redes,1051,0.2423
+month,2024-06,Origen,Referidos (incl. newsletter),838,0.1932
+month,2024-07,Dispositivo,Celular,2318,0.6213
+month,2024-07,Dispositivo,Computadora,1208,0.3238
+month,2024-07,Dispositivo,Tablet,205,0.0549
+month,2024-07,Origen,Directo (incl. newsletter),1150,0.3082
+month,2024-07,Origen,Buscadores,952,0.2552
+month,2024-07,Origen,Publicidad en redes,943,0.2527
+month,2024-07,Origen,Referidos (incl. newsletter),686,0.1839
+month,2024-08,Dispositivo,Celular,2485,0.6267
+month,2024-08,Dispositivo,Computadora,1262,0.3183
+month,2024-08,Dispositivo,Tablet,218,0.055
+month,2024-08,Origen,Directo (incl. newsletter),1265,0.319
+month,2024-08,Origen,Buscadores,1045,0.2636
+month,2024-08,Origen,Publicidad en redes,984,0.2482
+month,2024-08,Origen,Referidos (incl. newsletter),671,0.1692
+month,2024-09,Dispositivo,Celular,2589,0.6207
+month,2024-09,Dispositivo,Computadora,1341,0.3215
+month,2024-09,Dispositivo,Tablet,241,0.0578
+month,2024-09,Origen,Directo (incl. newsletter),1239,0.2971
+month,2024-09,Origen,Buscadores,1157,0.2774
+month,2024-09,Origen,Publicidad en redes,1024,0.2455
+month,2024-09,Origen,Referidos (incl. newsletter),751,0.1801
+month,2024-10,Dispositivo,Celular,2939,0.6225
+month,2024-10,Dispositivo,Computadora,1500,0.3177
+month,2024-10,Dispositivo,Tablet,282,0.0597
+month,2024-10,Origen,Directo (incl. newsletter),1406,0.2978
+month,2024-10,Origen,Buscadores,1281,0.2713
+month,2024-10,Origen,Publicidad en redes,1117,0.2366
+month,2024-10,Origen,Referidos (incl. newsletter),917,0.1942
+month,2024-11,Dispositivo,Celular,3403,0.6316
+month,2024-11,Dispositivo,Computadora,1691,0.3138
+month,2024-11,Dispositivo,Tablet,294,0.0546
+month,2024-11,Origen,Publicidad en redes,1624,0.3014
+month,2024-11,Origen,Directo (incl. newsletter),1542,0.2862
+month,2024-11,Origen,Buscadores,1262,0.2342
+month,2024-11,Origen,Referidos (incl. newsletter),960,0.1782
+month,2024-12,Dispositivo,Celular,4226,0.6209
+month,2024-12,Dispositivo,Computadora,2191,0.3219
+month,2024-12,Dispositivo,Tablet,389,0.0572
+month,2024-12,Origen,Directo (incl. newsletter),2047,0.3008
+month,2024-12,Origen,Buscadores,1810,0.2659
+month,2024-12,Origen,Publicidad en redes,1652,0.2427
+month,2024-12,Origen,Referidos (incl. newsletter),1297,0.1906
+month,2025-01,Dispositivo,Celular,3292,0.6066
+month,2025-01,Dispositivo,Computadora,1815,0.3344
+month,2025-01,Dispositivo,Tablet,320,0.059
+month,2025-01,Origen,Directo (incl. newsletter),1616,0.2978
+month,2025-01,Origen,Buscadores,1496,0.2757
+month,2025-01,Origen,Publicidad en redes,1273,0.2346
+month,2025-01,Origen,Referidos (incl. newsletter),1042,0.192
+month,2025-02,Dispositivo,Celular,3118,0.6161
+month,2025-02,Dispositivo,Computadora,1636,0.3233
+month,2025-02,Dispositivo,Tablet,307,0.0607
+month,2025-02,Origen,Directo (incl. newsletter),1571,0.3104
+month,2025-02,Origen,Buscadores,1285,0.2539
+month,2025-02,Origen,Publicidad en redes,1265,0.25
+month,2025-02,Origen,Referidos (incl. newsletter),940,0.1857
+month,2025-03,Dispositivo,Celular,3326,0.6144
+month,2025-03,Dispositivo,Computadora,1769,0.3268
+month,2025-03,Dispositivo,Tablet,318,0.0587
+month,2025-03,Origen,Directo (incl. newsletter),1641,0.3032
+month,2025-03,Origen,Buscadores,1478,0.273
+month,2025-03,Origen,Publicidad en redes,1275,0.2355
+month,2025-03,Origen,Referidos (incl. newsletter),1019,0.1883
+month,2025-04,Dispositivo,Celular,3048,0.6176
+month,2025-04,Dispositivo,Computadora,1592,0.3226
+month,2025-04,Dispositivo,Tablet,295,0.0598
+month,2025-04,Origen,Directo (incl. newsletter),1500,0.304
+month,2025-04,Origen,Buscadores,1331,0.2697
+month,2025-04,Origen,Publicidad en redes,1227,0.2486
+month,2025-04,Origen,Referidos (incl. newsletter),877,0.1777
+month,2025-05,Dispositivo,Celular,3613,0.6301
+month,2025-05,Dispositivo,Computadora,1788,0.3118
+month,2025-05,Dispositivo,Tablet,333,0.0581
+month,2025-05,Origen,Directo (incl. newsletter),1659,0.2893
+month,2025-05,Origen,Publicidad en redes,1656,0.2888
+month,2025-05,Origen,Buscadores,1423,0.2482
+month,2025-05,Origen,Referidos (incl. newsletter),996,0.1737
+month,2025-06,Dispositivo,Celular,3262,0.6191
+month,2025-06,Dispositivo,Computadora,1683,0.3194
+month,2025-06,Dispositivo,Tablet,324,0.0615
+month,2025-06,Origen,Directo (incl. newsletter),1671,0.3171
+month,2025-06,Origen,Buscadores,1414,0.2684
+month,2025-06,Origen,Publicidad en redes,1263,0.2397
+month,2025-06,Origen,Referidos (incl. newsletter),921,0.1748
+month,2025-07,Dispositivo,Celular,2935,0.612
+month,2025-07,Dispositivo,Computadora,1604,0.3344
+month,2025-07,Dispositivo,Tablet,257,0.0536
+month,2025-07,Origen,Directo (incl. newsletter),1522,0.3173
+month,2025-07,Origen,Buscadores,1242,0.259
+month,2025-07,Origen,Publicidad en redes,1159,0.2417
+month,2025-07,Origen,Referidos (incl. newsletter),873,0.182
+month,2025-08,Dispositivo,Celular,3229,0.6225
+month,2025-08,Dispositivo,Computadora,1631,0.3144
+month,2025-08,Dispositivo,Tablet,327,0.063
+month,2025-08,Origen,Directo (incl. newsletter),1612,0.3108
+month,2025-08,Origen,Buscadores,1421,0.274
+month,2025-08,Origen,Publicidad en redes,1221,0.2354
+month,2025-08,Origen,Referidos (incl. newsletter),933,0.1799
+month,2025-09,Dispositivo,Celular,3230,0.6093
+month,2025-09,Dispositivo,Computadora,1767,0.3333
+month,2025-09,Dispositivo,Tablet,304,0.0573
+month,2025-09,Origen,Directo (incl. newsletter),1623,0.3062
+month,2025-09,Origen,Buscadores,1387,0.2616
+month,2025-09,Origen,Publicidad en redes,1293,0.2439
+month,2025-09,Origen,Referidos (incl. newsletter),998,0.1883
+total,Todo,Dispositivo,Celular,62117,0.6189
+total,Todo,Dispositivo,Computadora,32428,0.3231
+total,Todo,Dispositivo,Tablet,5818,0.058
+total,Todo,Origen,Directo (incl. newsletter),30466,0.3036
+total,Todo,Origen,Buscadores,26417,0.2632
+total,Todo,Origen,Publicidad en redes,25165,0.2507
+total,Todo,Origen,Referidos (incl. newsletter),18315,0.1825
+year,2024,Dispositivo,Celular,33064,0.621
+year,2024,Dispositivo,Computadora,17143,0.322
+year,2024,Dispositivo,Tablet,3033,0.057
+year,2024,Origen,Directo (incl. newsletter),16051,0.3015
+year,2024,Origen,Buscadores,13940,0.2618
+year,2024,Origen,Publicidad en redes,13533,0.2542
+year,2024,Origen,Referidos (incl. newsletter),9716,0.1825
+year,2025,Dispositivo,Celular,29053,0.6165
+year,2025,Dispositivo,Computadora,15285,0.3244
+year,2025,Dispositivo,Tablet,2785,0.0591
+year,2025,Origen,Directo (incl. newsletter),14415,0.3059
+year,2025,Origen,Buscadores,12477,0.2648
+year,2025,Origen,Publicidad en redes,11632,0.2468
+year,2025,Origen,Referidos (incl. newsletter),8599,0.1825

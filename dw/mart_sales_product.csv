@@ -1,0 +1,721 @@
+period_type,period,channel,province,product,units,sales_line_amount,rank_in_period,share_of_period
+month,2024-01,OFFLINE,Buenos Aires,Classic A Bottle,60,701400.00,2,0.346
+month,2024-01,OFFLINE,Buenos Aires,Sport B Bottle,89,1326000.00,1,0.654
+month,2024-01,OFFLINE,Córdoba,Classic A Bottle,52,621600.00,2,0.4266
+month,2024-01,OFFLINE,Córdoba,Sport B Bottle,56,835500.00,1,0.5734
+month,2024-01,OFFLINE,Mendoza,Classic A Bottle,34,406800.00,2,0.3884
+month,2024-01,OFFLINE,Mendoza,Sport B Bottle,43,640500.00,1,0.6116
+month,2024-01,OFFLINE,Santa Fe,Classic A Bottle,40,480000.00,2,0.3486
+month,2024-01,OFFLINE,Santa Fe,Sport B Bottle,60,897000.00,1,0.6514
+month,2024-01,OFFLINE,Todas,Classic A Bottle,186,2209800.00,2,0.374
+month,2024-01,OFFLINE,Todas,Sport B Bottle,248,3699000.00,1,0.626
+month,2024-01,ONLINE,Buenos Aires,Classic A Bottle,92,1101000.00,2,0.4315
+month,2024-01,ONLINE,Buenos Aires,Sport B Bottle,98,1450500.00,1,0.5685
+month,2024-01,ONLINE,Córdoba,Classic A Bottle,78,922800.00,2,0.4548
+month,2024-01,ONLINE,Córdoba,Sport B Bottle,74,1106250.00,1,0.5452
+month,2024-01,ONLINE,Mendoza,Classic A Bottle,22,264000.00,2,0.2938
+month,2024-01,ONLINE,Mendoza,Sport B Bottle,44,634500.00,1,0.7062
+month,2024-01,ONLINE,Santa Fe,Classic A Bottle,62,738600.00,2,0.4751
+month,2024-01,ONLINE,Santa Fe,Sport B Bottle,55,816000.00,1,0.5249
+month,2024-01,ONLINE,Todas,Classic A Bottle,254,3026400.00,2,0.4303
+month,2024-01,ONLINE,Todas,Sport B Bottle,271,4007250.00,1,0.5697
+month,2024-01,Todos,Buenos Aires,Classic A Bottle,152,1802400.00,2,0.3936
+month,2024-01,Todos,Buenos Aires,Sport B Bottle,187,2776500.00,1,0.6064
+month,2024-01,Todos,Córdoba,Classic A Bottle,130,1544400.00,2,0.443
+month,2024-01,Todos,Córdoba,Sport B Bottle,130,1941750.00,1,0.557
+month,2024-01,Todos,Mendoza,Classic A Bottle,56,670800.00,2,0.3447
+month,2024-01,Todos,Mendoza,Sport B Bottle,87,1275000.00,1,0.6553
+month,2024-01,Todos,Santa Fe,Classic A Bottle,102,1218600.00,2,0.4157
+month,2024-01,Todos,Santa Fe,Sport B Bottle,115,1713000.00,1,0.5843
+month,2024-01,Todos,Todas,Classic A Bottle,440,5236200.00,2,0.4046
+month,2024-01,Todos,Todas,Sport B Bottle,519,7706250.00,1,0.5954
+month,2024-02,OFFLINE,Buenos Aires,Classic A Bottle,96,1081200.00,2,0.4308
+month,2024-02,OFFLINE,Buenos Aires,Sport B Bottle,97,1428750.00,1,0.5692
+month,2024-02,OFFLINE,Córdoba,Classic A Bottle,58,690000.00,2,0.4559
+month,2024-02,OFFLINE,Córdoba,Sport B Bottle,55,823500.00,1,0.5441
+month,2024-02,OFFLINE,Mendoza,Classic A Bottle,41,488400.00,2,0.4171
+month,2024-02,OFFLINE,Mendoza,Sport B Bottle,46,682500.00,1,0.5829
+month,2024-02,OFFLINE,Santa Fe,Classic A Bottle,67,783000.00,2,0.4585
+month,2024-02,OFFLINE,Santa Fe,Sport B Bottle,63,924750.00,1,0.5415
+month,2024-02,OFFLINE,Todas,Classic A Bottle,262,3042600.00,2,0.4408
+month,2024-02,OFFLINE,Todas,Sport B Bottle,261,3859500.00,1,0.5592
+month,2024-02,ONLINE,Buenos Aires,Classic A Bottle,113,1350000.00,2,0.4225
+month,2024-02,ONLINE,Buenos Aires,Sport B Bottle,126,1845000.00,1,0.5775
+month,2024-02,ONLINE,Córdoba,Classic A Bottle,78,930600.00,2,0.4462
+month,2024-02,ONLINE,Córdoba,Sport B Bottle,77,1155000.00,1,0.5538
+month,2024-02,ONLINE,Mendoza,Classic A Bottle,43,514800.00,2,0.4962
+month,2024-02,ONLINE,Mendoza,Sport B Bottle,37,522750.00,1,0.5038
+month,2024-02,ONLINE,Santa Fe,Classic A Bottle,73,861000.00,1,0.5132
+month,2024-02,ONLINE,Santa Fe,Sport B Bottle,56,816750.00,2,0.4868
+month,2024-02,ONLINE,Todas,Classic A Bottle,307,3656400.00,2,0.4573
+month,2024-02,ONLINE,Todas,Sport B Bottle,296,4339500.00,1,0.5427
+month,2024-02,Todos,Buenos Aires,Classic A Bottle,209,2431200.00,2,0.4262
+month,2024-02,Todos,Buenos Aires,Sport B Bottle,223,3273750.00,1,0.5738
+month,2024-02,Todos,Córdoba,Classic A Bottle,136,1620600.00,2,0.4503
+month,2024-02,Todos,Córdoba,Sport B Bottle,132,1978500.00,1,0.5497
+month,2024-02,Todos,Mendoza,Classic A Bottle,84,1003200.00,2,0.4543
+month,2024-02,Todos,Mendoza,Sport B Bottle,83,1205250.00,1,0.5457
+month,2024-02,Todos,Santa Fe,Classic A Bottle,140,1644000.00,2,0.4856
+month,2024-02,Todos,Santa Fe,Sport B Bottle,119,1741500.00,1,0.5144
+month,2024-02,Todos,Todas,Classic A Bottle,569,6699000.00,2,0.4497
+month,2024-02,Todos,Todas,Sport B Bottle,557,8199000.00,1,0.5503
+month,2024-03,OFFLINE,Buenos Aires,Classic A Bottle,89,1065600.00,1,0.5421
+month,2024-03,OFFLINE,Buenos Aires,Sport B Bottle,61,900000.00,2,0.4579
+month,2024-03,OFFLINE,Córdoba,Classic A Bottle,85,987000.00,1,0.542
+month,2024-03,OFFLINE,Córdoba,Sport B Bottle,56,834000.00,2,0.458
+month,2024-03,OFFLINE,Mendoza,Classic A Bottle,35,414000.00,2,0.4654
+month,2024-03,OFFLINE,Mendoza,Sport B Bottle,32,475500.00,1,0.5346
+month,2024-03,OFFLINE,Santa Fe,Classic A Bottle,80,936600.00,1,0.5456
+month,2024-03,OFFLINE,Santa Fe,Sport B Bottle,52,780000.00,2,0.4544
+month,2024-03,OFFLINE,Todas,Classic A Bottle,289,3403200.00,1,0.5324
+month,2024-03,OFFLINE,Todas,Sport B Bottle,201,2989500.00,2,0.4676
+month,2024-03,ONLINE,Buenos Aires,Classic A Bottle,130,1555800.00,1,0.5071
+month,2024-03,ONLINE,Buenos Aires,Sport B Bottle,103,1512000.00,2,0.4929
+month,2024-03,ONLINE,Córdoba,Classic A Bottle,71,830400.00,1,0.5267
+month,2024-03,ONLINE,Córdoba,Sport B Bottle,50,746250.00,2,0.4733
+month,2024-03,ONLINE,Mendoza,Classic A Bottle,39,463200.00,1,0.5157
+month,2024-03,ONLINE,Mendoza,Sport B Bottle,29,435000.00,2,0.4843
+month,2024-03,ONLINE,Santa Fe,Classic A Bottle,101,1149000.00,1,0.5892
+month,2024-03,ONLINE,Santa Fe,Sport B Bottle,55,801000.00,2,0.4108
+month,2024-03,ONLINE,Todas,Classic A Bottle,341,3998400.00,1,0.5336
+month,2024-03,ONLINE,Todas,Sport B Bottle,237,3494250.00,2,0.4664
+month,2024-03,Todos,Buenos Aires,Classic A Bottle,219,2621400.00,1,0.5208
+month,2024-03,Todos,Buenos Aires,Sport B Bottle,164,2412000.00,2,0.4792
+month,2024-03,Todos,Córdoba,Classic A Bottle,156,1817400.00,1,0.5349
+month,2024-03,Todos,Córdoba,Sport B Bottle,106,1580250.00,2,0.4651
+month,2024-03,Todos,Mendoza,Classic A Bottle,74,877200.00,2,0.4907
+month,2024-03,Todos,Mendoza,Sport B Bottle,61,910500.00,1,0.5093
+month,2024-03,Todos,Santa Fe,Classic A Bottle,181,2085600.00,1,0.5688
+month,2024-03,Todos,Santa Fe,Sport B Bottle,107,1581000.00,2,0.4312
+month,2024-03,Todos,Todas,Classic A Bottle,630,7401600.00,1,0.5331
+month,2024-03,Todos,Todas,Sport B Bottle,438,6483750.00,2,0.4669
+month,2024-04,OFFLINE,Buenos Aires,Classic A Bottle,58,693600.00,1,0.5252
+month,2024-04,OFFLINE,Buenos Aires,Sport B Bottle,42,627000.00,2,0.4748
+month,2024-04,OFFLINE,Córdoba,Classic A Bottle,58,691200.00,1,0.5567
+month,2024-04,OFFLINE,Córdoba,Sport B Bottle,37,550500.00,2,0.4433
+month,2024-04,OFFLINE,Mendoza,Classic A Bottle,43,516000.00,2,0.445
+month,2024-04,OFFLINE,Mendoza,Sport B Bottle,43,643500.00,1,0.555
+month,2024-04,OFFLINE,Santa Fe,Classic A Bottle,88,1050000.00,1,0.5516
+month,2024-04,OFFLINE,Santa Fe,Sport B Bottle,59,853500.00,2,0.4484
+month,2024-04,OFFLINE,Todas,Classic A Bottle,247,2950800.00,1,0.5246
+month,2024-04,OFFLINE,Todas,Sport B Bottle,181,2674500.00,2,0.4754
+month,2024-04,ONLINE,Buenos Aires,Classic A Bottle,122,1456800.00,1,0.5405
+month,2024-04,ONLINE,Buenos Aires,Sport B Bottle,83,1238250.00,2,0.4595
+month,2024-04,ONLINE,Córdoba,Classic A Bottle,66,786600.00,1,0.5673
+month,2024-04,ONLINE,Córdoba,Sport B Bottle,40,600000.00,2,0.4327
+month,2024-04,ONLINE,Mendoza,Classic A Bottle,38,455400.00,1,0.5128
+month,2024-04,ONLINE,Mendoza,Sport B Bottle,29,432750.00,2,0.4872
+month,2024-04,ONLINE,Santa Fe,Classic A Bottle,65,777000.00,2,0.4381
+month,2024-04,ONLINE,Santa Fe,Sport B Bottle,67,996750.00,1,0.5619
+month,2024-04,ONLINE,Todas,Classic A Bottle,291,3475800.00,1,0.5154
+month,2024-04,ONLINE,Todas,Sport B Bottle,219,3267750.00,2,0.4846
+month,2024-04,Todos,Buenos Aires,Classic A Bottle,180,2150400.00,1,0.5355
+month,2024-04,Todos,Buenos Aires,Sport B Bottle,125,1865250.00,2,0.4645
+month,2024-04,Todos,Córdoba,Classic A Bottle,124,1477800.00,1,0.5623
+month,2024-04,Todos,Córdoba,Sport B Bottle,77,1150500.00,2,0.4377
+month,2024-04,Todos,Mendoza,Classic A Bottle,81,971400.00,2,0.4744
+month,2024-04,Todos,Mendoza,Sport B Bottle,72,1076250.00,1,0.5256
+month,2024-04,Todos,Santa Fe,Classic A Bottle,153,1827000.00,2,0.4968
+month,2024-04,Todos,Santa Fe,Sport B Bottle,126,1850250.00,1,0.5032
+month,2024-04,Todos,Todas,Classic A Bottle,538,6426600.00,1,0.5196
+month,2024-04,Todos,Todas,Sport B Bottle,400,5942250.00,2,0.4804
+month,2024-05,OFFLINE,Buenos Aires,Classic A Bottle,59,694800.00,2,0.4206
+month,2024-05,OFFLINE,Buenos Aires,Sport B Bottle,66,957000.00,1,0.5794
+month,2024-05,OFFLINE,Córdoba,Classic A Bottle,64,764400.00,2,0.4503
+month,2024-05,OFFLINE,Córdoba,Sport B Bottle,67,933000.00,1,0.5497
+month,2024-05,OFFLINE,Mendoza,Classic A Bottle,49,584400.00,1,0.5767
+month,2024-05,OFFLINE,Mendoza,Sport B Bottle,29,429000.00,2,0.4233
+month,2024-05,OFFLINE,Santa Fe,Classic A Bottle,34,398400.00,2,0.3123
+month,2024-05,OFFLINE,Santa Fe,Sport B Bottle,59,877500.00,1,0.6877
+month,2024-05,OFFLINE,Todas,Classic A Bottle,206,2442000.00,2,0.4331
+month,2024-05,OFFLINE,Todas,Sport B Bottle,221,3196500.00,1,0.5669
+month,2024-05,ONLINE,Buenos Aires,Classic A Bottle,161,1822200.00,1,0.5692
+month,2024-05,ONLINE,Buenos Aires,Sport B Bottle,97,1379250.00,2,0.4308
+month,2024-05,ONLINE,Córdoba,Classic A Bottle,72,801600.00,1,0.5232
+month,2024-05,ONLINE,Córdoba,Sport B Bottle,53,730500.00,2,0.4768
+month,2024-05,ONLINE,Mendoza,Classic A Bottle,38,438600.00,2,0.4128
+month,2024-05,ONLINE,Mendoza,Sport B Bottle,44,624000.00,1,0.5872
+month,2024-05,ONLINE,Santa Fe,Classic A Bottle,93,1061400.00,1,0.5676
+month,2024-05,ONLINE,Santa Fe,Sport B Bottle,57,808500.00,2,0.4324
+month,2024-05,ONLINE,Todas,Classic A Bottle,364,4123800.00,1,0.5379
+month,2024-05,ONLINE,Todas,Sport B Bottle,251,3542250.00,2,0.4621
+month,2024-05,Todos,Buenos Aires,Classic A Bottle,220,2517000.00,1,0.5186
+month,2024-05,Todos,Buenos Aires,Sport B Bottle,163,2336250.00,2,0.4814
+month,2024-05,Todos,Córdoba,Classic A Bottle,136,1566000.00,2,0.4849
+month,2024-05,Todos,Córdoba,Sport B Bottle,120,1663500.00,1,0.5151
+month,2024-05,Todos,Mendoza,Classic A Bottle,87,1023000.00,2,0.4928
+month,2024-05,Todos,Mendoza,Sport B Bottle,73,1053000.00,1,0.5072
+month,2024-05,Todos,Santa Fe,Classic A Bottle,127,1459800.00,2,0.464
+month,2024-05,Todos,Santa Fe,Sport B Bottle,116,1686000.00,1,0.536
+month,2024-05,Todos,Todas,Classic A Bottle,570,6565800.00,2,0.4935
+month,2024-05,Todos,Todas,Sport B Bottle,472,6738750.00,1,0.5065
+month,2024-06,OFFLINE,Buenos Aires,Classic A Bottle,91,1089600.00,2,0.4743
+month,2024-06,OFFLINE,Buenos Aires,Sport B Bottle,81,1207500.00,1,0.5257
+month,2024-06,OFFLINE,Córdoba,Classic A Bottle,61,729600.00,2,0.34
+month,2024-06,OFFLINE,Córdoba,Sport B Bottle,95,1416000.00,1,0.66
+month,2024-06,OFFLINE,Mendoza,Classic A Bottle,44,524400.00,2,0.4137
+month,2024-06,OFFLINE,Mendoza,Sport B Bottle,51,743250.00,1,0.5863
+month,2024-06,OFFLINE,Santa Fe,Classic A Bottle,53,618600.00,2,0.4102
+month,2024-06,OFFLINE,Santa Fe,Sport B Bottle,60,889500.00,1,0.5898
+month,2024-06,OFFLINE,Todas,Classic A Bottle,249,2962200.00,2,0.4104
+month,2024-06,OFFLINE,Todas,Sport B Bottle,287,4256250.00,1,0.5896
+month,2024-06,ONLINE,Buenos Aires,Classic A Bottle,126,1471200.00,2,0.3661
+month,2024-06,ONLINE,Buenos Aires,Sport B Bottle,173,2547750.00,1,0.6339
+month,2024-06,ONLINE,Córdoba,Classic A Bottle,66,789600.00,2,0.4446
+month,2024-06,ONLINE,Córdoba,Sport B Bottle,66,986250.00,1,0.5554
+month,2024-06,ONLINE,Mendoza,Classic A Bottle,28,336000.00,2,0.328
+month,2024-06,ONLINE,Mendoza,Sport B Bottle,46,688500.00,1,0.672
+month,2024-06,ONLINE,Santa Fe,Classic A Bottle,81,970800.00,2,0.49
+month,2024-06,ONLINE,Santa Fe,Sport B Bottle,68,1010250.00,1,0.51
+month,2024-06,ONLINE,Todas,Classic A Bottle,301,3567600.00,2,0.4054
+month,2024-06,ONLINE,Todas,Sport B Bottle,353,5232750.00,1,0.5946
+month,2024-06,Todos,Buenos Aires,Classic A Bottle,217,2560800.00,2,0.4054
+month,2024-06,Todos,Buenos Aires,Sport B Bottle,254,3755250.00,1,0.5946
+month,2024-06,Todos,Córdoba,Classic A Bottle,127,1519200.00,2,0.3874
+month,2024-06,Todos,Córdoba,Sport B Bottle,161,2402250.00,1,0.6126
+month,2024-06,Todos,Mendoza,Classic A Bottle,72,860400.00,2,0.3754
+month,2024-06,Todos,Mendoza,Sport B Bottle,97,1431750.00,1,0.6246
+month,2024-06,Todos,Santa Fe,Classic A Bottle,134,1589400.00,2,0.4555
+month,2024-06,Todos,Santa Fe,Sport B Bottle,128,1899750.00,1,0.5445
+month,2024-06,Todos,Todas,Classic A Bottle,550,6529800.00,2,0.4076
+month,2024-06,Todos,Todas,Sport B Bottle,640,9489000.00,1,0.5924
+month,2024-07,OFFLINE,Buenos Aires,Classic A Bottle,52,618000.00,2,0.379
+month,2024-07,OFFLINE,Buenos Aires,Sport B Bottle,68,1012500.00,1,0.621
+month,2024-07,OFFLINE,Córdoba,Classic A Bottle,78,898800.00,1,0.6138
+month,2024-07,OFFLINE,Córdoba,Sport B Bottle,38,565500.00,2,0.3862
+month,2024-07,OFFLINE,Mendoza,Classic A Bottle,56,652200.00,1,0.6187
+month,2024-07,OFFLINE,Mendoza,Sport B Bottle,27,402000.00,2,0.3813
+month,2024-07,OFFLINE,Santa Fe,Classic A Bottle,38,456000.00,2,0.4655
+month,2024-07,OFFLINE,Santa Fe,Sport B Bottle,35,523500.00,1,0.5345
+month,2024-07,OFFLINE,Todas,Classic A Bottle,224,2625000.00,1,0.5118
+month,2024-07,OFFLINE,Todas,Sport B Bottle,168,2503500.00,2,0.4882
+month,2024-07,ONLINE,Buenos Aires,Classic A Bottle,113,1354800.00,1,0.5186
+month,2024-07,ONLINE,Buenos Aires,Sport B Bottle,84,1257750.00,2,0.4814
+month,2024-07,ONLINE,Córdoba,Classic A Bottle,54,625800.00,1,0.7228
+month,2024-07,ONLINE,Córdoba,Sport B Bottle,16,240000.00,2,0.2772
+month,2024-07,ONLINE,Mendoza,Classic A Bottle,41,472200.00,1,0.5055
+month,2024-07,ONLINE,Mendoza,Sport B Bottle,32,462000.00,2,0.4945
+month,2024-07,ONLINE,Santa Fe,Classic A Bottle,67,800400.00,1,0.5317
+month,2024-07,ONLINE,Santa Fe,Sport B Bottle,51,705000.00,2,0.4683
+month,2024-07,ONLINE,Todas,Classic A Bottle,275,3253200.00,1,0.5497
+month,2024-07,ONLINE,Todas,Sport B Bottle,183,2664750.00,2,0.4503
+month,2024-07,Todos,Buenos Aires,Classic A Bottle,165,1972800.00,2,0.4649
+month,2024-07,Todos,Buenos Aires,Sport B Bottle,152,2270250.00,1,0.5351
+month,2024-07,Todos,Córdoba,Classic A Bottle,132,1524600.00,1,0.6543
+month,2024-07,Todos,Córdoba,Sport B Bottle,54,805500.00,2,0.3457
+month,2024-07,Todos,Mendoza,Classic A Bottle,97,1124400.00,1,0.5655
+month,2024-07,Todos,Mendoza,Sport B Bottle,59,864000.00,2,0.4345
+month,2024-07,Todos,Santa Fe,Classic A Bottle,105,1256400.00,1,0.5056
+month,2024-07,Todos,Santa Fe,Sport B Bottle,86,1228500.00,2,0.4944
+month,2024-07,Todos,Todas,Classic A Bottle,499,5878200.00,1,0.5321
+month,2024-07,Todos,Todas,Sport B Bottle,351,5168250.00,2,0.4679
+month,2024-08,OFFLINE,Buenos Aires,Classic A Bottle,87,1026600.00,1,0.637
+month,2024-08,OFFLINE,Buenos Aires,Sport B Bottle,39,585000.00,2,0.363
+month,2024-08,OFFLINE,Córdoba,Classic A Bottle,64,744600.00,1,0.5729
+month,2024-08,OFFLINE,Córdoba,Sport B Bottle,37,555000.00,2,0.4271
+month,2024-08,OFFLINE,Mendoza,Classic A Bottle,70,819000.00,1,0.5311
+month,2024-08,OFFLINE,Mendoza,Sport B Bottle,50,723000.00,2,0.4689
+month,2024-08,OFFLINE,Santa Fe,Classic A Bottle,72,861600.00,1,0.6884
+month,2024-08,OFFLINE,Santa Fe,Sport B Bottle,26,390000.00,2,0.3116
+month,2024-08,OFFLINE,Todas,Classic A Bottle,293,3451800.00,1,0.6051
+month,2024-08,OFFLINE,Todas,Sport B Bottle,152,2253000.00,2,0.3949
+month,2024-08,ONLINE,Buenos Aires,Classic A Bottle,148,1765800.00,1,0.5499
+month,2024-08,ONLINE,Buenos Aires,Sport B Bottle,97,1445250.00,2,0.4501
+month,2024-08,ONLINE,Córdoba,Classic A Bottle,77,910800.00,1,0.6179
+month,2024-08,ONLINE,Córdoba,Sport B Bottle,38,563250.00,2,0.3821
+month,2024-08,ONLINE,Mendoza,Classic A Bottle,27,323400.00,1,0.5322
+month,2024-08,ONLINE,Mendoza,Sport B Bottle,19,284250.00,2,0.4678
+month,2024-08,ONLINE,Santa Fe,Classic A Bottle,48,574800.00,1,0.5021
+month,2024-08,ONLINE,Santa Fe,Sport B Bottle,38,570000.00,2,0.4979
+month,2024-08,ONLINE,Todas,Classic A Bottle,300,3574800.00,1,0.5553
+month,2024-08,ONLINE,Todas,Sport B Bottle,192,2862750.00,2,0.4447
+month,2024-08,Todos,Buenos Aires,Classic A Bottle,235,2792400.00,1,0.579
+month,2024-08,Todos,Buenos Aires,Sport B Bottle,136,2030250.00,2,0.421
+month,2024-08,Todos,Córdoba,Classic A Bottle,141,1655400.00,1,0.5968
+month,2024-08,Todos,Córdoba,Sport B Bottle,75,1118250.00,2,0.4032
+month,2024-08,Todos,Mendoza,Classic A Bottle,97,1142400.00,1,0.5314
+month,2024-08,Todos,Mendoza,Sport B Bottle,69,1007250.00,2,0.4686
+month,2024-08,Todos,Santa Fe,Classic A Bottle,120,1436400.00,1,0.5994
+month,2024-08,Todos,Santa Fe,Sport B Bottle,64,960000.00,2,0.4006
+month,2024-08,Todos,Todas,Classic A Bottle,593,7026600.00,1,0.5787
+month,2024-08,Todos,Todas,Sport B Bottle,344,5115750.00,2,0.4213
+month,2024-09,OFFLINE,Buenos Aires,Classic A Bottle,72,859200.00,1,0.529
+month,2024-09,OFFLINE,Buenos Aires,Sport B Bottle,51,765000.00,2,0.471
+month,2024-09,OFFLINE,Córdoba,Classic A Bottle,72,835200.00,1,0.6424
+month,2024-09,OFFLINE,Córdoba,Sport B Bottle,31,465000.00,2,0.3576
+month,2024-09,OFFLINE,Mendoza,Classic A Bottle,55,651600.00,1,0.6265
+month,2024-09,OFFLINE,Mendoza,Sport B Bottle,26,388500.00,2,0.3735
+month,2024-09,OFFLINE,Santa Fe,Classic A Bottle,47,556800.00,2,0.4493
+month,2024-09,OFFLINE,Santa Fe,Sport B Bottle,46,682500.00,1,0.5507
+month,2024-09,OFFLINE,Todas,Classic A Bottle,246,2902800.00,1,0.5578
+month,2024-09,OFFLINE,Todas,Sport B Bottle,154,2301000.00,2,0.4422
+month,2024-09,ONLINE,Buenos Aires,Classic A Bottle,130,1551000.00,1,0.5404
+month,2024-09,ONLINE,Buenos Aires,Sport B Bottle,88,1319250.00,2,0.4596
+month,2024-09,ONLINE,Córdoba,Classic A Bottle,71,849600.00,1,0.5581
+month,2024-09,ONLINE,Córdoba,Sport B Bottle,45,672750.00,2,0.4419
+month,2024-09,ONLINE,Mendoza,Classic A Bottle,33,393000.00,1,0.5689
+month,2024-09,ONLINE,Mendoza,Sport B Bottle,20,297750.00,2,0.4311
+month,2024-09,ONLINE,Santa Fe,Classic A Bottle,77,921600.00,1,0.5144
+month,2024-09,ONLINE,Santa Fe,Sport B Bottle,58,870000.00,2,0.4856
+month,2024-09,ONLINE,Todas,Classic A Bottle,311,3715200.00,1,0.5404
+month,2024-09,ONLINE,Todas,Sport B Bottle,211,3159750.00,2,0.4596
+month,2024-09,Todos,Buenos Aires,Classic A Bottle,202,2410200.00,1,0.5363
+month,2024-09,Todos,Buenos Aires,Sport B Bottle,139,2084250.00,2,0.4637
+month,2024-09,Todos,Córdoba,Classic A Bottle,143,1684800.00,1,0.5969
+month,2024-09,Todos,Córdoba,Sport B Bottle,76,1137750.00,2,0.4031
+month,2024-09,Todos,Mendoza,Classic A Bottle,88,1044600.00,1,0.6035
+month,2024-09,Todos,Mendoza,Sport B Bottle,46,686250.00,2,0.3965
+month,2024-09,Todos,Santa Fe,Classic A Bottle,124,1478400.00,2,0.4878
+month,2024-09,Todos,Santa Fe,Sport B Bottle,104,1552500.00,1,0.5122
+month,2024-09,Todos,Todas,Classic A Bottle,557,6618000.00,1,0.5479
+month,2024-09,Todos,Todas,Sport B Bottle,365,5460750.00,2,0.4521
+month,2024-10,OFFLINE,Buenos Aires,Classic A Bottle,85,972000.00,1,0.5078
+month,2024-10,OFFLINE,Buenos Aires,Sport B Bottle,63,942000.00,2,0.4922
+month,2024-10,OFFLINE,Córdoba,Classic A Bottle,54,646800.00,2,0.4484
+month,2024-10,OFFLINE,Córdoba,Sport B Bottle,55,795750.00,1,0.5516
+month,2024-10,OFFLINE,Mendoza,Classic A Bottle,48,576000.00,2,0.416
+month,2024-10,OFFLINE,Mendoza,Sport B Bottle,54,808500.00,1,0.584
+month,2024-10,OFFLINE,Santa Fe,Classic A Bottle,73,868800.00,1,0.6274
+month,2024-10,OFFLINE,Santa Fe,Sport B Bottle,35,516000.00,2,0.3726
+month,2024-10,OFFLINE,Todas,Classic A Bottle,260,3063600.00,1,0.5001
+month,2024-10,OFFLINE,Todas,Sport B Bottle,207,3062250.00,2,0.4999
+month,2024-10,ONLINE,Buenos Aires,Classic A Bottle,125,1483800.00,2,0.4846
+month,2024-10,ONLINE,Buenos Aires,Sport B Bottle,106,1578000.00,1,0.5154
+month,2024-10,ONLINE,Córdoba,Classic A Bottle,75,892800.00,2,0.4433
+month,2024-10,ONLINE,Córdoba,Sport B Bottle,75,1121250.00,1,0.5567
+month,2024-10,ONLINE,Mendoza,Classic A Bottle,68,806400.00,1,0.5047
+month,2024-10,ONLINE,Mendoza,Sport B Bottle,53,791250.00,2,0.4953
+month,2024-10,ONLINE,Santa Fe,Classic A Bottle,80,957600.00,2,0.4844
+month,2024-10,ONLINE,Santa Fe,Sport B Bottle,68,1019250.00,1,0.5156
+month,2024-10,ONLINE,Todas,Classic A Bottle,348,4140600.00,2,0.4787
+month,2024-10,ONLINE,Todas,Sport B Bottle,302,4509750.00,1,0.5213
+month,2024-10,Todos,Buenos Aires,Classic A Bottle,210,2455800.00,2,0.4935
+month,2024-10,Todos,Buenos Aires,Sport B Bottle,169,2520000.00,1,0.5065
+month,2024-10,Todos,Córdoba,Classic A Bottle,129,1539600.00,2,0.4454
+month,2024-10,Todos,Córdoba,Sport B Bottle,130,1917000.00,1,0.5546
+month,2024-10,Todos,Mendoza,Classic A Bottle,116,1382400.00,2,0.4636
+month,2024-10,Todos,Mendoza,Sport B Bottle,107,1599750.00,1,0.5364
+month,2024-10,Todos,Santa Fe,Classic A Bottle,153,1826400.00,1,0.5433
+month,2024-10,Todos,Santa Fe,Sport B Bottle,103,1535250.00,2,0.4567
+month,2024-10,Todos,Todas,Classic A Bottle,608,7204200.00,2,0.4876
+month,2024-10,Todos,Todas,Sport B Bottle,509,7572000.00,1,0.5124
+month,2024-11,OFFLINE,Buenos Aires,Classic A Bottle,62,730800.00,2,0.4461
+month,2024-11,OFFLINE,Buenos Aires,Sport B Bottle,62,907500.00,1,0.5539
+month,2024-11,OFFLINE,Córdoba,Classic A Bottle,35,410400.00,2,0.2838
+month,2024-11,OFFLINE,Córdoba,Sport B Bottle,74,1035750.00,1,0.7162
+month,2024-11,OFFLINE,Mendoza,Classic A Bottle,37,434400.00,2,0.3884
+month,2024-11,OFFLINE,Mendoza,Sport B Bottle,46,684000.00,1,0.6116
+month,2024-11,OFFLINE,Santa Fe,Classic A Bottle,51,604800.00,2,0.4239
+month,2024-11,OFFLINE,Santa Fe,Sport B Bottle,56,822000.00,1,0.5761
+month,2024-11,OFFLINE,Todas,Classic A Bottle,185,2180400.00,2,0.3873
+month,2024-11,OFFLINE,Todas,Sport B Bottle,238,3449250.00,1,0.6127
+month,2024-11,ONLINE,Buenos Aires,Classic A Bottle,164,1830600.00,2,0.4465
+month,2024-11,ONLINE,Buenos Aires,Sport B Bottle,159,2269500.00,1,0.5535
+month,2024-11,ONLINE,Córdoba,Classic A Bottle,91,1024800.00,2,0.4631
+month,2024-11,ONLINE,Córdoba,Sport B Bottle,83,1188000.00,1,0.5369
+month,2024-11,ONLINE,Mendoza,Classic A Bottle,56,633600.00,2,0.4496
+month,2024-11,ONLINE,Mendoza,Sport B Bottle,55,775500.00,1,0.5504
+month,2024-11,ONLINE,Santa Fe,Classic A Bottle,93,1059000.00,1,0.5724
+month,2024-11,ONLINE,Santa Fe,Sport B Bottle,57,791250.00,2,0.4276
+month,2024-11,ONLINE,Todas,Classic A Bottle,404,4548000.00,2,0.4751
+month,2024-11,ONLINE,Todas,Sport B Bottle,354,5024250.00,1,0.5249
+month,2024-11,Todos,Buenos Aires,Classic A Bottle,226,2561400.00,2,0.4464
+month,2024-11,Todos,Buenos Aires,Sport B Bottle,221,3177000.00,1,0.5536
+month,2024-11,Todos,Córdoba,Classic A Bottle,126,1435200.00,2,0.3922
+month,2024-11,Todos,Córdoba,Sport B Bottle,157,2223750.00,1,0.6078
+month,2024-11,Todos,Mendoza,Classic A Bottle,93,1068000.00,2,0.4226
+month,2024-11,Todos,Mendoza,Sport B Bottle,101,1459500.00,1,0.5774
+month,2024-11,Todos,Santa Fe,Classic A Bottle,144,1663800.00,1,0.5077
+month,2024-11,Todos,Santa Fe,Sport B Bottle,113,1613250.00,2,0.4923
+month,2024-11,Todos,Todas,Classic A Bottle,589,6728400.00,2,0.4426
+month,2024-11,Todos,Todas,Sport B Bottle,592,8473500.00,1,0.5574
+month,2024-12,OFFLINE,Buenos Aires,Classic A Bottle,96,1128000.00,2,0.3785
+month,2024-12,OFFLINE,Buenos Aires,Sport B Bottle,125,1852500.00,1,0.6215
+month,2024-12,OFFLINE,Córdoba,Classic A Bottle,86,1027200.00,2,0.4281
+month,2024-12,OFFLINE,Córdoba,Sport B Bottle,92,1372500.00,1,0.5719
+month,2024-12,OFFLINE,Mendoza,Classic A Bottle,58,687600.00,2,0.3828
+month,2024-12,OFFLINE,Mendoza,Sport B Bottle,74,1108500.00,1,0.6172
+month,2024-12,OFFLINE,Santa Fe,Classic A Bottle,49,582000.00,2,0.3511
+month,2024-12,OFFLINE,Santa Fe,Sport B Bottle,74,1075500.00,1,0.6489
+month,2024-12,OFFLINE,Todas,Classic A Bottle,289,3424800.00,2,0.3877
+month,2024-12,OFFLINE,Todas,Sport B Bottle,365,5409000.00,1,0.6123
+month,2024-12,ONLINE,Buenos Aires,Classic A Bottle,233,2721000.00,2,0.4125
+month,2024-12,ONLINE,Buenos Aires,Sport B Bottle,269,3875250.00,1,0.5875
+month,2024-12,ONLINE,Córdoba,Classic A Bottle,86,1018200.00,2,0.3795
+month,2024-12,ONLINE,Córdoba,Sport B Bottle,113,1665000.00,1,0.6205
+month,2024-12,ONLINE,Mendoza,Classic A Bottle,60,715800.00,2,0.3702
+month,2024-12,ONLINE,Mendoza,Sport B Bottle,83,1218000.00,1,0.6298
+month,2024-12,ONLINE,Santa Fe,Classic A Bottle,113,1322400.00,2,0.4395
+month,2024-12,ONLINE,Santa Fe,Sport B Bottle,114,1686750.00,1,0.5605
+month,2024-12,ONLINE,Todas,Classic A Bottle,492,5777400.00,2,0.4062
+month,2024-12,ONLINE,Todas,Sport B Bottle,579,8445000.00,1,0.5938
+month,2024-12,Todos,Buenos Aires,Classic A Bottle,329,3849000.00,2,0.4019
+month,2024-12,Todos,Buenos Aires,Sport B Bottle,394,5727750.00,1,0.5981
+month,2024-12,Todos,Córdoba,Classic A Bottle,172,2045400.00,2,0.4024
+month,2024-12,Todos,Córdoba,Sport B Bottle,205,3037500.00,1,0.5976
+month,2024-12,Todos,Mendoza,Classic A Bottle,118,1403400.00,2,0.3763
+month,2024-12,Todos,Mendoza,Sport B Bottle,157,2326500.00,1,0.6237
+month,2024-12,Todos,Santa Fe,Classic A Bottle,162,1904400.00,2,0.4081
+month,2024-12,Todos,Santa Fe,Sport B Bottle,188,2762250.00,1,0.5919
+month,2024-12,Todos,Todas,Classic A Bottle,781,9202200.00,2,0.3991
+month,2024-12,Todos,Todas,Sport B Bottle,944,13854000.00,1,0.6009
+month,2025-01,OFFLINE,Buenos Aires,Classic A Bottle,75,894000.00,2,0.3693
+month,2025-01,OFFLINE,Buenos Aires,Sport B Bottle,102,1527000.00,1,0.6307
+month,2025-01,OFFLINE,Córdoba,Classic A Bottle,61,732000.00,2,0.3783
+month,2025-01,OFFLINE,Córdoba,Sport B Bottle,81,1203000.00,1,0.6217
+month,2025-01,OFFLINE,Mendoza,Classic A Bottle,39,468000.00,2,0.3549
+month,2025-01,OFFLINE,Mendoza,Sport B Bottle,57,850500.00,1,0.6451
+month,2025-01,OFFLINE,Santa Fe,Classic A Bottle,63,751200.00,2,0.4017
+month,2025-01,OFFLINE,Santa Fe,Sport B Bottle,75,1119000.00,1,0.5983
+month,2025-01,OFFLINE,Todas,Classic A Bottle,238,2845200.00,2,0.3771
+month,2025-01,OFFLINE,Todas,Sport B Bottle,315,4699500.00,1,0.6229
+month,2025-01,ONLINE,Buenos Aires,Classic A Bottle,115,1359600.00,2,0.3772
+month,2025-01,ONLINE,Buenos Aires,Sport B Bottle,150,2244750.00,1,0.6228
+month,2025-01,ONLINE,Córdoba,Classic A Bottle,53,633000.00,2,0.3411
+month,2025-01,ONLINE,Córdoba,Sport B Bottle,82,1222500.00,1,0.6589
+month,2025-01,ONLINE,Mendoza,Classic A Bottle,43,512400.00,2,0.3176
+month,2025-01,ONLINE,Mendoza,Sport B Bottle,74,1101000.00,1,0.6824
+month,2025-01,ONLINE,Santa Fe,Classic A Bottle,60,712800.00,2,0.3464
+month,2025-01,ONLINE,Santa Fe,Sport B Bottle,90,1344750.00,1,0.6536
+month,2025-01,ONLINE,Todas,Classic A Bottle,271,3217800.00,2,0.3524
+month,2025-01,ONLINE,Todas,Sport B Bottle,396,5913000.00,1,0.6476
+month,2025-01,Todos,Buenos Aires,Classic A Bottle,190,2253600.00,2,0.374
+month,2025-01,Todos,Buenos Aires,Sport B Bottle,252,3771750.00,1,0.626
+month,2025-01,Todos,Córdoba,Classic A Bottle,114,1365000.00,2,0.3601
+month,2025-01,Todos,Córdoba,Sport B Bottle,163,2425500.00,1,0.6399
+month,2025-01,Todos,Mendoza,Classic A Bottle,82,980400.00,2,0.3344
+month,2025-01,Todos,Mendoza,Sport B Bottle,131,1951500.00,1,0.6656
+month,2025-01,Todos,Santa Fe,Classic A Bottle,123,1464000.00,2,0.3727
+month,2025-01,Todos,Santa Fe,Sport B Bottle,165,2463750.00,1,0.6273
+month,2025-01,Todos,Todas,Classic A Bottle,509,6063000.00,2,0.3636
+month,2025-01,Todos,Todas,Sport B Bottle,711,10612500.00,1,0.6364
+month,2025-02,OFFLINE,Buenos Aires,Classic A Bottle,105,1251600.00,2,0.4995
+month,2025-02,OFFLINE,Buenos Aires,Sport B Bottle,84,1254000.00,1,0.5005
+month,2025-02,OFFLINE,Córdoba,Classic A Bottle,64,760800.00,2,0.3882
+month,2025-02,OFFLINE,Córdoba,Sport B Bottle,82,1199250.00,1,0.6118
+month,2025-02,OFFLINE,Mendoza,Classic A Bottle,53,631200.00,2,0.4535
+month,2025-02,OFFLINE,Mendoza,Sport B Bottle,51,760500.00,1,0.5465
+month,2025-02,OFFLINE,Santa Fe,Classic A Bottle,58,686400.00,2,0.4065
+month,2025-02,OFFLINE,Santa Fe,Sport B Bottle,67,1002000.00,1,0.5935
+month,2025-02,OFFLINE,Todas,Classic A Bottle,280,3330000.00,2,0.4413
+month,2025-02,OFFLINE,Todas,Sport B Bottle,284,4215750.00,1,0.5587
+month,2025-02,ONLINE,Buenos Aires,Classic A Bottle,170,2030400.00,2,0.4837
+month,2025-02,ONLINE,Buenos Aires,Sport B Bottle,145,2167500.00,1,0.5163
+month,2025-02,ONLINE,Córdoba,Classic A Bottle,105,1234200.00,1,0.5435
+month,2025-02,ONLINE,Córdoba,Sport B Bottle,71,1036500.00,2,0.4565
+month,2025-02,ONLINE,Mendoza,Classic A Bottle,55,658800.00,2,0.4654
+month,2025-02,ONLINE,Mendoza,Sport B Bottle,53,756750.00,1,0.5346
+month,2025-02,ONLINE,Santa Fe,Classic A Bottle,89,1032600.00,2,0.4845
+month,2025-02,ONLINE,Santa Fe,Sport B Bottle,75,1098750.00,1,0.5155
+month,2025-02,ONLINE,Todas,Classic A Bottle,419,4956000.00,2,0.4948
+month,2025-02,ONLINE,Todas,Sport B Bottle,344,5059500.00,1,0.5052
+month,2025-02,Todos,Buenos Aires,Classic A Bottle,275,3282000.00,2,0.4896
+month,2025-02,Todos,Buenos Aires,Sport B Bottle,229,3421500.00,1,0.5104
+month,2025-02,Todos,Córdoba,Classic A Bottle,169,1995000.00,2,0.4715
+month,2025-02,Todos,Córdoba,Sport B Bottle,153,2235750.00,1,0.5285
+month,2025-02,Todos,Mendoza,Classic A Bottle,108,1290000.00,2,0.4595
+month,2025-02,Todos,Mendoza,Sport B Bottle,104,1517250.00,1,0.5405
+month,2025-02,Todos,Santa Fe,Classic A Bottle,147,1719000.00,2,0.45
+month,2025-02,Todos,Santa Fe,Sport B Bottle,142,2100750.00,1,0.55
+month,2025-02,Todos,Todas,Classic A Bottle,699,8286000.00,2,0.4718
+month,2025-02,Todos,Todas,Sport B Bottle,628,9275250.00,1,0.5282
+month,2025-03,OFFLINE,Buenos Aires,Classic A Bottle,91,1083600.00,2,0.4705
+month,2025-03,OFFLINE,Buenos Aires,Sport B Bottle,82,1219500.00,1,0.5295
+month,2025-03,OFFLINE,Córdoba,Classic A Bottle,76,907200.00,1,0.5045
+month,2025-03,OFFLINE,Córdoba,Sport B Bottle,60,891000.00,2,0.4955
+month,2025-03,OFFLINE,Mendoza,Classic A Bottle,66,788400.00,1,0.5582
+month,2025-03,OFFLINE,Mendoza,Sport B Bottle,42,624000.00,2,0.4418
+month,2025-03,OFFLINE,Santa Fe,Classic A Bottle,57,659400.00,1,0.5079
+month,2025-03,OFFLINE,Santa Fe,Sport B Bottle,43,639000.00,2,0.4921
+month,2025-03,OFFLINE,Todas,Classic A Bottle,290,3438600.00,1,0.5048
+month,2025-03,OFFLINE,Todas,Sport B Bottle,227,3373500.00,2,0.4952
+month,2025-03,ONLINE,Buenos Aires,Classic A Bottle,168,1965000.00,1,0.5146
+month,2025-03,ONLINE,Buenos Aires,Sport B Bottle,124,1853250.00,2,0.4854
+month,2025-03,ONLINE,Córdoba,Classic A Bottle,90,1056600.00,1,0.5382
+month,2025-03,ONLINE,Córdoba,Sport B Bottle,63,906750.00,2,0.4618
+month,2025-03,ONLINE,Mendoza,Classic A Bottle,83,991800.00,1,0.591
+month,2025-03,ONLINE,Mendoza,Sport B Bottle,46,686250.00,2,0.409
+month,2025-03,ONLINE,Santa Fe,Classic A Bottle,69,825000.00,2,0.4331
+month,2025-03,ONLINE,Santa Fe,Sport B Bottle,72,1080000.00,1,0.5669
+month,2025-03,ONLINE,Todas,Classic A Bottle,410,4838400.00,1,0.5167
+month,2025-03,ONLINE,Todas,Sport B Bottle,305,4526250.00,2,0.4833
+month,2025-03,Todos,Buenos Aires,Classic A Bottle,259,3048600.00,2,0.498
+month,2025-03,Todos,Buenos Aires,Sport B Bottle,206,3072750.00,1,0.502
+month,2025-03,Todos,Córdoba,Classic A Bottle,166,1963800.00,1,0.5221
+month,2025-03,Todos,Córdoba,Sport B Bottle,123,1797750.00,2,0.4779
+month,2025-03,Todos,Mendoza,Classic A Bottle,149,1780200.00,1,0.576
+month,2025-03,Todos,Mendoza,Sport B Bottle,88,1310250.00,2,0.424
+month,2025-03,Todos,Santa Fe,Classic A Bottle,126,1484400.00,2,0.4634
+month,2025-03,Todos,Santa Fe,Sport B Bottle,115,1719000.00,1,0.5366
+month,2025-03,Todos,Todas,Classic A Bottle,700,8277000.00,1,0.5117
+month,2025-03,Todos,Todas,Sport B Bottle,532,7899750.00,2,0.4883
+month,2025-04,OFFLINE,Buenos Aires,Classic A Bottle,71,848400.00,2,0.4133
+month,2025-04,OFFLINE,Buenos Aires,Sport B Bottle,81,1204500.00,1,0.5867
+month,2025-04,OFFLINE,Córdoba,Classic A Bottle,37,444000.00,2,0.3597
+month,2025-04,OFFLINE,Córdoba,Sport B Bottle,53,790500.00,1,0.6403
+month,2025-04,OFFLINE,Mendoza,Classic A Bottle,35,417600.00,1,0.5631
+month,2025-04,OFFLINE,Mendoza,Sport B Bottle,22,324000.00,2,0.4369
+month,2025-04,OFFLINE,Santa Fe,Classic A Bottle,53,633600.00,1,0.6406
+month,2025-04,OFFLINE,Santa Fe,Sport B Bottle,24,355500.00,2,0.3594
+month,2025-04,OFFLINE,Todas,Classic A Bottle,196,2343600.00,2,0.467
+month,2025-04,OFFLINE,Todas,Sport B Bottle,180,2674500.00,1,0.533
+month,2025-04,ONLINE,Buenos Aires,Classic A Bottle,162,1919400.00,1,0.5417
+month,2025-04,ONLINE,Buenos Aires,Sport B Bottle,109,1623750.00,2,0.4583
+month,2025-04,ONLINE,Córdoba,Classic A Bottle,79,925200.00,2,0.467
+month,2025-04,ONLINE,Córdoba,Sport B Bottle,72,1056000.00,1,0.533
+month,2025-04,ONLINE,Mendoza,Classic A Bottle,51,598800.00,1,0.6452
+month,2025-04,ONLINE,Mendoza,Sport B Bottle,22,329250.00,2,0.3548
+month,2025-04,ONLINE,Santa Fe,Classic A Bottle,96,1146000.00,2,0.494
+month,2025-04,ONLINE,Santa Fe,Sport B Bottle,79,1173750.00,1,0.506
+month,2025-04,ONLINE,Todas,Classic A Bottle,388,4589400.00,1,0.5232
+month,2025-04,ONLINE,Todas,Sport B Bottle,282,4182750.00,2,0.4768
+month,2025-04,Todos,Buenos Aires,Classic A Bottle,233,2767800.00,2,0.4946
+month,2025-04,Todos,Buenos Aires,Sport B Bottle,190,2828250.00,1,0.5054
+month,2025-04,Todos,Córdoba,Classic A Bottle,116,1369200.00,2,0.4258
+month,2025-04,Todos,Córdoba,Sport B Bottle,125,1846500.00,1,0.5742
+month,2025-04,Todos,Mendoza,Classic A Bottle,86,1016400.00,1,0.6088
+month,2025-04,Todos,Mendoza,Sport B Bottle,44,653250.00,2,0.3912
+month,2025-04,Todos,Santa Fe,Classic A Bottle,149,1779600.00,1,0.5378
+month,2025-04,Todos,Santa Fe,Sport B Bottle,103,1529250.00,2,0.4622
+month,2025-04,Todos,Todas,Classic A Bottle,584,6933000.00,1,0.5027
+month,2025-04,Todos,Todas,Sport B Bottle,462,6857250.00,2,0.4973
+month,2025-05,OFFLINE,Buenos Aires,Classic A Bottle,57,678000.00,2,0.444
+month,2025-05,OFFLINE,Buenos Aires,Sport B Bottle,57,849000.00,1,0.556
+month,2025-05,OFFLINE,Córdoba,Classic A Bottle,48,572400.00,2,0.4159
+month,2025-05,OFFLINE,Córdoba,Sport B Bottle,54,804000.00,1,0.5841
+month,2025-05,OFFLINE,Mendoza,Classic A Bottle,38,452400.00,2,0.465
+month,2025-05,OFFLINE,Mendoza,Sport B Bottle,35,520500.00,1,0.535
+month,2025-05,OFFLINE,Santa Fe,Classic A Bottle,85,989400.00,1,0.5654
+month,2025-05,OFFLINE,Santa Fe,Sport B Bottle,51,760500.00,2,0.4346
+month,2025-05,OFFLINE,Todas,Classic A Bottle,228,2692200.00,2,0.4785
+month,2025-05,OFFLINE,Todas,Sport B Bottle,197,2934000.00,1,0.5215
+month,2025-05,ONLINE,Buenos Aires,Classic A Bottle,183,2029800.00,2,0.4672
+month,2025-05,ONLINE,Buenos Aires,Sport B Bottle,162,2315250.00,1,0.5328
+month,2025-05,ONLINE,Córdoba,Classic A Bottle,99,1085400.00,2,0.4622
+month,2025-05,ONLINE,Córdoba,Sport B Bottle,90,1263000.00,1,0.5378
+month,2025-05,ONLINE,Mendoza,Classic A Bottle,45,525000.00,2,0.4266
+month,2025-05,ONLINE,Mendoza,Sport B Bottle,50,705750.00,1,0.5734
+month,2025-05,ONLINE,Santa Fe,Classic A Bottle,119,1316400.00,1,0.5604
+month,2025-05,ONLINE,Santa Fe,Sport B Bottle,75,1032750.00,2,0.4396
+month,2025-05,ONLINE,Todas,Classic A Bottle,446,4956600.00,2,0.4825
+month,2025-05,ONLINE,Todas,Sport B Bottle,377,5316750.00,1,0.5175
+month,2025-05,Todos,Buenos Aires,Classic A Bottle,240,2707800.00,2,0.4611
+month,2025-05,Todos,Buenos Aires,Sport B Bottle,219,3164250.00,1,0.5389
+month,2025-05,Todos,Córdoba,Classic A Bottle,147,1657800.00,2,0.4451
+month,2025-05,Todos,Córdoba,Sport B Bottle,144,2067000.00,1,0.5549
+month,2025-05,Todos,Mendoza,Classic A Bottle,83,977400.00,2,0.4435
+month,2025-05,Todos,Mendoza,Sport B Bottle,85,1226250.00,1,0.5565
+month,2025-05,Todos,Santa Fe,Classic A Bottle,204,2305800.00,1,0.5625
+month,2025-05,Todos,Santa Fe,Sport B Bottle,126,1793250.00,2,0.4375
+month,2025-05,Todos,Todas,Classic A Bottle,674,7648800.00,2,0.4811
+month,2025-05,Todos,Todas,Sport B Bottle,574,8250750.00,1,0.5189
+month,2025-06,OFFLINE,Buenos Aires,Classic A Bottle,75,877800.00,2,0.3844
+month,2025-06,OFFLINE,Buenos Aires,Sport B Bottle,97,1405500.00,1,0.6156
+month,2025-06,OFFLINE,Córdoba,Classic A Bottle,61,721200.00,2,0.4244
+month,2025-06,OFFLINE,Córdoba,Sport B Bottle,66,978000.00,1,0.5756
+month,2025-06,OFFLINE,Mendoza,Classic A Bottle,33,392400.00,2,0.3404
+month,2025-06,OFFLINE,Mendoza,Sport B Bottle,51,760500.00,1,0.6596
+month,2025-06,OFFLINE,Santa Fe,Classic A Bottle,51,612000.00,2,0.3957
+month,2025-06,OFFLINE,Santa Fe,Sport B Bottle,63,934500.00,1,0.6043
+month,2025-06,OFFLINE,Todas,Classic A Bottle,220,2603400.00,2,0.3896
+month,2025-06,OFFLINE,Todas,Sport B Bottle,277,4078500.00,1,0.6104
+month,2025-06,ONLINE,Buenos Aires,Classic A Bottle,177,2008200.00,2,0.4368
+month,2025-06,ONLINE,Buenos Aires,Sport B Bottle,179,2589750.00,1,0.5632
+month,2025-06,ONLINE,Córdoba,Classic A Bottle,64,760800.00,2,0.4077
+month,2025-06,ONLINE,Córdoba,Sport B Bottle,74,1105500.00,1,0.5923
+month,2025-06,ONLINE,Mendoza,Classic A Bottle,50,592800.00,2,0.3291
+month,2025-06,ONLINE,Mendoza,Sport B Bottle,81,1208250.00,1,0.6709
+month,2025-06,ONLINE,Santa Fe,Classic A Bottle,68,814800.00,2,0.3603
+month,2025-06,ONLINE,Santa Fe,Sport B Bottle,99,1446750.00,1,0.6397
+month,2025-06,ONLINE,Todas,Classic A Bottle,359,4176600.00,2,0.3968
+month,2025-06,ONLINE,Todas,Sport B Bottle,433,6350250.00,1,0.6032
+month,2025-06,Todos,Buenos Aires,Classic A Bottle,252,2886000.00,2,0.4194
+month,2025-06,Todos,Buenos Aires,Sport B Bottle,276,3995250.00,1,0.5806
+month,2025-06,Todos,Córdoba,Classic A Bottle,125,1482000.00,2,0.4156
+month,2025-06,Todos,Córdoba,Sport B Bottle,140,2083500.00,1,0.5844
+month,2025-06,Todos,Mendoza,Classic A Bottle,83,985200.00,2,0.3335
+month,2025-06,Todos,Mendoza,Sport B Bottle,132,1968750.00,1,0.6665
+month,2025-06,Todos,Santa Fe,Classic A Bottle,119,1426800.00,2,0.3747
+month,2025-06,Todos,Santa Fe,Sport B Bottle,162,2381250.00,1,0.6253
+month,2025-06,Todos,Todas,Classic A Bottle,579,6780000.00,2,0.394
+month,2025-06,Todos,Todas,Sport B Bottle,710,10428750.00,1,0.606
+month,2025-07,OFFLINE,Buenos Aires,Classic A Bottle,49,583200.00,1,0.5678
+month,2025-07,OFFLINE,Buenos Aires,Sport B Bottle,30,444000.00,2,0.4322
+month,2025-07,OFFLINE,Córdoba,Classic A Bottle,61,722400.00,1,0.5649
+month,2025-07,OFFLINE,Córdoba,Sport B Bottle,39,556500.00,2,0.4351
+month,2025-07,OFFLINE,Mendoza,Classic A Bottle,46,548400.00,1,0.5256
+month,2025-07,OFFLINE,Mendoza,Sport B Bottle,33,495000.00,2,0.4744
+month,2025-07,OFFLINE,Santa Fe,Classic A Bottle,52,619200.00,1,0.5664
+month,2025-07,OFFLINE,Santa Fe,Sport B Bottle,32,474000.00,2,0.4336
+month,2025-07,OFFLINE,Todas,Classic A Bottle,208,2473200.00,1,0.5567
+month,2025-07,OFFLINE,Todas,Sport B Bottle,134,1969500.00,2,0.4433
+month,2025-07,ONLINE,Buenos Aires,Classic A Bottle,187,2196000.00,1,0.6898
+month,2025-07,ONLINE,Buenos Aires,Sport B Bottle,66,987750.00,2,0.3102
+month,2025-07,ONLINE,Córdoba,Classic A Bottle,64,763800.00,1,0.622
+month,2025-07,ONLINE,Córdoba,Sport B Bottle,31,464250.00,2,0.378
+month,2025-07,ONLINE,Mendoza,Classic A Bottle,47,563400.00,1,0.5249
+month,2025-07,ONLINE,Mendoza,Sport B Bottle,34,510000.00,2,0.4751
+month,2025-07,ONLINE,Santa Fe,Classic A Bottle,76,888000.00,2,0.4568
+month,2025-07,ONLINE,Santa Fe,Sport B Bottle,74,1056000.00,1,0.5432
+month,2025-07,ONLINE,Todas,Classic A Bottle,374,4411200.00,1,0.5938
+month,2025-07,ONLINE,Todas,Sport B Bottle,205,3018000.00,2,0.4062
+month,2025-07,Todos,Buenos Aires,Classic A Bottle,236,2779200.00,1,0.66
+month,2025-07,Todos,Buenos Aires,Sport B Bottle,96,1431750.00,2,0.34
+month,2025-07,Todos,Córdoba,Classic A Bottle,125,1486200.00,1,0.5928
+month,2025-07,Todos,Córdoba,Sport B Bottle,70,1020750.00,2,0.4072
+month,2025-07,Todos,Mendoza,Classic A Bottle,93,1111800.00,1,0.5252
+month,2025-07,Todos,Mendoza,Sport B Bottle,67,1005000.00,2,0.4748
+month,2025-07,Todos,Santa Fe,Classic A Bottle,128,1507200.00,2,0.4962
+month,2025-07,Todos,Santa Fe,Sport B Bottle,106,1530000.00,1,0.5038
+month,2025-07,Todos,Todas,Classic A Bottle,582,6884400.00,1,0.5799
+month,2025-07,Todos,Todas,Sport B Bottle,339,4987500.00,2,0.4201
+month,2025-08,OFFLINE,Buenos Aires,Classic A Bottle,73,871200.00,1,0.5329
+month,2025-08,OFFLINE,Buenos Aires,Sport B Bottle,51,763500.00,2,0.4671
+month,2025-08,OFFLINE,Córdoba,Classic A Bottle,60,714000.00,1,0.5324
+month,2025-08,OFFLINE,Córdoba,Sport B Bottle,42,627000.00,2,0.4676
+month,2025-08,OFFLINE,Mendoza,Classic A Bottle,55,642600.00,2,0.4575
+month,2025-08,OFFLINE,Mendoza,Sport B Bottle,52,762000.00,1,0.5425
+month,2025-08,OFFLINE,Santa Fe,Classic A Bottle,66,792000.00,1,0.5399
+month,2025-08,OFFLINE,Santa Fe,Sport B Bottle,45,675000.00,2,0.4601
+month,2025-08,OFFLINE,Todas,Classic A Bottle,254,3019800.00,1,0.5164
+month,2025-08,OFFLINE,Todas,Sport B Bottle,190,2827500.00,2,0.4836
+month,2025-08,ONLINE,Buenos Aires,Classic A Bottle,169,2005200.00,1,0.5342
+month,2025-08,ONLINE,Buenos Aires,Sport B Bottle,118,1748250.00,2,0.4658
+month,2025-08,ONLINE,Córdoba,Classic A Bottle,101,1206600.00,1,0.5401
+month,2025-08,ONLINE,Córdoba,Sport B Bottle,69,1027500.00,2,0.4599
+month,2025-08,ONLINE,Mendoza,Classic A Bottle,79,918600.00,1,0.5586
+month,2025-08,ONLINE,Mendoza,Sport B Bottle,52,726000.00,2,0.4414
+month,2025-08,ONLINE,Santa Fe,Classic A Bottle,92,1101600.00,1,0.5309
+month,2025-08,ONLINE,Santa Fe,Sport B Bottle,65,973500.00,2,0.4691
+month,2025-08,ONLINE,Todas,Classic A Bottle,441,5232000.00,1,0.539
+month,2025-08,ONLINE,Todas,Sport B Bottle,304,4475250.00,2,0.461
+month,2025-08,Todos,Buenos Aires,Classic A Bottle,242,2876400.00,1,0.5338
+month,2025-08,Todos,Buenos Aires,Sport B Bottle,169,2511750.00,2,0.4662
+month,2025-08,Todos,Córdoba,Classic A Bottle,161,1920600.00,1,0.5372
+month,2025-08,Todos,Córdoba,Sport B Bottle,111,1654500.00,2,0.4628
+month,2025-08,Todos,Mendoza,Classic A Bottle,134,1561200.00,1,0.512
+month,2025-08,Todos,Mendoza,Sport B Bottle,104,1488000.00,2,0.488
+month,2025-08,Todos,Santa Fe,Classic A Bottle,158,1893600.00,1,0.5346
+month,2025-08,Todos,Santa Fe,Sport B Bottle,110,1648500.00,2,0.4654
+month,2025-08,Todos,Todas,Classic A Bottle,695,8251800.00,1,0.5305
+month,2025-08,Todos,Todas,Sport B Bottle,494,7302750.00,2,0.4695
+month,2025-09,OFFLINE,Buenos Aires,Classic A Bottle,34,405600.00,2,0.3233
+month,2025-09,OFFLINE,Buenos Aires,Sport B Bottle,57,849000.00,1,0.6767
+month,2025-09,OFFLINE,Córdoba,Classic A Bottle,38,452400.00,2,0.3386
+month,2025-09,OFFLINE,Córdoba,Sport B Bottle,61,883500.00,1,0.6614
+month,2025-09,OFFLINE,Mendoza,Classic A Bottle,44,524400.00,1,0.5466
+month,2025-09,OFFLINE,Mendoza,Sport B Bottle,29,435000.00,2,0.4534
+month,2025-09,OFFLINE,Santa Fe,Classic A Bottle,35,415200.00,1,0.5016
+month,2025-09,OFFLINE,Santa Fe,Sport B Bottle,28,412500.00,2,0.4984
+month,2025-09,OFFLINE,Todas,Classic A Bottle,151,1797600.00,2,0.4106
+month,2025-09,OFFLINE,Todas,Sport B Bottle,175,2580000.00,1,0.5894
+month,2025-09,ONLINE,Buenos Aires,Classic A Bottle,145,1735200.00,1,0.5151
+month,2025-09,ONLINE,Buenos Aires,Sport B Bottle,109,1633500.00,2,0.4849
+month,2025-09,ONLINE,Córdoba,Classic A Bottle,119,1379400.00,1,0.5544
+month,2025-09,ONLINE,Córdoba,Sport B Bottle,75,1108500.00,2,0.4456
+month,2025-09,ONLINE,Mendoza,Classic A Bottle,58,674400.00,2,0.4818
+month,2025-09,ONLINE,Mendoza,Sport B Bottle,50,725250.00,1,0.5182
+month,2025-09,ONLINE,Santa Fe,Classic A Bottle,79,947400.00,1,0.5265
+month,2025-09,ONLINE,Santa Fe,Sport B Bottle,57,852000.00,2,0.4735
+month,2025-09,ONLINE,Todas,Classic A Bottle,401,4736400.00,1,0.523
+month,2025-09,ONLINE,Todas,Sport B Bottle,291,4319250.00,2,0.477
+month,2025-09,Todos,Buenos Aires,Classic A Bottle,179,2140800.00,2,0.463
+month,2025-09,Todos,Buenos Aires,Sport B Bottle,166,2482500.00,1,0.537
+month,2025-09,Todos,Córdoba,Classic A Bottle,157,1831800.00,2,0.4791
+month,2025-09,Todos,Córdoba,Sport B Bottle,136,1992000.00,1,0.5209
+month,2025-09,Todos,Mendoza,Classic A Bottle,102,1198800.00,1,0.5082
+month,2025-09,Todos,Mendoza,Sport B Bottle,79,1160250.00,2,0.4918
+month,2025-09,Todos,Santa Fe,Classic A Bottle,114,1362600.00,1,0.5187
+month,2025-09,Todos,Santa Fe,Sport B Bottle,85,1264500.00,2,0.4813
+month,2025-09,Todos,Todas,Classic A Bottle,552,6534000.00,2,0.4864
+month,2025-09,Todos,Todas,Sport B Bottle,466,6899250.00,1,0.5136
+total,Todo,OFFLINE,Buenos Aires,Classic A Bottle,1537,18154200.00,2,0.4518
+total,Todo,OFFLINE,Buenos Aires,Sport B Bottle,1485,22026750.00,1,0.5482
+total,Todo,OFFLINE,Córdoba,Classic A Bottle,1273,15073200.00,2,0.4542
+total,Todo,OFFLINE,Córdoba,Sport B Bottle,1231,18114750.00,1,0.5458
+total,Todo,OFFLINE,Mendoza,Classic A Bottle,979,11620200.00,2,0.467
+total,Todo,OFFLINE,Mendoza,Sport B Bottle,893,13260750.00,1,0.533
+total,Todo,OFFLINE,Santa Fe,Classic A Bottle,1212,14355000.00,2,0.4792
+total,Todo,OFFLINE,Santa Fe,Sport B Bottle,1053,15603750.00,1,0.5208
+total,Todo,OFFLINE,Todas,Classic A Bottle,5001,59202600.00,2,0.4618
+total,Todo,OFFLINE,Todas,Sport B Bottle,4662,69006000.00,1,0.5382
+total,Todo,ONLINE,Buenos Aires,Classic A Bottle,3133,36712800.00,2,0.4857
+total,Todo,ONLINE,Buenos Aires,Sport B Bottle,2645,38881500.00,1,0.5143
+total,Todo,ONLINE,Córdoba,Classic A Bottle,1659,19428600.00,2,0.4932
+total,Todo,ONLINE,Córdoba,Sport B Bottle,1357,19965000.00,1,0.5068
+total,Todo,ONLINE,Mendoza,Classic A Bottle,1004,11852400.00,2,0.46
+total,Todo,ONLINE,Mendoza,Sport B Bottle,953,13914750.00,1,0.54
+total,Todo,ONLINE,Santa Fe,Classic A Bottle,1701,19978200.00,2,0.4881
+total,Todo,ONLINE,Santa Fe,Sport B Bottle,1430,20949750.00,1,0.5119
+total,Todo,ONLINE,Todas,Classic A Bottle,7497,87972000.00,2,0.4842
+total,Todo,ONLINE,Todas,Sport B Bottle,6385,93711000.00,1,0.5158
+total,Todo,Todos,Buenos Aires,Classic A Bottle,4670,54867000.00,2,0.4739
+total,Todo,Todos,Buenos Aires,Sport B Bottle,4130,60908250.00,1,0.5261
+total,Todo,Todos,Córdoba,Classic A Bottle,2932,34501800.00,2,0.4754
+total,Todo,Todos,Córdoba,Sport B Bottle,2588,38079750.00,1,0.5246
+total,Todo,Todos,Mendoza,Classic A Bottle,1983,23472600.00,2,0.4634
+total,Todo,Todos,Mendoza,Sport B Bottle,1846,27175500.00,1,0.5366
+total,Todo,Todos,Santa Fe,Classic A Bottle,2913,34333200.00,2,0.4843
+total,Todo,Todos,Santa Fe,Sport B Bottle,2483,36553500.00,1,0.5157
+total,Todo,Todos,Todas,Classic A Bottle,12498,147174600.00,2,0.4749
+total,Todo,Todos,Todas,Sport B Bottle,11047,162717000.00,1,0.5251
+year,2024,OFFLINE,Buenos Aires,Classic A Bottle,907,10660800.00,2,0.4601
+year,2024,OFFLINE,Buenos Aires,Sport B Bottle,844,12510750.00,1,0.5399
+year,2024,OFFLINE,Córdoba,Classic A Bottle,767,9046800.00,2,0.4705
+year,2024,OFFLINE,Córdoba,Sport B Bottle,693,10182000.00,1,0.5295
+year,2024,OFFLINE,Mendoza,Classic A Bottle,570,6754800.00,2,0.4664
+year,2024,OFFLINE,Mendoza,Sport B Bottle,521,7728750.00,1,0.5336
+year,2024,OFFLINE,Santa Fe,Classic A Bottle,692,8196600.00,2,0.4703
+year,2024,OFFLINE,Santa Fe,Sport B Bottle,625,9231750.00,1,0.5297
+year,2024,OFFLINE,Todas,Classic A Bottle,2936,34659000.00,2,0.4664
+year,2024,OFFLINE,Todas,Sport B Bottle,2683,39653250.00,1,0.5336
+year,2024,ONLINE,Buenos Aires,Classic A Bottle,1657,19464000.00,2,0.4726
+year,2024,ONLINE,Buenos Aires,Sport B Bottle,1483,21717750.00,1,0.5274
+year,2024,ONLINE,Córdoba,Classic A Bottle,885,10383600.00,2,0.4908
+year,2024,ONLINE,Córdoba,Sport B Bottle,730,10774500.00,1,0.5092
+year,2024,ONLINE,Mendoza,Classic A Bottle,493,5816400.00,2,0.448
+year,2024,ONLINE,Mendoza,Sport B Bottle,491,7166250.00,1,0.552
+year,2024,ONLINE,Santa Fe,Classic A Bottle,953,11193600.00,1,0.5068
+year,2024,ONLINE,Santa Fe,Sport B Bottle,744,10891500.00,2,0.4932
+year,2024,ONLINE,Todas,Classic A Bottle,3988,46857600.00,2,0.481
+year,2024,ONLINE,Todas,Sport B Bottle,3448,50550000.00,1,0.519
+year,2024,Todos,Buenos Aires,Classic A Bottle,2564,30124800.00,2,0.4681
+year,2024,Todos,Buenos Aires,Sport B Bottle,2327,34228500.00,1,0.5319
+year,2024,Todos,Córdoba,Classic A Bottle,1652,19430400.00,2,0.4811
+year,2024,Todos,Córdoba,Sport B Bottle,1423,20956500.00,1,0.5189
+year,2024,Todos,Mendoza,Classic A Bottle,1063,12571200.00,2,0.4577
+year,2024,Todos,Mendoza,Sport B Bottle,1012,14895000.00,1,0.5423
+year,2024,Todos,Santa Fe,Classic A Bottle,1645,19390200.00,2,0.4907
+year,2024,Todos,Santa Fe,Sport B Bottle,1369,20123250.00,1,0.5093
+year,2024,Todos,Todas,Classic A Bottle,6924,81516600.00,2,0.4747
+year,2024,Todos,Todas,Sport B Bottle,6131,90203250.00,1,0.5253
+year,2025,OFFLINE,Buenos Aires,Classic A Bottle,630,7493400.00,2,0.4405
+year,2025,OFFLINE,Buenos Aires,Sport B Bottle,641,9516000.00,1,0.5595
+year,2025,OFFLINE,Córdoba,Classic A Bottle,506,6026400.00,2,0.4317
+year,2025,OFFLINE,Córdoba,Sport B Bottle,538,7932750.00,1,0.5683
+year,2025,OFFLINE,Mendoza,Classic A Bottle,409,4865400.00,2,0.4679
+year,2025,OFFLINE,Mendoza,Sport B Bottle,372,5532000.00,1,0.5321
+year,2025,OFFLINE,Santa Fe,Classic A Bottle,520,6158400.00,2,0.4915
+year,2025,OFFLINE,Santa Fe,Sport B Bottle,428,6372000.00,1,0.5085
+year,2025,OFFLINE,Todas,Classic A Bottle,2065,24543600.00,2,0.4554
+year,2025,OFFLINE,Todas,Sport B Bottle,1979,29352750.00,1,0.5446
+year,2025,ONLINE,Buenos Aires,Classic A Bottle,1476,17248800.00,1,0.5012
+year,2025,ONLINE,Buenos Aires,Sport B Bottle,1162,17163750.00,2,0.4988
+year,2025,ONLINE,Córdoba,Classic A Bottle,774,9045000.00,2,0.496
+year,2025,ONLINE,Córdoba,Sport B Bottle,627,9190500.00,1,0.504
+year,2025,ONLINE,Mendoza,Classic A Bottle,511,6036000.00,2,0.4721
+year,2025,ONLINE,Mendoza,Sport B Bottle,462,6748500.00,1,0.5279
+year,2025,ONLINE,Santa Fe,Classic A Bottle,748,8784600.00,2,0.4662
+year,2025,ONLINE,Santa Fe,Sport B Bottle,686,10058250.00,1,0.5338
+year,2025,ONLINE,Todas,Classic A Bottle,3509,41114400.00,2,0.4879
+year,2025,ONLINE,Todas,Sport B Bottle,2937,43161000.00,1,0.5121
+year,2025,Todos,Buenos Aires,Classic A Bottle,2106,24742200.00,2,0.4812
+year,2025,Todos,Buenos Aires,Sport B Bottle,1803,26679750.00,1,0.5188
+year,2025,Todos,Córdoba,Classic A Bottle,1280,15071400.00,2,0.4681
+year,2025,Todos,Córdoba,Sport B Bottle,1165,17123250.00,1,0.5319
+year,2025,Todos,Mendoza,Classic A Bottle,920,10901400.00,2,0.4703
+year,2025,Todos,Mendoza,Sport B Bottle,834,12280500.00,1,0.5297
+year,2025,Todos,Santa Fe,Classic A Bottle,1268,14943000.00,2,0.4763
+year,2025,Todos,Santa Fe,Sport B Bottle,1114,16430250.00,1,0.5237
+year,2025,Todos,Todas,Classic A Bottle,5574,65658000.00,2,0.4752
+year,2025,Todos,Todas,Sport B Bottle,4916,72513750.00,1,0.5248

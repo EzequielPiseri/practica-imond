@@ -1,0 +1,4 @@
+channel,channel_label,sort_order
+Todos,Todos,1
+ONLINE,Tienda online,2
+OFFLINE,Tiendas físicas,3
