@@ -53,6 +53,10 @@
           <select id="f-prov"></select>
         </div>
         <div class="filtro">
+          <label class="etq" for="f-producto">Producto</label>
+          <select id="f-producto"></select>
+        </div>
+        <div class="filtro">
           <span class="etq">Montos</span>
           <div class="seg" id="f-iva" role="group" aria-label="Impuestos">
             <button type="button" data-v="con" aria-pressed="true">Con IVA</button>
@@ -114,7 +118,7 @@
             <h3>¿Qué producto vende más cada mes?</h3>
             <ul class="leyenda" id="ley-prod"></ul>
           </header>
-          <p class="ayuda">Ventas de línea (sin IVA ni envío) de cada producto por mes. A la derecha, el reparto en el período elegido.</p>
+          <p class="ayuda">Ventas de línea (sin IVA ni envío) de cada producto por mes. A la derecha, el reparto en el período elegido. El filtro <strong>Producto</strong> aplica solo a este gráfico: ventas, ticket y pedidos se miden por pedido, y un pedido puede tener los dos productos.</p>
           <div class="dos-col">
             <div class="grafico" id="g-prod"></div>
             <div id="g-prod-rep"></div>
@@ -228,7 +232,7 @@
 
   <footer class="pie">
     <div class="wrap">
-      <p><strong>Fuente:</strong> data warehouse de EcoBottle (DuckDB). Las tablas <code>data/marts/*.csv</code> las genera <code>sql/05_marts.sql</code> a partir del modelo estrella (<code>sql/01_dimensiones.sql</code> y <code>sql/02_hechos.sql</code>).</p>
+      <p><strong>Fuente:</strong> data warehouse de EcoBottle (DuckDB). Las tablas <code>data/marts/*.csv</code> las genera <code>sql/04_marts.sql</code> a partir del modelo estrella (<code>sql/01_dimensiones.sql</code> y <code>sql/02_hechos.sql</code>).</p>
       <p><strong>Reglas:</strong> venta = pedido <code>PAID</code> o <code>FULFILLED</code>; sin IVA = total − IVA (incluye el envío); usuarios activos = clientes logueados distintos; NPS = % promotores − % detractores.</p>
     </div>
   </footer>

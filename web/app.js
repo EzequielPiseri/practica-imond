@@ -2,7 +2,7 @@
 
 /* =====================================================================
    Tablero comercial EcoBottle AR
-   Lee las tablas mart de data/marts/ (calculadas en sql/05_marts.sql),
+   Lee las tablas mart de data/marts/ (calculadas en sql/04_marts.sql),
    busca la fila que corresponde a los filtros y la dibuja.
    No suma, no promedia ni divide valores de negocio.
    ===================================================================== */
@@ -107,9 +107,8 @@ function indexar(t) {
 /* ---------------------------------------------------------------------
    Estado de los filtros
    --------------------------------------------------------------------- */
-const inicial = () => ({ anio: "Todo", mes: "", canal: "Todos", prov: "Todas", iva: "con" });
+const inicial = () => ({ anio: "Todo", mes: "", canal: "Todos", prov: "Todas", iva: "con", producto: "Todos" });
 let F = inicial();
-const prodOcultos = new Set();
 const periodo = () => F.mes || F.anio;
 const etiquetaPeriodo = () => D.etiqueta.get(periodo()) || periodo();
 
@@ -521,13 +520,13 @@ function renderVentas() {
     `</tbody></table><p class="ayuda" style="margin-top:10px">Pedidos válidos: ${filas.map(({ c, f }) => `${c === "Todos" ? "total" : CANAL_NOMBRE[c].toLowerCase()} ${entero(f && num(f.sale_orders))}`).join(" · ")}.</p>`;
 
   // Productos
-  const prods = D.productosNombres.map((p, i) => ({ clave: p, nombre: p, color: COLOR(PROD_COLOR[i % 2]), visible: !prodOcultos.has(p) }));
+  const prods = D.productosNombres.map((p, i) => ({ clave: p, nombre: p, color: COLOR(PROD_COLOR[i % 2]), visible: F.producto === "Todos" || F.producto === p }));
   const ley = document.getElementById("ley-prod");
   ley.innerHTML = prods.map((p) => `<li><button type="button" data-prod="${esc(p.clave)}" aria-pressed="${p.visible}"><i class="clave" style="background:${p.color}"></i>${esc(p.nombre)}</button></li>`).join("");
   ley.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
     const p = b.dataset.prod;
-    if (prodOcultos.has(p)) prodOcultos.delete(p); else if (prodOcultos.size < prods.length - 1) prodOcultos.add(p);
-    renderVentas();
+    F.producto = F.producto === p ? "Todos" : p;
+    render();
   }));
   const filaProd = (per2, prod) => (D.productos.get(k(per2, F.canal, F.prov)) || []).find((f) => f.product === prod);
   columnasAgrupadas(document.getElementById("g-prod"), {
@@ -754,6 +753,7 @@ function pintarControles() {
   selMes.innerHTML = `<option value="">Todos los meses</option>` + meses.map((m) => `<option value="${m.period}">${esc(m.period_label)}</option>`).join("");
   selMes.value = F.mes;
   document.getElementById("f-prov").value = F.prov;
+  document.getElementById("f-producto").value = F.producto;
 }
 
 function iniciarControles() {
@@ -772,7 +772,11 @@ function iniciarControles() {
     render();
   });
   document.getElementById("f-prov").addEventListener("change", (e) => { F.prov = e.target.value; render(); });
-  document.getElementById("f-reset").addEventListener("click", () => { F = inicial(); prodOcultos.clear(); render(); });
+  document.getElementById("f-producto").innerHTML = `<option value="Todos">Todos</option>` + D.productosNombres.map((p) => `<option value="${esc(p)}">${esc(p)}</option>`).join("");
+  document.getElementById("f-producto").addEventListener("change", (e) => { F.producto = e.target.value; render(); });
+  // Los botones de año muestran la etiqueta del mart (por ejemplo "2025 (ene–sep)")
+  document.querySelectorAll("#f-anio button").forEach((b) => { if (b.dataset.v !== "Todo") b.textContent = D.etiqueta.get(b.dataset.v) || b.dataset.v; });
+  document.getElementById("f-reset").addEventListener("click", () => { F = inicial(); render(); });
 
   // Sección activa en la barra
   const enlaces = [...document.querySelectorAll(".secciones a")];
