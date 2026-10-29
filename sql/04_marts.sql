@@ -1,5 +1,5 @@
 -- =====================================================================
--- 05_marts.sql — Tablas MART: KPIs ya calculados para el tablero
+-- 04_marts.sql — Tablas MART: KPIs ya calculados para el tablero
 -- =====================================================================
 -- Los KPIs se calculan en SQL y se materializan en tablas. El tablero
 -- web solo lee estas tablas y muestra la fila que corresponde a los
@@ -395,9 +395,15 @@ WITH periods AS (
     SELECT 'total' AS period_type, 'Todo' AS period,
            'Todo el período' AS period_label, NULL::DATE AS period_start
     UNION ALL
-    SELECT DISTINCT 'year', CAST(year AS VARCHAR), CAST(year AS VARCHAR), make_date(year, 1, 1)
+    -- Un año con datos incompletos lleva el rango en la etiqueta: "2025 (ene–sep)"
+    SELECT 'year', CAST(year AS VARCHAR),
+           CAST(year AS VARCHAR) || CASE WHEN COUNT(DISTINCT month) < 12
+               THEN ' (' || lower(left(arg_min(month_name, month), 3)) || '–'
+                         || lower(left(arg_max(month_name, month), 3)) || ')' ELSE '' END,
+           make_date(year, 1, 1)
     FROM dim_date
     WHERE year_month IN (SELECT period FROM mart_sales_kpi WHERE period_type = 'month')
+    GROUP BY year
     UNION ALL
     SELECT DISTINCT 'month', year_month, month_name || ' ' || year, month_start
     FROM dim_date
