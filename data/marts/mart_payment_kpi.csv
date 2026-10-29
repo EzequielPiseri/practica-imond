@@ -1,0 +1,289 @@
+period_type,period,channel,payment_method,payments,paid,failed,failed_share
+month,2024-01,OFFLINE,Efectivo,82,80,0,0.0
+month,2024-01,OFFLINE,Tarjeta,108,104,2,0.0185
+month,2024-01,OFFLINE,Todos,217,209,2,0.0092
+month,2024-01,OFFLINE,Transferencia,27,25,0,0.0
+month,2024-01,ONLINE,Pasarela de pago (Mercado Pago),127,103,16,0.126
+month,2024-01,ONLINE,Tarjeta,165,148,9,0.0545
+month,2024-01,ONLINE,Todos,292,251,25,0.0856
+month,2024-01,Todos,Efectivo,82,80,0,0.0
+month,2024-01,Todos,Pasarela de pago (Mercado Pago),127,103,16,0.126
+month,2024-01,Todos,Tarjeta,273,252,11,0.0403
+month,2024-01,Todos,Todos,509,460,27,0.053
+month,2024-01,Todos,Transferencia,27,25,0,0.0
+month,2024-02,OFFLINE,Efectivo,84,83,0,0.0
+month,2024-02,OFFLINE,Tarjeta,121,115,2,0.0165
+month,2024-02,OFFLINE,Todos,237,229,2,0.0084
+month,2024-02,OFFLINE,Transferencia,32,31,0,0.0
+month,2024-02,ONLINE,Pasarela de pago (Mercado Pago),135,122,7,0.0519
+month,2024-02,ONLINE,Tarjeta,185,162,12,0.0649
+month,2024-02,ONLINE,Todos,320,284,19,0.0594
+month,2024-02,Todos,Efectivo,84,83,0,0.0
+month,2024-02,Todos,Pasarela de pago (Mercado Pago),135,122,7,0.0519
+month,2024-02,Todos,Tarjeta,306,277,14,0.0458
+month,2024-02,Todos,Todos,557,513,21,0.0377
+month,2024-02,Todos,Transferencia,32,31,0,0.0
+month,2024-03,OFFLINE,Efectivo,82,80,0,0.0
+month,2024-03,OFFLINE,Tarjeta,131,125,4,0.0305
+month,2024-03,OFFLINE,Todos,238,229,4,0.0168
+month,2024-03,OFFLINE,Transferencia,25,24,0,0.0
+month,2024-03,ONLINE,Pasarela de pago (Mercado Pago),116,99,11,0.0948
+month,2024-03,ONLINE,Tarjeta,171,154,9,0.0526
+month,2024-03,ONLINE,Todos,287,253,20,0.0697
+month,2024-03,Todos,Efectivo,82,80,0,0.0
+month,2024-03,Todos,Pasarela de pago (Mercado Pago),116,99,11,0.0948
+month,2024-03,Todos,Tarjeta,302,279,13,0.043
+month,2024-03,Todos,Todos,525,482,24,0.0457
+month,2024-03,Todos,Transferencia,25,24,0,0.0
+month,2024-04,OFFLINE,Efectivo,70,69,0,0.0
+month,2024-04,OFFLINE,Tarjeta,101,100,0,0.0
+month,2024-04,OFFLINE,Todos,196,194,0,0.0
+month,2024-04,OFFLINE,Transferencia,25,25,0,0.0
+month,2024-04,ONLINE,Pasarela de pago (Mercado Pago),110,96,10,0.0909
+month,2024-04,ONLINE,Tarjeta,162,148,5,0.0309
+month,2024-04,ONLINE,Todos,272,244,15,0.0551
+month,2024-04,Todos,Efectivo,70,69,0,0.0
+month,2024-04,Todos,Pasarela de pago (Mercado Pago),110,96,10,0.0909
+month,2024-04,Todos,Tarjeta,263,248,5,0.019
+month,2024-04,Todos,Todos,468,438,15,0.0321
+month,2024-04,Todos,Transferencia,25,25,0,0.0
+month,2024-05,OFFLINE,Efectivo,71,71,0,0.0
+month,2024-05,OFFLINE,Tarjeta,97,94,3,0.0309
+month,2024-05,OFFLINE,Todos,193,189,3,0.0155
+month,2024-05,OFFLINE,Transferencia,25,24,0,0.0
+month,2024-05,ONLINE,Pasarela de pago (Mercado Pago),140,119,18,0.1286
+month,2024-05,ONLINE,Tarjeta,187,166,6,0.0321
+month,2024-05,ONLINE,Todos,327,285,24,0.0734
+month,2024-05,Todos,Efectivo,71,71,0,0.0
+month,2024-05,Todos,Pasarela de pago (Mercado Pago),140,119,18,0.1286
+month,2024-05,Todos,Tarjeta,284,260,9,0.0317
+month,2024-05,Todos,Todos,520,474,27,0.0519
+month,2024-05,Todos,Transferencia,25,24,0,0.0
+month,2024-06,OFFLINE,Efectivo,92,91,0,0.0
+month,2024-06,OFFLINE,Tarjeta,142,135,3,0.0211
+month,2024-06,OFFLINE,Todos,259,250,3,0.0116
+month,2024-06,OFFLINE,Transferencia,25,24,0,0.0
+month,2024-06,ONLINE,Pasarela de pago (Mercado Pago),148,131,13,0.0878
+month,2024-06,ONLINE,Tarjeta,189,174,10,0.0529
+month,2024-06,ONLINE,Todos,337,305,23,0.0682
+month,2024-06,Todos,Efectivo,92,91,0,0.0
+month,2024-06,Todos,Pasarela de pago (Mercado Pago),148,131,13,0.0878
+month,2024-06,Todos,Tarjeta,331,309,13,0.0393
+month,2024-06,Todos,Todos,596,555,26,0.0436
+month,2024-06,Todos,Transferencia,25,24,0,0.0
+month,2024-07,OFFLINE,Efectivo,74,73,0,0.0
+month,2024-07,OFFLINE,Tarjeta,97,94,1,0.0103
+month,2024-07,OFFLINE,Todos,189,185,1,0.0053
+month,2024-07,OFFLINE,Transferencia,18,18,0,0.0
+month,2024-07,ONLINE,Pasarela de pago (Mercado Pago),98,80,12,0.1224
+month,2024-07,ONLINE,Tarjeta,138,122,6,0.0435
+month,2024-07,ONLINE,Todos,236,202,18,0.0763
+month,2024-07,Todos,Efectivo,74,73,0,0.0
+month,2024-07,Todos,Pasarela de pago (Mercado Pago),98,80,12,0.1224
+month,2024-07,Todos,Tarjeta,235,216,7,0.0298
+month,2024-07,Todos,Todos,425,387,19,0.0447
+month,2024-07,Todos,Transferencia,18,18,0,0.0
+month,2024-08,OFFLINE,Efectivo,79,78,0,0.0
+month,2024-08,OFFLINE,Tarjeta,109,103,3,0.0275
+month,2024-08,OFFLINE,Todos,206,199,3,0.0146
+month,2024-08,OFFLINE,Transferencia,18,18,0,0.0
+month,2024-08,ONLINE,Pasarela de pago (Mercado Pago),119,107,5,0.042
+month,2024-08,ONLINE,Tarjeta,160,138,7,0.0438
+month,2024-08,ONLINE,Todos,279,245,12,0.043
+month,2024-08,Todos,Efectivo,79,78,0,0.0
+month,2024-08,Todos,Pasarela de pago (Mercado Pago),119,107,5,0.042
+month,2024-08,Todos,Tarjeta,269,241,10,0.0372
+month,2024-08,Todos,Todos,485,444,15,0.0309
+month,2024-08,Todos,Transferencia,18,18,0,0.0
+month,2024-09,OFFLINE,Efectivo,78,78,0,0.0
+month,2024-09,OFFLINE,Tarjeta,101,97,1,0.0099
+month,2024-09,OFFLINE,Todos,199,195,1,0.005
+month,2024-09,OFFLINE,Transferencia,20,20,0,0.0
+month,2024-09,ONLINE,Pasarela de pago (Mercado Pago),119,104,8,0.0672
+month,2024-09,ONLINE,Tarjeta,155,144,6,0.0387
+month,2024-09,ONLINE,Todos,274,248,14,0.0511
+month,2024-09,Todos,Efectivo,78,78,0,0.0
+month,2024-09,Todos,Pasarela de pago (Mercado Pago),119,104,8,0.0672
+month,2024-09,Todos,Tarjeta,256,241,7,0.0273
+month,2024-09,Todos,Todos,473,443,15,0.0317
+month,2024-09,Todos,Transferencia,20,20,0,0.0
+month,2024-10,OFFLINE,Efectivo,87,85,0,0.0
+month,2024-10,OFFLINE,Tarjeta,120,114,5,0.0417
+month,2024-10,OFFLINE,Todos,229,221,5,0.0218
+month,2024-10,OFFLINE,Transferencia,22,22,0,0.0
+month,2024-10,ONLINE,Pasarela de pago (Mercado Pago),170,145,16,0.0941
+month,2024-10,ONLINE,Tarjeta,191,173,10,0.0524
+month,2024-10,ONLINE,Todos,361,318,26,0.072
+month,2024-10,Todos,Efectivo,87,85,0,0.0
+month,2024-10,Todos,Pasarela de pago (Mercado Pago),170,145,16,0.0941
+month,2024-10,Todos,Tarjeta,311,287,15,0.0482
+month,2024-10,Todos,Todos,590,539,31,0.0525
+month,2024-10,Todos,Transferencia,22,22,0,0.0
+month,2024-11,OFFLINE,Efectivo,103,99,0,0.0
+month,2024-11,OFFLINE,Tarjeta,78,73,3,0.0385
+month,2024-11,OFFLINE,Todos,214,205,3,0.014
+month,2024-11,OFFLINE,Transferencia,33,33,0,0.0
+month,2024-11,ONLINE,Pasarela de pago (Mercado Pago),178,155,20,0.1124
+month,2024-11,ONLINE,Tarjeta,233,212,10,0.0429
+month,2024-11,ONLINE,Todos,411,367,30,0.073
+month,2024-11,Todos,Efectivo,103,99,0,0.0
+month,2024-11,Todos,Pasarela de pago (Mercado Pago),178,155,20,0.1124
+month,2024-11,Todos,Tarjeta,311,285,13,0.0418
+month,2024-11,Todos,Todos,625,572,33,0.0528
+month,2024-11,Todos,Transferencia,33,33,0,0.0
+month,2024-12,OFFLINE,Efectivo,130,126,0,0.0
+month,2024-12,OFFLINE,Tarjeta,156,148,7,0.0449
+month,2024-12,OFFLINE,Todos,324,312,7,0.0216
+month,2024-12,OFFLINE,Transferencia,38,38,0,0.0
+month,2024-12,ONLINE,Pasarela de pago (Mercado Pago),214,181,21,0.0981
+month,2024-12,ONLINE,Tarjeta,327,292,19,0.0581
+month,2024-12,ONLINE,Todos,541,473,40,0.0739
+month,2024-12,Todos,Efectivo,130,126,0,0.0
+month,2024-12,Todos,Pasarela de pago (Mercado Pago),214,181,21,0.0981
+month,2024-12,Todos,Tarjeta,483,440,26,0.0538
+month,2024-12,Todos,Todos,865,785,47,0.0543
+month,2024-12,Todos,Transferencia,38,38,0,0.0
+month,2025-01,OFFLINE,Efectivo,96,93,0,0.0
+month,2025-01,OFFLINE,Tarjeta,132,126,3,0.0227
+month,2025-01,OFFLINE,Todos,266,257,3,0.0113
+month,2025-01,OFFLINE,Transferencia,38,38,0,0.0
+month,2025-01,ONLINE,Pasarela de pago (Mercado Pago),166,144,20,0.1205
+month,2025-01,ONLINE,Tarjeta,210,190,10,0.0476
+month,2025-01,ONLINE,Todos,376,334,30,0.0798
+month,2025-01,Todos,Efectivo,96,93,0,0.0
+month,2025-01,Todos,Pasarela de pago (Mercado Pago),166,144,20,0.1205
+month,2025-01,Todos,Tarjeta,342,316,13,0.038
+month,2025-01,Todos,Todos,642,591,33,0.0514
+month,2025-01,Todos,Transferencia,38,38,0,0.0
+month,2025-02,OFFLINE,Efectivo,97,97,0,0.0
+month,2025-02,OFFLINE,Tarjeta,143,142,0,0.0
+month,2025-02,OFFLINE,Todos,267,265,0,0.0
+month,2025-02,OFFLINE,Transferencia,27,26,0,0.0
+month,2025-02,ONLINE,Pasarela de pago (Mercado Pago),167,144,19,0.1138
+month,2025-02,ONLINE,Tarjeta,220,199,14,0.0636
+month,2025-02,ONLINE,Todos,387,343,33,0.0853
+month,2025-02,Todos,Efectivo,97,97,0,0.0
+month,2025-02,Todos,Pasarela de pago (Mercado Pago),167,144,19,0.1138
+month,2025-02,Todos,Tarjeta,363,341,14,0.0386
+month,2025-02,Todos,Todos,654,608,33,0.0505
+month,2025-02,Todos,Transferencia,27,26,0,0.0
+month,2025-03,OFFLINE,Efectivo,83,80,0,0.0
+month,2025-03,OFFLINE,Tarjeta,137,134,1,0.0073
+month,2025-03,OFFLINE,Todos,251,244,1,0.004
+month,2025-03,OFFLINE,Transferencia,31,30,0,0.0
+month,2025-03,ONLINE,Pasarela de pago (Mercado Pago),160,138,15,0.0938
+month,2025-03,ONLINE,Tarjeta,218,199,8,0.0367
+month,2025-03,ONLINE,Todos,378,337,23,0.0608
+month,2025-03,Todos,Efectivo,83,80,0,0.0
+month,2025-03,Todos,Pasarela de pago (Mercado Pago),160,138,15,0.0938
+month,2025-03,Todos,Tarjeta,355,333,9,0.0254
+month,2025-03,Todos,Todos,629,581,24,0.0382
+month,2025-03,Todos,Transferencia,31,30,0,0.0
+month,2025-04,OFFLINE,Efectivo,74,74,0,0.0
+month,2025-04,OFFLINE,Tarjeta,98,92,2,0.0204
+month,2025-04,OFFLINE,Todos,191,185,2,0.0105
+month,2025-04,OFFLINE,Transferencia,19,19,0,0.0
+month,2025-04,ONLINE,Pasarela de pago (Mercado Pago),149,117,24,0.1611
+month,2025-04,ONLINE,Tarjeta,218,193,11,0.0505
+month,2025-04,ONLINE,Todos,367,310,35,0.0954
+month,2025-04,Todos,Efectivo,74,74,0,0.0
+month,2025-04,Todos,Pasarela de pago (Mercado Pago),149,117,24,0.1611
+month,2025-04,Todos,Tarjeta,316,285,13,0.0411
+month,2025-04,Todos,Todos,558,495,37,0.0663
+month,2025-04,Todos,Transferencia,19,19,0,0.0
+month,2025-05,OFFLINE,Efectivo,74,70,0,0.0
+month,2025-05,OFFLINE,Tarjeta,106,101,5,0.0472
+month,2025-05,OFFLINE,Todos,204,195,5,0.0245
+month,2025-05,OFFLINE,Transferencia,24,24,0,0.0
+month,2025-05,ONLINE,Pasarela de pago (Mercado Pago),196,175,13,0.0663
+month,2025-05,ONLINE,Tarjeta,239,218,14,0.0586
+month,2025-05,ONLINE,Todos,435,393,27,0.0621
+month,2025-05,Todos,Efectivo,74,70,0,0.0
+month,2025-05,Todos,Pasarela de pago (Mercado Pago),196,175,13,0.0663
+month,2025-05,Todos,Tarjeta,345,319,19,0.0551
+month,2025-05,Todos,Todos,639,588,32,0.0501
+month,2025-05,Todos,Transferencia,24,24,0,0.0
+month,2025-06,OFFLINE,Efectivo,97,95,0,0.0
+month,2025-06,OFFLINE,Tarjeta,115,112,3,0.0261
+month,2025-06,OFFLINE,Todos,238,233,3,0.0126
+month,2025-06,OFFLINE,Transferencia,26,26,0,0.0
+month,2025-06,ONLINE,Pasarela de pago (Mercado Pago),152,134,15,0.0987
+month,2025-06,ONLINE,Tarjeta,209,195,7,0.0335
+month,2025-06,ONLINE,Todos,361,329,22,0.0609
+month,2025-06,Todos,Efectivo,97,95,0,0.0
+month,2025-06,Todos,Pasarela de pago (Mercado Pago),152,134,15,0.0987
+month,2025-06,Todos,Tarjeta,324,307,10,0.0309
+month,2025-06,Todos,Todos,599,562,25,0.0417
+month,2025-06,Todos,Transferencia,26,26,0,0.0
+month,2025-07,OFFLINE,Efectivo,80,76,0,0.0
+month,2025-07,OFFLINE,Tarjeta,76,75,0,0.0
+month,2025-07,OFFLINE,Todos,177,170,0,0.0
+month,2025-07,OFFLINE,Transferencia,21,19,0,0.0
+month,2025-07,ONLINE,Pasarela de pago (Mercado Pago),131,117,10,0.0763
+month,2025-07,ONLINE,Tarjeta,168,156,9,0.0536
+month,2025-07,ONLINE,Todos,299,273,19,0.0635
+month,2025-07,Todos,Efectivo,80,76,0,0.0
+month,2025-07,Todos,Pasarela de pago (Mercado Pago),131,117,10,0.0763
+month,2025-07,Todos,Tarjeta,244,231,9,0.0369
+month,2025-07,Todos,Todos,476,443,19,0.0399
+month,2025-07,Todos,Transferencia,21,19,0,0.0
+month,2025-08,OFFLINE,Efectivo,73,73,0,0.0
+month,2025-08,OFFLINE,Tarjeta,118,109,5,0.0424
+month,2025-08,OFFLINE,Todos,221,211,5,0.0226
+month,2025-08,OFFLINE,Transferencia,30,29,0,0.0
+month,2025-08,ONLINE,Pasarela de pago (Mercado Pago),160,140,16,0.1
+month,2025-08,ONLINE,Tarjeta,227,200,16,0.0705
+month,2025-08,ONLINE,Todos,387,340,32,0.0827
+month,2025-08,Todos,Efectivo,73,73,0,0.0
+month,2025-08,Todos,Pasarela de pago (Mercado Pago),160,140,16,0.1
+month,2025-08,Todos,Tarjeta,345,309,21,0.0609
+month,2025-08,Todos,Todos,608,551,37,0.0609
+month,2025-08,Todos,Transferencia,30,29,0,0.0
+month,2025-09,OFFLINE,Efectivo,65,65,0,0.0
+month,2025-09,OFFLINE,Tarjeta,82,78,1,0.0122
+month,2025-09,OFFLINE,Todos,167,163,1,0.006
+month,2025-09,OFFLINE,Transferencia,20,20,0,0.0
+month,2025-09,ONLINE,Pasarela de pago (Mercado Pago),138,120,14,0.1014
+month,2025-09,ONLINE,Tarjeta,221,204,10,0.0452
+month,2025-09,ONLINE,Todos,359,324,24,0.0669
+month,2025-09,Todos,Efectivo,65,65,0,0.0
+month,2025-09,Todos,Pasarela de pago (Mercado Pago),138,120,14,0.1014
+month,2025-09,Todos,Tarjeta,303,282,11,0.0363
+month,2025-09,Todos,Todos,526,487,25,0.0475
+month,2025-09,Todos,Transferencia,20,20,0,0.0
+total,Todo,OFFLINE,Efectivo,1771,1736,0,0.0
+total,Todo,OFFLINE,Tarjeta,2368,2271,54,0.0228
+total,Todo,OFFLINE,Todos,4683,4540,54,0.0115
+total,Todo,OFFLINE,Transferencia,544,533,0,0.0
+total,Todo,ONLINE,Pasarela de pago (Mercado Pago),3093,2671,303,0.098
+total,Todo,ONLINE,Tarjeta,4193,3787,208,0.0496
+total,Todo,ONLINE,Todos,7286,6458,511,0.0701
+total,Todo,Todos,Efectivo,1771,1736,0,0.0
+total,Todo,Todos,Pasarela de pago (Mercado Pago),3093,2671,303,0.098
+total,Todo,Todos,Tarjeta,6561,6058,262,0.0399
+total,Todo,Todos,Todos,11969,10998,565,0.0472
+total,Todo,Todos,Transferencia,544,533,0,0.0
+year,2024,OFFLINE,Efectivo,1032,1013,0,0.0
+year,2024,OFFLINE,Tarjeta,1361,1302,34,0.025
+year,2024,OFFLINE,Todos,2701,2617,34,0.0126
+year,2024,OFFLINE,Transferencia,308,302,0,0.0
+year,2024,ONLINE,Pasarela de pago (Mercado Pago),1674,1442,157,0.0938
+year,2024,ONLINE,Tarjeta,2263,2033,109,0.0482
+year,2024,ONLINE,Todos,3937,3475,266,0.0676
+year,2024,Todos,Efectivo,1032,1013,0,0.0
+year,2024,Todos,Pasarela de pago (Mercado Pago),1674,1442,157,0.0938
+year,2024,Todos,Tarjeta,3624,3335,143,0.0395
+year,2024,Todos,Todos,6638,6092,300,0.0452
+year,2024,Todos,Transferencia,308,302,0,0.0
+year,2025,OFFLINE,Efectivo,739,723,0,0.0
+year,2025,OFFLINE,Tarjeta,1007,969,20,0.0199
+year,2025,OFFLINE,Todos,1982,1923,20,0.0101
+year,2025,OFFLINE,Transferencia,236,231,0,0.0
+year,2025,ONLINE,Pasarela de pago (Mercado Pago),1419,1229,146,0.1029
+year,2025,ONLINE,Tarjeta,1930,1754,99,0.0513
+year,2025,ONLINE,Todos,3349,2983,245,0.0732
+year,2025,Todos,Efectivo,739,723,0,0.0
+year,2025,Todos,Pasarela de pago (Mercado Pago),1419,1229,146,0.1029
+year,2025,Todos,Tarjeta,2937,2723,119,0.0405
+year,2025,Todos,Todos,5331,4906,265,0.0497
+year,2025,Todos,Transferencia,236,231,0,0.0

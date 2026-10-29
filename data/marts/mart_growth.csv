@@ -1,0 +1,10 @@
+sort_order,kpi,unit,value_2024,value_2025,change,change_unit
+1,Ventas con IVA,money,146308315.5,170630917.5,16.6,%
+2,Ventas sin IVA,money,121384350.0,141614850.0,16.7,%
+3,Ventas tienda online,money,81186546.0,105310134.0,29.7,%
+4,Ventas tiendas físicas,money,65121769.5,65320783.5,0.3,%
+5,Pedidos válidos,count,4196.0,4906.0,16.9,%
+6,Clientes que compraron,count,1624.0,2264.0,39.4,%
+7,Ticket promedio (con IVA),money,34868.52,34780.05,-0.3,%
+8,Usuarios activos,count,1472.0,2324.0,57.9,%
+9,NPS,score,23.31,33.92,10.6,puntos

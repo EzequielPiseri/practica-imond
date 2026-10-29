@@ -2,7 +2,7 @@
 """Arma el data warehouse ejecutando los archivos SQL de la carpeta sql/.
 
 Uso:
-    python run_sql.py              # ejecuta sql/*.sql en orden y exporta el resultado a dw/
+    python run_sql.py              # ejecuta sql/*.sql en orden y exporta el resultado a data/
     python run_sql.py --ui         # lo mismo y después abre DuckDB en el navegador para explorar
     python run_sql.py --explorar   # solo abre las tablas de origen para explorarlas (no ejecuta sql/)
 
@@ -13,8 +13,10 @@ Cada vez que se arma el data warehouse:
   1. Borra la base warehouse.duckdb y la vuelve a crear desde cero.
   2. Ejecuta los archivos de sql/ en orden alfabético (01_..., 02_..., 03_...).
      Si una consulta es un SELECT, muestra el resultado en la terminal.
-  3. Exporta cada tabla creada a dw/<tabla>.csv (la carpeta dw/ se regenera completa).
-  4. Genera dw/modelo_estrella.md con el diagrama del modelo (GitHub lo dibuja solo).
+  3. Exporta cada tabla creada a un CSV (las carpetas se regeneran completas):
+       data/marts/<tabla>.csv             las tablas mart_* (KPIs que consume el tablero)
+       data/modelo_estrella/<tabla>.csv   dimensiones y hechos
+  4. Genera data/modelo_estrella/modelo_estrella.md con el diagrama del modelo (GitHub lo dibuja solo).
 
 La interfaz del navegador necesita internet. Sin conexión se abre una consola SQL en la terminal.
 """
@@ -32,9 +34,12 @@ import duckdb
 ROOT = Path(__file__).resolve().parent
 RAW_DIR = ROOT / "raw"
 SQL_DIR = ROOT / "sql"
-DW_DIR = ROOT / "dw"
+DATA_DIR = ROOT / "data"
+MODEL_DIR = DATA_DIR / "modelo_estrella"
+MARTS_DIR = DATA_DIR / "marts"
+MART_PREFIX = "mart_"
 DATABASE = ROOT / "warehouse.duckdb"
-DIAGRAM = DW_DIR / "modelo_estrella.md"
+DIAGRAM = MODEL_DIR / "modelo_estrella.md"
 UI_HOST = "ui.duckdb.org"  # de acá la interfaz descarga sus archivos
 ALREADY_OPEN = ("La base warehouse.duckdb está abierta en otra terminal (¿quedó abierto --ui o --explorar?).\n"
                 "Cerrala presionando Enter en esa terminal y volvé a ejecutar.")
@@ -60,9 +65,11 @@ def reset_outputs() -> None:
     try:
         for path in (DATABASE, DATABASE.with_name(DATABASE.name + ".wal")):
             path.unlink(missing_ok=True)
-        DW_DIR.mkdir(exist_ok=True)
-        for path in list(DW_DIR.glob("*.csv")) + [DIAGRAM]:
-            path.unlink(missing_ok=True)
+        for folder in (MODEL_DIR, MARTS_DIR):
+            folder.mkdir(parents=True, exist_ok=True)
+            for path in folder.glob("*.csv"):
+                path.unlink()
+        DIAGRAM.unlink(missing_ok=True)
     except PermissionError:
         sys.exit(ALREADY_OPEN)
 
@@ -106,12 +113,20 @@ def user_tables(con: duckdb.DuckDBPyConnection) -> list[str]:
     return [row[0] for row in rows]
 
 
+def is_mart(table: str) -> bool:
+    return table.startswith(MART_PREFIX)
+
+
 def export_tables(con: duckdb.DuckDBPyConnection, tables: list[str]) -> None:
-    print("\nTablas exportadas a dw/:")
-    for table in tables:
-        rows = con.sql(f'SELECT COUNT(*) FROM main."{table}"').fetchone()[0]
-        con.sql(f"COPY main.\"{table}\" TO '{(DW_DIR / f'{table}.csv').as_posix()}' (HEADER)")
-        print(f"  {table + '.csv':<32}{rows:>10} filas")
+    for folder, group in ((MODEL_DIR, [t for t in tables if not is_mart(t)]),
+                          (MARTS_DIR, [t for t in tables if is_mart(t)])):
+        if not group:
+            continue
+        print(f"\nTablas exportadas a {folder.relative_to(ROOT).as_posix()}/:")
+        for table in group:
+            rows = con.sql(f'SELECT COUNT(*) FROM main."{table}"').fetchone()[0]
+            con.sql(f"COPY main.\"{table}\" TO '{(folder / f'{table}.csv').as_posix()}' (HEADER)")
+            print(f"  {table + '.csv':<32}{rows:>10} filas")
 
 
 def write_diagram(con: duckdb.DuckDBPyConnection, tables: list[str]) -> None:
@@ -167,7 +182,7 @@ def build() -> duckdb.DuckDBPyConnection:
     tables = user_tables(con)
     if tables:
         export_tables(con, tables)
-        write_diagram(con, tables)
+        write_diagram(con, [t for t in tables if not is_mart(t)])
     else:
         print("\nTodavía no se creó ninguna tabla.")
     print(f"\nListo. Base de datos: {DATABASE.name}")
@@ -226,7 +241,7 @@ def console(con: duckdb.DuckDBPyConnection) -> None:
 
 
 def explore() -> None:
-    con = duckdb.connect()  # en memoria: no toca warehouse.duckdb ni dw/
+    con = duckdb.connect()  # en memoria: no toca warehouse.duckdb ni data/
     names = create_raw_views(con)
     print("Tablas de origen disponibles (esquema raw):")
     for i in range(0, len(names), 4):

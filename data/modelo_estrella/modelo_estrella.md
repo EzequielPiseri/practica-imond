@@ -13,7 +13,6 @@ erDiagram
     dim_customer ||--o{ fact_sales_order : "customer_key"
     dim_customer ||--o{ fact_sales_order_item : "customer_key"
     dim_customer ||--o{ fact_web_session : "customer_key"
-    dim_date ||--o{ agg_sales_product_month : "month_date_key"
     dim_date ||--o{ fact_nps_response : "date_key"
     dim_date ||--o{ fact_payment : "order_date_key"
     dim_date ||--o{ fact_payment : "paid_date_key"
@@ -28,7 +27,6 @@ erDiagram
     dim_order_status ||--o{ fact_sales_order_item : "order_status_key"
     dim_payment_method ||--o{ fact_payment : "payment_method_key"
     dim_payment_method ||--o{ fact_sales_order : "payment_method_key"
-    dim_product ||--o{ agg_sales_product_month : "product_key"
     dim_product ||--o{ fact_sales_order_item : "product_key"
     dim_province ||--o{ fact_sales_order : "province_key"
     dim_province ||--o{ fact_sales_order_item : "province_key"
@@ -37,14 +35,6 @@ erDiagram
     dim_store ||--o{ fact_sales_order_item : "store_key"
     dim_store ||--o{ fact_shipment : "store_key"
     dim_traffic_source ||--o{ fact_web_session : "traffic_source_key"
-    agg_sales_product_month {
-        INTEGER month_date_key PK, FK
-        INTEGER product_key PK, FK
-        INTEGER units
-        DECIMAL sales_amount
-        INTEGER rank_in_month
-        DECIMAL share_of_month
-    }
     dim_channel {
         INTEGER channel_key PK
         INTEGER channel_id
@@ -210,168 +200,5 @@ erDiagram
         BOOLEAN is_logged_in
         INTEGER duration_seconds
         INTEGER active_customer_key
-    }
-    looker_nps {
-        BIGINT respuesta_id
-        VARCHAR fecha
-        VARCHAR mes
-        VARCHAR canal
-        VARCHAR provincia
-        SMALLINT puntaje
-        VARCHAR grupo_nps
-        INTEGER es_promotor
-        INTEGER es_pasivo
-        INTEGER es_detractor
-        VARCHAR comentario
-    }
-    looker_productos {
-        BIGINT linea_id
-        BIGINT pedido_id
-        VARCHAR fecha
-        VARCHAR mes
-        VARCHAR canal
-        VARCHAR provincia
-        VARCHAR producto
-        VARCHAR categoria
-        INTEGER es_venta
-        INTEGER unidades
-        DECIMAL monto_linea
-        DECIMAL monto_venta_linea
-    }
-    looker_sesiones {
-        BIGINT sesion_id
-        VARCHAR fecha
-        VARCHAR mes
-        INTEGER cliente_id
-        INTEGER logueado
-        VARCHAR origen
-        VARCHAR dispositivo
-        INTEGER duracion_segundos
-    }
-    looker_usuarios_mes {
-        VARCHAR mes
-        BIGINT usuarios_activos
-        BIGINT sesiones
-        HUGEINT sesiones_logueadas
-    }
-    looker_ventas {
-        BIGINT pedido_id
-        VARCHAR fecha
-        VARCHAR mes
-        VARCHAR canal
-        VARCHAR tienda
-        VARCHAR provincia
-        VARCHAR provincia_iso
-        VARCHAR estado
-        VARCHAR medio_pago
-        INTEGER es_venta
-        INTEGER unidades
-        DECIMAL monto_total
-        DECIMAL monto_venta
-    }
-    mart_customer_kpi {
-        VARCHAR period_type
-        VARCHAR period
-        BIGINT active_users
-        BIGINT sessions
-        BIGINT logged_sessions
-        DOUBLE logged_share
-    }
-    mart_dim_channel {
-        VARCHAR channel
-        VARCHAR channel_label
-        INTEGER sort_order
-    }
-    mart_dim_period {
-        VARCHAR period
-        VARCHAR period_type
-        VARCHAR period_label
-        DATE period_start
-        BIGINT sort_order
-    }
-    mart_dim_province {
-        VARCHAR province
-        BIGINT sort_order
-    }
-    mart_growth {
-        INTEGER sort_order
-        VARCHAR kpi
-        DOUBLE value_2024
-        DOUBLE value_2025
-        DOUBLE change
-        VARCHAR change_unit
-        VARCHAR label_2024
-        VARCHAR label_2025
-        VARCHAR label_change
-        VARCHAR change_color
-    }
-    mart_nps_group {
-        VARCHAR period_type
-        VARCHAR period
-        VARCHAR channel
-        VARCHAR nps_group
-        INTEGER sort_order
-        HUGEINT responses
-        DOUBLE share
-    }
-    mart_nps_kpi {
-        VARCHAR period_type
-        VARCHAR period
-        VARCHAR channel
-        BIGINT responses
-        HUGEINT promoters
-        HUGEINT passives
-        HUGEINT detractors
-        DOUBLE promoter_share
-        DOUBLE detractor_share
-        DOUBLE nps
-    }
-    mart_order_status {
-        VARCHAR period_type
-        VARCHAR period
-        VARCHAR channel
-        VARCHAR province
-        VARCHAR status_code
-        VARCHAR status_description
-        BOOLEAN is_sale
-        BIGINT orders
-        DECIMAL total_amount
-    }
-    mart_sales_kpi {
-        VARCHAR period_type
-        VARCHAR period
-        VARCHAR channel
-        VARCHAR province
-        BIGINT orders_total
-        HUGEINT sale_orders
-        HUGEINT non_sale_orders
-        DOUBLE sale_order_share
-        DECIMAL sales_amount
-        DECIMAL sales_net_amount
-        DECIMAL sales_tax_amount
-        DECIMAL sales_shipping_amount
-        DECIMAL non_sale_amount
-        DOUBLE ticket_amount
-        DOUBLE ticket_net_amount
-        DOUBLE ticket_no_shipping
-    }
-    mart_sales_product {
-        VARCHAR period_type
-        VARCHAR period
-        VARCHAR channel
-        VARCHAR province
-        VARCHAR product
-        HUGEINT units
-        DECIMAL sales_line_amount
-        BIGINT rank_in_period
-        DOUBLE share_of_period
-    }
-    mart_session_mix {
-        VARCHAR period_type
-        VARCHAR period
-        VARCHAR breakdown
-        VARCHAR label
-        BIGINT sessions
-        DOUBLE share
     }
 ```
