@@ -19,7 +19,7 @@
 -- COLUMNAS DE MEDIDA: cada KPI tiene una columna preparada para que se
 -- calcule con una agregación estándar (SUM, AVG o COUNT DISTINCT) y el
 -- resultado sea correcto con cualquier agrupación. Los marts de
--- 05_marts.sql se calculan a partir de estas columnas:
+-- 04_marts.sql se calculan a partir de estas columnas:
 --   Ventas con IVA     SUMA     fact_sales_order.sales_amount
 --   Ventas sin IVA     SUMA     fact_sales_order.sales_net_amount
 --   Pedidos válidos    SUMA     fact_sales_order.sale_count

@@ -5,7 +5,7 @@
 -- Parte B: los KPIs del tablero, calculados desde el modelo estrella con
 --          las columnas de medida de 02_hechos.sql. Los mismos KPIs, ya
 --          materializados por período, canal y provincia, están en
---          05_marts.sql.
+--          04_marts.sql.
 -- Parte C: consultas exploratorias para hallazgos.
 -- =====================================================================
 
