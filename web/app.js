@@ -19,6 +19,7 @@ const ARCHIVOS = {
   entregas: "mart_delivery_kpi",
   pagos: "mart_payment_kpi",
   crecimiento: "mart_growth",
+  lideres: "mart_product_leaders",
   periodos: "mart_dim_period",
   canales: "mart_dim_channel",
   provincias: "mart_dim_province",
@@ -93,6 +94,7 @@ function indexar(t) {
   D.npsGrupos = agrupar(t.npsGrupos, (f) => k(f.period, f.channel));
   D.entregas = new Map(t.entregas.map((f) => [k(f.period, f.channel, f.province), f]));
   D.pagos = agrupar(t.pagos.filter((f) => f.payment_method !== "Todos"), (f) => k(f.period, f.channel));
+  D.lideres = t.lideres;
   D.crecimiento = t.crecimiento.slice().sort((a, b) => num(a.sort_order) - num(b.sort_order));
   D.periodos = t.periodos.slice().sort((a, b) => num(a.sort_order) - num(b.sort_order));
   D.meses = D.periodos.filter((p) => p.period_type === "month");
@@ -647,40 +649,76 @@ function renderCrecimiento() {
 /* ---------------------------------------------------------------------
    Hallazgos: cada uno lleva al gráfico que lo respalda
    --------------------------------------------------------------------- */
+// Los números de cada hallazgo se buscan en los marts (no se calculan acá);
+// la interpretación es texto de análisis.
+const busca = {
+  dias: (mes) => num(D.entregas.get(k(mes, "Todos", "Todas"))?.avg_days_to_deliver),
+  nps: (per, canal) => num(D.nps.get(k(per, canal))?.nps),
+  crec: (kpi) => D.crecimiento.find((f) => f.kpi === kpi),
+  rechazo: (medio) => num((D.pagos.get(k("Todo", "Todos")) || []).find((f) => f.payment_method.startsWith(medio))?.failed_share),
+  estado: (codigo) => (D.estados.get(k("Todo", "Todos", "Todas")) || []).find((f) => f.status_code === codigo),
+  cliente: (mes) => D.clientes.get(mes),
+  sesiones: (apertura, valor) => num((D.sesiones.get(k("Todo", apertura)) || []).find((f) => f.label === valor)?.share),
+  lider: (producto) => D.lideres.find((f) => f.product === producto),
+};
+const variacion = (kpi) => {
+  const f = busca.crec(kpi);
+  if (!f) return nada;
+  const c = num(f.change);
+  return `${c > 0 ? "+" : ""}${fmt(c, 1)}${f.change_unit === "puntos" ? " pts" : " %"}`;
+};
+
 const HALLAZGOS = [
   {
     titulo: "En julio y agosto de 2024 el NPS online se desplomó por la demora del correo",
-    hecho: "El tiempo del despacho a la entrega pasó de 3,2–3,9 días a 7,4 en julio y 8,0 en agosto. En esos meses el NPS online cayó de 29,2 a −6,0 y −26,5; el de las tiendas, que no usan envío, no cayó (46,2 en agosto).",
+    hecho: () => `Los días del despacho a la entrega pasaron de ${dec1(busca.dias("2024-06"))} en junio a ${dec1(busca.dias("2024-07"))} en julio y ${dec1(busca.dias("2024-08"))} en agosto, y volvieron a ${dec1(busca.dias("2024-10"))} en octubre. ` +
+      `En esos meses el NPS online cayó de ${dec1(busca.nps("2024-06", "ONLINE"))} a ${dec1(busca.nps("2024-07", "ONLINE"))} y ${dec1(busca.nps("2024-08", "ONLINE"))}; ` +
+      `el de las tiendas, que no usan envío, no cayó (${dec1(busca.nps("2024-08", "OFFLINE"))} en agosto).`,
     interp: "La caída se explica por la demora y no por el producto: coinciden las fechas y el canal sin envío funciona como grupo de control. Conviene tener un segundo correo y avisar al cliente cuando el envío se demora.",
     boton: "Ver NPS y entregas", filtros: { anio: "2024", mes: "", canal: "Todos", prov: "Todas" }, destino: "g-nps-mes",
   },
   {
     titulo: "La venta crece por más clientes, no por compras más caras, y todo el crecimiento es online",
-    hecho: "Enero a septiembre, 2025 contra 2024: ventas +16,6 %, pedidos válidos +16,9 %, clientes que compraron +39,4 %, ticket −0,3 %. Online +29,7 %; tiendas físicas +0,3 %.",
+    hecho: () => `Enero a septiembre, 2025 contra 2024: ventas ${variacion("Ventas con IVA")}, pedidos válidos ${variacion("Pedidos válidos")}, ` +
+      `clientes que compraron ${variacion("Clientes que compraron")}, ticket ${variacion("Ticket promedio (con IVA)")}. ` +
+      `Tienda online ${variacion("Ventas tienda online")}; tiendas físicas ${variacion("Ventas tiendas físicas")}.`,
     interp: "El negocio crece captando clientes por el canal online, no subiendo precios ni el gasto por compra.",
     boton: "Ver crecimiento", filtros: null, destino: "crecimiento",
   },
   {
     titulo: "El NPS online es más bajo que el de las tiendas físicas",
-    hecho: "NPS de todo el período: tiendas físicas 40,9, tienda online 24,0.",
+    hecho: () => `NPS de todo el período: tiendas físicas ${dec1(busca.nps("Todo", "OFFLINE"))}, tienda online ${dec1(busca.nps("Todo", "ONLINE"))}.`,
     interp: "Es consistente con el hallazgo de la demora: el canal online depende del correo y el de tienda no.",
     boton: "Ver NPS online", filtros: { anio: "Todo", mes: "", canal: "ONLINE", prov: "Todas" }, destino: "g-dona",
   },
   {
     titulo: "Mercado Pago rechaza más del doble que la tarjeta",
-    hecho: "Se rechaza el 9,8 % de los pagos por pasarela contra el 4,0 % con tarjeta. Las cancelaciones suman 658 pedidos y $22,5 M que no se concretaron.",
+    hecho: () => {
+      const c = busca.estado("CANCELLED");
+      return `Se rechaza el ${pct(busca.rechazo("Pasarela"))} de los pagos por pasarela contra el ${pct(busca.rechazo("Tarjeta"))} con tarjeta. ` +
+        `Las cancelaciones suman ${entero(c && num(c.orders))} pedidos y ${pesosM(c && num(c.total_amount))} que no se concretaron.`;
+    },
     interp: "Es un punto concreto para recuperar ventas: reintentos o un medio alternativo en el momento del rechazo.",
     boton: "Ver rechazos de pago", filtros: { anio: "Todo", mes: "", canal: "Todos", prov: "Todas" }, destino: "g-pagos",
   },
   {
     titulo: "Los usuarios activos se duplicaron y la mayoría de las visitas llega desde el celular",
-    hecho: "Los clientes logueados por mes pasaron de 424 (enero 2024) a 1.041 (septiembre 2025), y las sesiones logueadas, del 21 % al 34 %. El 61,9 % de las visitas es desde el celular.",
+    hecho: () => {
+      const a = busca.cliente(D.meses[0].period), b = busca.cliente(D.meses.at(-1).period);
+      return `Los usuarios activos por mes pasaron de ${entero(a && num(a.active_users))} (${D.meses[0].period_label.toLowerCase()}) a ${entero(b && num(b.active_users))} (${D.meses.at(-1).period_label.toLowerCase()}), ` +
+        `y las sesiones logueadas, del ${pct(a && num(a.logged_share), 0)} al ${pct(b && num(b.logged_share), 0)}. ` +
+        `El ${pct(busca.sesiones("Dispositivo", "Celular"))} de las visitas es desde el celular.`;
+    },
     interp: "Parte del crecimiento puede deberse a que más gente inicia sesión, no a que haya más audiencia. La experiencia móvil es prioritaria.",
     boton: "Ver clientes", filtros: { anio: "Todo", mes: "", canal: "Todos", prov: "Todas" }, destino: "g-usuarios",
   },
   {
     titulo: "Los dos productos se reparten la venta casi parejo",
-    hecho: "Sport B lidera en pesos en 12 de los 21 meses por su precio más alto; Classic A vende más unidades en 15 de los 21.",
+    hecho: () => {
+      const s = busca.lider("Sport B Bottle"), c = busca.lider("Classic A Bottle");
+      return `Sport B es el primero en pesos en ${s ? s.months_top_sales : nada} de los ${s ? s.months : nada} meses, por su precio más alto; ` +
+        `Classic A vende más unidades en ${c ? c.months_top_units : nada} de los ${c ? c.months : nada}.`;
+    },
     interp: "Con dos productos, un ranking dice poco: por eso el tablero muestra los dos lado a lado cada mes.",
     boton: "Ver productos", filtros: { anio: "Todo", mes: "", canal: "Todos", prov: "Todas" }, destino: "g-prod",
   },
@@ -689,7 +727,7 @@ const HALLAZGOS = [
 function renderHallazgos() {
   const cont = document.getElementById("hallazgos-lista");
   cont.innerHTML = HALLAZGOS.map((h, i) => `<article class="hall"><h3>${i + 1}. ${esc(h.titulo)}</h3>` +
-    `<p><span class="tipo">Hecho</span>${esc(h.hecho)}</p><p><span class="tipo interp">Interpretación</span>${esc(h.interp)}</p>` +
+    `<p><span class="tipo">Hecho</span>${esc(h.hecho())}</p><p><span class="tipo interp">Interpretación</span>${esc(h.interp)}</p>` +
     `<button type="button" data-i="${i}">${esc(h.boton)} →</button></article>`).join("");
   cont.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
     const h = HALLAZGOS[Number(b.dataset.i)];
