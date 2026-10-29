@@ -2,11 +2,16 @@
 
 Trabajo práctico de **Introducción al Marketing Online y los Negocios Digitales**.
 
-Se transforman los datos transaccionales de EcoBottle AR (`raw/`) en un **modelo estrella (Kimball)** con DuckDB. El resultado (`dw/`) alimenta un tablero comercial con los KPIs que monitorea el management: Ventas, Usuarios Activos, Ticket Promedio, NPS, Ventas por Provincia y Ranking Mensual por Producto.
+Se transforman los datos transaccionales de EcoBottle AR (`raw/`) en un **modelo estrella (Kimball)** con DuckDB, en un proceso **ELT**: los datos se cargan tal como vienen y las transformaciones se hacen en SQL. Sobre el modelo, una capa de **tablas mart** materializa los KPIs que monitorea el management (Ventas, Usuarios Activos, Ticket Promedio, NPS, Ventas por Provincia y Ranking Mensual por Producto), y un **tablero web** las publica.
 
+- **Tablero:** [ezequielpiseri.github.io/practica-imond](https://ezequielpiseri.github.io/practica-imond/)
 - **Consigna:** [Práctica](https://docs.google.com/document/d/15RNP3FVqLjO4jzh80AAkK6mUR5DOLqPxLjQxqvdzrYg/edit?usp=sharing)
 - **Repositorio original:** [AugustoCarmona/practica-imond](https://github.com/AugustoCarmona/practica-imond)
-- **Tablero (Power BI):** [`tablero/EcoBottle_tablero.pbix`](./tablero/EcoBottle_tablero.pbix), con capturas en la sección [Tablero](#tablero)
+
+```
+raw/ (origen) ──► sql/ (ELT) ──► data/modelo_estrella/ ──► data/marts/ ──► tablero web (GitHub Pages)
+                                  dimensiones y hechos      KPIs ya calculados   solo muestra
+```
 
 ## Contenido
 
@@ -16,30 +21,32 @@ Se transforman los datos transaccionales de EcoBottle AR (`raw/`) en un **modelo
 4. [Supuestos y decisiones](#supuestos-y-decisiones)
 5. [Diccionario de datos](#diccionario-de-datos)
 6. [Consultas clave (KPIs)](#consultas-clave-kpis)
-7. [Validaciones](#validaciones)
-8. [Tablero](#tablero)
-9. [Hallazgos](#hallazgos)
-10. [Anexo: versión en Looker Studio](#anexo-versión-en-looker-studio)
+7. [Capa de marts](#capa-de-marts)
+8. [Validaciones](#validaciones)
+9. [Tablero web](#tablero-web)
+10. [Hallazgos](#hallazgos)
 
 ## Estructura del repositorio
 
 ```
-raw/                     datos de origen (CSV, no se modifican)
+raw/                         datos de origen (CSV, no se modifican)
 sql/
-  01_dimensiones.sql     11 dimensiones
-  02_hechos.sql          6 tablas de hechos + 1 agregado
-  03_consultas.sql       validaciones, KPIs y consultas de hallazgos
-  04_looker.sql          tablas planas para Looker Studio (versión alternativa del tablero)
-dw/                      data warehouse exportado en CSV (fuente del tablero)
-  modelo_estrella.md     diagrama completo del modelo (generado)
-tablero/
-  EcoBottle_tablero.pbix tablero en Power BI
-  tema_ecobottle.json    tema de colores y tipografía del tablero
-img/                     capturas del tablero
-run_sql.py               ejecuta los SQL, arma warehouse.duckdb y exporta dw/
-requirements.txt         dependencias (DuckDB)
-assets/DER.png           diagrama de las tablas de origen
-generator/               generador de los datos de raw/ (referencia)
+  01_dimensiones.sql         10 dimensiones
+  02_hechos.sql              6 tablas de hechos, con columnas de medida
+  03_consultas.sql           validaciones, KPIs y consultas de hallazgos
+  05_marts.sql               tablas mart: KPIs calculados por período, canal y provincia
+data/
+  modelo_estrella/           dimensiones y hechos exportados en CSV
+    modelo_estrella.md       diagrama completo del modelo (generado)
+  marts/                     tablas mart en CSV (fuente del tablero)
+index.html                   tablero web (página publicada en GitHub Pages)
+web/
+  styles.css                 estilos del tablero
+  app.js                     lee los marts, aplica los filtros y dibuja los gráficos
+run_sql.py                   ejecuta los SQL, arma warehouse.duckdb y exporta data/
+requirements.txt             dependencias (DuckDB)
+assets/                      diagrama de las tablas de origen y captura del tablero
+generator/                   generador de los datos de raw/ (referencia)
 ```
 
 ## Cómo ejecutarlo
@@ -58,9 +65,9 @@ python run_sql.py
 `run_sql.py`:
 
 1. Crea `warehouse.duckdb` desde cero.
-2. Ejecuta los archivos de `sql/` en orden (`01` a `04`), y muestra en la terminal el resultado de cada consulta.
-3. Exporta cada tabla a `dw/<tabla>.csv`.
-4. Genera `dw/modelo_estrella.md` con el diagrama del modelo.
+2. Ejecuta los archivos de `sql/` en orden, y muestra en la terminal el resultado de cada consulta (validaciones, KPIs y controles de los marts).
+3. Exporta las tablas a CSV: las `mart_*` a `data/marts/` y las dimensiones y hechos a `data/modelo_estrella/`.
+4. Genera `data/modelo_estrella/modelo_estrella.md` con el diagrama del modelo.
 
 Otros modos:
 
@@ -69,9 +76,15 @@ python run_sql.py --explorar   # consola sobre raw/ sin ejecutar sql/
 python run_sql.py --ui         # arma el DW y abre la interfaz web de DuckDB
 ```
 
+**Ver el tablero en local.** El navegador no deja leer los CSV si se abre `index.html` con doble clic. Hay que servir la carpeta:
+
+```bash
+python -m http.server 8000     # y abrir http://localhost:8000
+```
+
 ## Modelo estrella
 
-Diagrama simplificado (solo relaciones). El diagrama completo, con columnas y tipos, está en [`dw/modelo_estrella.md`](./dw/modelo_estrella.md).
+Diagrama simplificado (solo relaciones). El diagrama completo, con columnas y tipos, está en [`data/modelo_estrella/modelo_estrella.md`](./data/modelo_estrella/modelo_estrella.md).
 
 ```mermaid
 erDiagram
@@ -101,9 +114,6 @@ erDiagram
     dim_payment_method ||--o{ fact_payment : "payment_method_key"
     dim_date ||--o{ fact_shipment : "order / shipped / delivered"
     dim_province ||--o{ fact_shipment : "province_key"
-
-    dim_date ||--o{ agg_sales_product_month : "month_date_key"
-    dim_product ||--o{ agg_sales_product_month : "product_key"
 ```
 
 ### Tablas de hechos y su grano
@@ -116,7 +126,6 @@ erDiagram
 | `fact_shipment` | un envío por correo | Tiempos de entrega |
 | `fact_web_session` | una visita a la web | Usuarios Activos |
 | `fact_nps_response` | una respuesta de la encuesta NPS | NPS |
-| `agg_sales_product_month` | un producto en un mes | Ranking mensual (precalculado) |
 
 Hay dos hechos de ventas porque los KPIs piden dos granos distintos. El pedido tiene `total_amount`, con IVA y envío, que se usa para Ventas y Ticket. La línea tiene `line_total` por producto, que se usa para el Ranking. Bajar `total_amount` a nivel línea obligaría a repartir el envío entre productos con un criterio arbitrario.
 
@@ -125,20 +134,20 @@ Hay dos hechos de ventas porque los KPIs piden dos granos distintos. El pedido t
 **Reglas de negocio** (vienen del README original y se verificaron en los datos):
 
 - **Venta válida:** pedido con estado `PAID` o `FULFILLED`. La regla está en un solo lugar, `dim_order_status.is_sale`, y se copia a los hechos como `is_sale` y `sales_amount`. Así no hay que repetir el filtro en cada consulta ni en cada medida.
-- **Montos:** en pesos argentinos (ARS). `total_amount` = subtotal + IVA (21 %) + costo de envío. Ventas y Ticket se calculan sobre `total_amount`, como define la consigna.
+- **Montos:** en pesos argentinos (ARS). `total_amount` = subtotal + IVA (21 %) + costo de envío. Ventas y Ticket se calculan sobre `total_amount`, como define la consigna. También se informan **sin IVA**: `total_amount − tax_amount`, es decir, se descuenta el impuesto y se mantiene el envío, que es ingreso de la empresa.
 - **Canal:** un `store_id` vacío indica pedido online.
 
 **Decisiones de modelado:**
 
 - **Claves subrogadas** (`*_key`, números propios del DW) en todas las dimensiones. Las claves naturales (`*_id`) se conservan para trazabilidad.
-- **Miembro "Desconocido" con clave `-1`:** cliente anónimo en sesiones y NPS, tienda en pedidos online ("Tienda online"), y valores faltantes de origen de tráfico y dispositivo. Así ninguna FK de dimensión queda nula y el tablero no pierde filas al relacionar tablas.
+- **Miembro "Desconocido" con clave `-1`:** cliente anónimo en sesiones y NPS, tienda en pedidos online ("Tienda online"), y valores faltantes de origen de tráfico y dispositivo. Así ninguna FK de dimensión queda nula y ningún JOIN pierde filas.
 - **Fechas opcionales:** las de pago, despacho y entrega quedan `NULL` si el evento todavía no pasó. Ponerles `-1` equivaldría a inventar una fecha.
 - **Provincia de la venta:** se toma de la dirección de envío. En las compras en tienda esa dirección es la de la tienda (4.443 de 4.683 pedidos offline). Las 240 ventas de tienda enviadas a domicilio se asignan a la provincia del cliente. Ningún pedido quedó sin provincia.
-- **Usuarios Activos:** clientes logueados **distintos** en `web_session` durante el período. El 70 % de las sesiones son anónimas (70.751 de 100.363). La consigna sugiere contar `session_id` para los anónimos, pero eso mezcla dos unidades: un visitante con 10 visitas contaría como 10 usuarios. Por eso las sesiones anónimas se guardan, para analizar tráfico, pero no se cuentan como usuarios. **Consecuencia:** el KPI subestima la audiencia real; es "clientes identificados activos". Además, como es un conteo de distintos, no es sumable: la suma de los usuarios de cada mes no da los usuarios del año. En Power BI no es un problema, porque `DISTINCTCOUNT` se calcula sobre el período filtrado: la tarjeta muestra los clientes distintos del período y la serie muestra los de cada mes (MAU). En la versión de Looker Studio se muestra el MAU promedio (ver [Anexo](#anexo-versión-en-looker-studio)).
+- **Usuarios Activos:** clientes logueados **distintos** en `web_session` durante el período. El 70 % de las sesiones son anónimas (70.751 de 100.363). La consigna sugiere contar `session_id` para los anónimos, pero eso mezcla dos unidades: un visitante con 10 visitas contaría como 10 usuarios. Por eso las sesiones anónimas se guardan, para analizar tráfico, pero no se cuentan como usuarios. **Consecuencia:** el KPI subestima la audiencia real; es "clientes identificados activos". Además, como es un conteo de distintos, no es sumable: la suma de los usuarios de cada mes no da los usuarios del año. Por eso se calcula en SQL para cada período (`mart_customer_kpi`): 3.077 clientes distintos en todo el período, y los de cada mes (MAU) en la serie mensual. La consulta B3b muestra también la forma de contar que sugiere la consigna, para comparar.
 - **NPS:** promotores (9-10) menos detractores (0-6), sobre el total de respuestas, multiplicado por 100. La encuesta no tiene número de pedido, así que el NPS se cruza por cliente, canal y fecha de respuesta, no por pedido.
+- **Los KPIs se calculan en SQL, no en la herramienta de visualización.** Cada hecho tiene columnas de medida preparadas (`sale_count`, `sales_net_amount`, `ticket_amount`, `active_customer_key`, `nps_points`) y la capa de marts materializa los KPIs para cada combinación de filtros. El tablero no suma, no promedia ni divide: busca la fila y la muestra.
 - **Datos personales:** `dim_customer` no guarda email ni teléfono porque el tablero no los necesita (minimización de datos).
 - **`dim_customer.province_name`:** la provincia donde el cliente recibe más pedidos, sin contar direcciones de tiendas. Queda vacía para los clientes que solo compraron en tienda.
-- **`agg_sales_product_month`:** agregado precalculado sin canal ni provincia, así que **no responde a esos filtros**. Para un ranking filtrable, el tablero usa `fact_sales_order_item`.
 
 ## Diccionario de datos
 
@@ -251,6 +260,10 @@ Convenciones: `PK` = clave primaria, `FK` = clave foránea. Los importes son `DE
 | `shipping_fee` | DECIMAL | Costo de envío |
 | `total_amount` | DECIMAL | subtotal + IVA + envío |
 | `sales_amount` | DECIMAL | `total_amount` si `is_sale`; si no, 0 |
+| `sale_count` | INTEGER | 1 si `is_sale`; si no, 0. Su suma son los pedidos válidos |
+| `sales_net_amount` | DECIMAL | `total_amount − tax_amount` si `is_sale`; si no, 0 (ventas sin IVA) |
+| `ticket_amount` | DECIMAL | `total_amount` si `is_sale`; si no, NULL. Su promedio es el ticket |
+| `ticket_net_amount` | DECIMAL | Igual que `ticket_amount`, sin IVA |
 
 **`fact_sales_order_item`**: un producto dentro de un pedido. Repite las claves del pedido (fecha, canal, tienda, provincia, estado) para poder filtrarse igual que las ventas.
 
@@ -305,6 +318,7 @@ Convenciones: `PK` = clave primaria, `FK` = clave foránea. Los importes son `DE
 | `device_key` | INTEGER FK → dim_device | Dispositivo |
 | `is_logged_in` | BOOLEAN | El visitante inició sesión |
 | `duration_seconds` | INTEGER | Duración (NULL si no tiene fin registrado) |
+| `active_customer_key` | INTEGER | `customer_key` si está logueado; NULL si es anónimo. Su recuento distinto son los usuarios activos |
 
 **`fact_nps_response`**: una respuesta de la encuesta.
 
@@ -319,17 +333,7 @@ Convenciones: `PK` = clave primaria, `FK` = clave foránea. Los importes son `DE
 | `is_promoter`, `is_passive`, `is_detractor` | INTEGER | Indicadores 1/0 para calcular el NPS |
 | `has_comment` | BOOLEAN | Dejó comentario |
 | `comment` | VARCHAR | Texto del comentario |
-
-**`agg_sales_product_month`**: un producto en un mes. PK compuesta (`month_date_key`, `product_key`).
-
-| Columna | Tipo | Descripción |
-|---|---|---|
-| `month_date_key` | INTEGER FK → dim_date | Primer día del mes |
-| `product_key` | INTEGER FK → dim_product | Producto |
-| `units` | INTEGER | Unidades vendidas |
-| `sales_amount` | DECIMAL | Suma de `line_total` de ventas válidas |
-| `rank_in_month` | INTEGER | 1 = el que más facturó ese mes |
-| `share_of_month` | DECIMAL | Participación en el mes (0 a 1) |
+| `nps_points` | INTEGER | +100 promotor, 0 pasivo, −100 detractor. Su promedio es el NPS |
 
 ## Consultas clave (KPIs)
 
@@ -384,14 +388,42 @@ GROUP BY d.year_month, p.name, i.product_key;
 
 ### Resultados del período completo (01/2024 a 09/2025)
 
-| KPI | Valor |
-|---|---|
-| Ventas | $382,4M |
-| Pedidos válidos | 10.998 |
-| Ticket promedio | $34,8K |
-| Usuarios activos: clientes logueados distintos en todo el período (tarjeta de Power BI) | 3.077 |
-| Usuarios activos mensuales (MAU) promedio (tarjeta de Looker) | 771 |
-| NPS | 30 |
+| KPI | Con IVA | Sin IVA |
+|---|---|---|
+| Ventas | $382,4M | $317,3M |
+| Pedidos válidos | 10.998 de 11.969 | |
+| Ticket promedio | $34.771 | $28.854 |
+| Ticket online / tiendas físicas | $35.152 / $34.229 | $29.244 / $28.298 |
+| Usuarios activos (clientes logueados distintos en todo el período) | 3.077 | |
+| NPS | 30,0 | |
+
+El ticket online es más alto porque incluye el envío, que en tienda no se cobra: sin envío, los dos canales quedan casi iguales ($34.041 online y $34.170 en tiendas).
+
+## Capa de marts
+
+`sql/05_marts.sql` calcula los KPIs a partir del modelo estrella y los **materializa** en tablas que el tablero consume directamente.
+
+**Por qué una fila por cada combinación de filtros.** Un promedio o un recuento distinto no se puede volver a agregar: el ticket de 2025 no es el promedio de los tickets de cada mes, y los usuarios del año no son la suma de los usuarios de cada mes. Por eso cada mart trae, ya calculada, cada combinación que ofrece el tablero:
+
+- **Período:** el total (`Todo`), cada año y cada mes. Una vista temporal repite cada fecha en sus tres períodos, así un solo `GROUP BY` calcula los tres niveles.
+- **Canal y provincia:** `GROUP BY ... CUBE (channel, province)` genera todas las combinaciones, incluidos los totales `Todos` y `Todas`, calculados desde los hechos y no sumando filas.
+
+| Tabla | Una fila es… | Qué trae |
+|---|---|---|
+| `mart_sales_kpi` | período × canal × provincia | ventas con y sin IVA, pedidos totales y válidos, ticket con y sin IVA y sin envío |
+| `mart_order_status` | período × canal × provincia × estado | pedidos y monto por estado, con `is_sale` |
+| `mart_sales_product` | período × canal × provincia × producto | unidades, ventas de línea, puesto y participación |
+| `mart_product_leaders` | un producto | meses en que fue el primero en pesos y en unidades |
+| `mart_customer_kpi` | período | usuarios activos, sesiones y % de sesiones logueadas |
+| `mart_session_mix` | período × apertura × valor | sesiones por origen de tráfico y por dispositivo |
+| `mart_nps_kpi` | período × canal | respuestas, promotores, pasivos, detractores y NPS |
+| `mart_nps_group` | período × canal × grupo | lo mismo en formato largo, para el gráfico de anillo |
+| `mart_delivery_kpi` | período × canal × provincia | envíos entregados, días en el correo, días del pedido a la puerta, percentil 90 y % de más de 7 días |
+| `mart_payment_kpi` | período × canal × medio de pago | pagos, rechazos y tasa de rechazo |
+| `mart_growth` | un KPI | enero a septiembre 2024 contra 2025 y la variación (en puntos para el NPS) |
+| `mart_dim_period`, `mart_dim_channel`, `mart_dim_province` | un valor de filtro | etiqueta y orden de cada opción de los filtros |
+
+Usuarios y sesiones no tienen canal ni provincia (todas las visitas son web y sin ubicación), y el NPS no tiene provincia (la encuesta no tiene pedido): esos marts no traen esas columnas y el tablero lo indica.
 
 ## Validaciones
 
@@ -404,100 +436,44 @@ La parte A de `03_consultas.sql` verifica que el modelo cuadre con `raw/`:
 | Pedidos sin provincia asignada | ✅ 0 |
 | Pedidos cuyas líneas no suman el subtotal | ✅ 0 |
 | Claves foráneas válidas | ✅ DuckDB rechaza la carga si alguna falla |
+| Columnas de medida = fórmula de cada KPI, en total y por canal (A5) | ✅ |
+| Marts = modelo estrella: ventas, pedidos, meses que suman el total, estados, productos, usuarios, sesiones, NPS, entregas y pagos (controles de `05_marts.sql`) | ✅ 11 de 11 |
 
-## Tablero
+## Tablero web
 
-Herramienta: **Power BI Desktop**. Archivo: [`tablero/EcoBottle_tablero.pbix`](./tablero/EcoBottle_tablero.pbix). Tiene dos páginas, **Resumen** y **Clientes**, con un menú lateral compartido (navegación, filtros y botón para borrarlos).
+**[ezequielpiseri.github.io/practica-imond](https://ezequielpiseri.github.io/practica-imond/)** · HTML, CSS y JavaScript sin librerías, publicado con GitHub Pages desde la raíz del repositorio.
 
-![Página Resumen](./img/resumen.png)
+![Tablero web](./assets/tablero.png)
 
-![Página Resumen filtrada en 2025, con la comparación contra el año anterior](./img/resumen_2025.png)
+El tablero lee los CSV de `data/marts/`, busca la fila que corresponde a los filtros elegidos y la dibuja. **No suma, no promedia ni divide valores de negocio:** todos los KPIs vienen calculados del SQL.
 
-![Página Clientes](./img/clientes.png)
+### Secciones
 
-### Carga y modelo
-
-- Se importan los CSV del modelo estrella de `dw/` (dimensiones y hechos). Las tablas `looker_*` no se usan en Power BI.
-- **Configuración regional de importación: Inglés (Estados Unidos).** Los CSV usan punto decimal; con la configuración en español, Power BI lee `34812.50` como 3.481.250.
-- **Detección automática de relaciones y "Fecha/hora automática": desactivadas.** Las relaciones se crean a mano, siguiendo las FK del diagrama: 10 relaciones 1 a N, de la dimensión al hecho, todas activas y con filtro en una sola dirección. Así el modelo de Power BI es el mismo modelo estrella del DW.
-- Tema propio: [`tablero/tema_ecobottle.json`](./tablero/tema_ecobottle.json), con los colores del logo.
-
-### Medidas DAX principales
-
-```dax
-Ventas           = SUM ( fact_sales_order[sales_amount] )
-
-Pedidos válidos  = CALCULATE ( COUNTROWS ( fact_sales_order ), fact_sales_order[is_sale] = TRUE () )
-
-Ticket Promedio  = DIVIDE ( [Ventas], [Pedidos válidos] )
-
-Usuarios Activos = CALCULATE ( DISTINCTCOUNT ( fact_web_session[customer_key] ),
-                       fact_web_session[customer_key] <> -1 )
-
-NPS              = DIVIDE ( SUM ( fact_nps_response[is_promoter] ) - SUM ( fact_nps_response[is_detractor] ),
-                       COUNTROWS ( fact_nps_response ) ) * 100
-
-Sesiones         = COUNTROWS ( fact_web_session )
-```
-
-La regla "solo PAID y FULFILLED son venta" no se repite en DAX: ya viene resuelta en `sales_amount` e `is_sale` desde el DW.
-
-`Usuarios Activos` excluye la clave `-1` (visitante anónimo). En los datos, una sesión tiene cliente conocido si y solo si está logueada (29.612 sesiones), así que es equivalente a filtrar por `is_logged_in`.
-
-### Comparación contra el año anterior
-
-Cada tarjeta muestra la variación contra el mismo período del año anterior (por ejemplo, **▲ +16,6 % vs año anterior**), en verde si sube más de 1 %, en rojo si baja más de 1 % y en ámbar si queda estable. El NPS se compara en **puntos**, no en porcentaje, porque ya es un puntaje.
-
-```dax
-Ventas PA =
-VAR ini = MIN ( dim_date[date] )
-VAR fin = MIN ( MAX ( dim_date[date] ), DATE ( 2025, 9, 30 ) )
-RETURN
-IF ( EDATE ( ini, -12 ) < DATE ( 2024, 1, 1 ), BLANK (),
-    CALCULATE ( [Ventas], REMOVEFILTERS ( dim_date ),
-        dim_date[date] >= EDATE ( ini, -12 ),
-        dim_date[date] <= EDATE ( fin, -12 ) ) )
-```
-
-Decisiones:
-
-- **Se corta en el último dato (30/09/2025).** El calendario llega a octubre de 2025, pero los datos terminan en septiembre. Sin el corte, "2025" (9 meses con datos) se compararía con enero–octubre de 2024 y siempre parecería que cae.
-- **Sin año anterior, no hay comparación.** Para 2024 o sin filtro de año, la tarjeta dice "Sin año anterior para comparar" en gris, en lugar de mostrar un 0 % que se leería como "no cambió".
-- La misma lógica se repite para Usuarios Activos, Ticket Promedio y NPS (medidas `* PA`, `* vs PA` para el texto y `* vs PA Color` para el color).
-
-### Vistas
-
-Los títulos son preguntas de negocio, para que cada gráfico diga qué responde.
-
-| Página | Visual | Datos | KPI de la consigna |
-|---|---|---|---|
-| Resumen | Tarjetas con comparación | Ventas, Usuarios Activos, Ticket Promedio, NPS | Ventas ($M), Usuarios (nK), Ticket ($K), NPS |
-| Resumen | ¿Qué producto vende más cada mes? (columnas) | `year_month` × producto, ventas de línea | Ranking mensual por producto |
-| Resumen | ¿Dónde vendemos más? (barras) | provincia, Ventas | Ventas por provincia |
-| Resumen | ¿Qué opinan los clientes? (anillo) | promotores / pasivos / detractores, NPS al centro | NPS |
-| Resumen | ¿Por qué canal crece la venta? (líneas) | mes × canal, Ventas | Serie temporal de Ventas |
-| Clientes | Tarjetas con comparación | Usuarios Activos, NPS | Usuarios, NPS |
-| Clientes | ¿Cuántos clientes nos visitan cada mes? (línea) | mes, Usuarios Activos | Serie temporal de Usuarios |
-| Clientes | ¿Mejora la opinión de los clientes? (líneas, línea de referencia en 0) | mes × canal, NPS | Tendencia de NPS |
-| Clientes | ¿De dónde llegan las visitas? (barras) | origen de tráfico, Sesiones | Contexto de Usuarios |
-| Clientes | ¿Desde qué dispositivo nos visitan? (barras) | dispositivo, Sesiones | Contexto de Usuarios |
-
-Las series usan eje de fechas **continuo**, que respeta la distancia real entre meses; el detalle de cada mes se ve al pasar el mouse.
-
-### Filtros y cómo afectan (decisión de diseño)
-
-| Filtro | Páginas | Afecta a |
+| Sección | Qué responde | Mart |
 |---|---|---|
-| Año (botones 2024 / 2025) | Resumen y Clientes, sincronizado | Todo |
-| Mes | Resumen y Clientes, sincronizado | Todo |
-| Canal | Resumen y Clientes, sincronizado | Ventas, Ticket, productos, provincias y NPS. **No** a Usuarios ni Sesiones |
-| Provincia | Resumen | Ventas, Ticket y productos (provincia del pedido) |
-| Producto | Resumen | Solo el gráfico de productos |
+| Resumen | Ventas, pedidos válidos, ticket, usuarios activos y NPS del período, con su evolución mensual | `mart_sales_kpi`, `mart_customer_kpi`, `mart_nps_kpi` |
+| Ventas | Ventas por mes y canal; por provincia; ticket por canal (con IVA, sin IVA y sin envío); ventas por producto y reparto; pedidos por estado; rechazo de pagos | `mart_sales_kpi`, `mart_sales_product`, `mart_order_status`, `mart_payment_kpi` |
+| Clientes | Usuarios activos por mes; sesiones por origen y dispositivo | `mart_customer_kpi`, `mart_session_mix` |
+| Experiencia | Distribución del NPS; NPS mensual por canal; tiempos de entrega | `mart_nps_group`, `mart_nps_kpi`, `mart_delivery_kpi` |
+| Crecimiento | Enero a septiembre 2024 contra 2025 | `mart_growth` |
+| Hallazgos | Los hallazgos de abajo; cada tarjeta lleva al gráfico que la respalda. Los números del texto también se leen de los marts; la interpretación es texto de análisis | todos los anteriores y `mart_product_leaders` |
 
-- **Producto** solo filtra el gráfico de productos. Ventas y Ticket se miden por pedido, y un pedido puede tener los dos productos: asignarle su IVA y su envío a uno solo sería arbitrario.
-- **Canal** y **Provincia** no filtran Usuarios ni Sesiones: todas las visitas son web y no tienen ubicación. En la página Clientes, una nota debajo del filtro lo aclara.
-- **Provincia** no filtra el NPS: la encuesta no tiene pedido, así que no hay provincia de venta para la respuesta.
-- **Borrar filtros** usa la acción "Borrar todas las segmentaciones" (en Power BI Desktop, los botones se activan con Ctrl + clic).
+### Filtros e interacción
+
+| Filtro | Afecta a | No afecta a |
+|---|---|---|
+| Período (total, año o mes) | Todo, salvo Crecimiento | Crecimiento (compara períodos fijos) |
+| Canal | Ventas, productos, estados, pagos, NPS y entregas | Usuarios y sesiones: todas las visitas son web |
+| Provincia | Ventas, productos, estados y entregas | Usuarios, sesiones, NPS y pagos: no tienen provincia |
+| Con / sin IVA | Ventas y ticket | El resto |
+
+- Cada tarjeta del Resumen indica qué filtros le aplican.
+- Las series mensuales muestran siempre todos los meses y resaltan los del período elegido.
+- Clic en un mes del gráfico de ventas: filtra ese mes. Clic en una provincia: filtra esa provincia.
+- Pasar el mouse por los gráficos muestra los valores; las ventas por mes tienen además una tabla de datos.
+- Diseño adaptable a celular y modo oscuro según la configuración del sistema.
+
+**Publicación.** En GitHub: *Settings → Pages → Deploy from a branch → `main` / `(root)`*. Para actualizar los datos se corre `python run_sql.py` y se suben los CSV de `data/marts/`; el tablero no necesita cambios.
 
 ## Hallazgos
 
@@ -515,25 +491,4 @@ Las consultas están en la parte C de `03_consultas.sql`. Se distinguen **hechos
 
 6. **Los productos se reparten casi parejo.** *(Hecho)* Sport B lidera en pesos en 12 de los 21 meses, por su precio más alto ($15.000 contra $12.000). Classic A vende más unidades en 15 de los 21 meses. El puesto 1 alterna mes a mes. *(Interpretación)* Con dos productos, un "top N" dice poco: por eso el tablero muestra los dos productos lado a lado cada mes en lugar de solo el primero.
 
-**Ideas para sumar al tablero:** días de entrega por mes junto al NPS online (alerta temprana del hallazgo 1), tasa de conversión de sesión a pedido por origen de tráfico (requiere vincular sesión y pedido, que hoy no se puede), y tasa de rechazo de pago por medio. Para medir el NPS por pedido, agregar `order_id` a la encuesta.
-
-## Anexo: versión en Looker Studio
-
-La consigna menciona Looker Studio en los entregables, así que el repositorio también deja preparada esa versión. Los KPIs dan los mismos valores en las dos herramientas.
-
-Looker Studio no relaciona tablas entre sí como Power BI: cada CSV es una fuente de datos independiente. Por eso `sql/04_looker.sql` arma una **capa de presentación**: tablas planas derivadas del modelo estrella, cada una con los atributos de sus dimensiones ya unidos. No reemplazan al modelo: si cambia una regla, se cambia en `01` o `02` y estas tablas la heredan.
-
-| Fuente en Looker | CSV de `dw/` | Grano | Se usa para |
-|---|---|---|---|
-| tp_ventas | `looker_ventas.csv` | un pedido | Ventas, Ticket Promedio, Ventas por Provincia |
-| tp_productos | `looker_productos.csv` | una línea de pedido | Ranking mensual por producto |
-| tp_usuarios_mes | `looker_usuarios_mes.csv` | un mes | Usuarios Activos (MAU) |
-| tp_nps | `looker_nps.csv` | una respuesta de encuesta | NPS |
-
-`looker_sesiones.csv` (una visita web) queda disponible para analizar tráfico por origen y dispositivo. Se cargan con el conector **Subida de archivos CSV**.
-
-**Fechas.** Se exportan como texto `AAAAMMDD` (`20240102`). Con el formato `AAAA-MM-DD`, Looker interpretaba mal las fechas de 2024 y el filtro de período las dejaba afuera. En cada fuente se crean dos campos de tipo fecha: **Día** = `PARSE_DATE("%Y%m%d", CAST(fecha AS TEXT))` y **Mes (fecha)** = `PARSE_DATE("%Y%m%d", CAST(mes AS TEXT))`.
-
-**Campos calculados:** Ventas = `SUM(monto_venta)`; Ticket Promedio = `SUM(monto_venta) / SUM(es_venta)`; Usuarios Activos = `AVG(usuarios_activos)`; NPS = `(SUM(es_promotor) - SUM(es_detractor)) / COUNT(respuesta_id) * 100`; Ventas producto = `SUM(monto_venta_linea)`.
-
-**Por qué en Looker Usuarios Activos se precalcula por mes.** `COUNT_DISTINCT` con un filtro de período da un resultado incorrecto: Looker cuenta los distintos de cada día y suma los días ("reagregación errónea"), así que un cliente que entra 10 días cuenta 10 veces. Con el período completo daba 28.764 en lugar de 3.077. Por eso el conteo distinto se hace en DuckDB, por mes (`looker_usuarios_mes`), y la tarjeta muestra el **promedio de usuarios activos mensuales (MAU)** del período, que sí se puede reagregar. Power BI no tiene este problema, porque calcula `DISTINCTCOUNT` sobre el período filtrado.
+**Ideas para sumar:** tasa de conversión de sesión a pedido por origen de tráfico (requiere vincular sesión y pedido, que hoy no se puede) y, para medir el NPS por pedido, agregar `order_id` a la encuesta. Los días de entrega junto al NPS online y la tasa de rechazo por medio de pago ya están en el tablero.
