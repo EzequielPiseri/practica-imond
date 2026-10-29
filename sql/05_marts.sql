@@ -21,6 +21,7 @@
 --   mart_sales_kpi      ventas, pedidos y ticket    período x canal x provincia
 --   mart_order_status   pedidos por estado          período x canal x provincia x estado
 --   mart_sales_product  ventas por producto         período x canal x provincia x producto
+--   mart_product_leaders meses en que cada producto fue el primero
 --   mart_customer_kpi   usuarios activos, sesiones  período
 --   mart_session_mix    sesiones por origen y por dispositivo
 --   mart_nps_kpi        NPS                         período x canal
@@ -144,6 +145,30 @@ FROM grouped
 WINDOW w     AS (PARTITION BY period, channel, province ORDER BY sales_line_amount DESC),
        w_all AS (PARTITION BY period, channel, province)
 ORDER BY period_type, period, channel, province, product;
+
+
+-- ---------------------------------------------------------------------
+-- mart_product_leaders — un producto
+-- ---------------------------------------------------------------------
+-- En cuántos meses cada producto fue el primero en pesos y en unidades.
+
+CREATE TABLE mart_product_leaders AS
+WITH monthly AS (
+    SELECT
+        product,
+        RANK() OVER (PARTITION BY period ORDER BY sales_line_amount DESC) AS rank_sales,
+        RANK() OVER (PARTITION BY period ORDER BY units DESC)             AS rank_units
+    FROM mart_sales_product
+    WHERE period_type = 'month' AND channel = 'Todos' AND province = 'Todas'
+)
+SELECT
+    product,
+    COUNT(*)                                   AS months,
+    COUNT(*) FILTER (WHERE rank_sales = 1)     AS months_top_sales,
+    COUNT(*) FILTER (WHERE rank_units = 1)     AS months_top_units
+FROM monthly
+GROUP BY product
+ORDER BY product;
 
 
 -- ---------------------------------------------------------------------
