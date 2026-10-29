@@ -6,7 +6,7 @@
 --   * <x>_id   = clave NATURAL (la que viene de raw/).
 --   * Clave -1 = miembro "Desconocido / No aplica" (cliente anónimo,
 --                pedido online sin tienda, etc.). Así los hechos nunca
---                tienen FK nulas y Power BI no pierde filas al relacionar.
+--                tienen FK nulas y ningún JOIN pierde filas.
 --   * Fechas   = date_key entero AAAAMMDD (ej. 20240131).
 -- =====================================================================
 
@@ -43,7 +43,7 @@ LEFT JOIN raw.product_category AS f ON f.category_id = c.parent_id;    -- famili
 
 -- ---------------------------------------------------------------------
 -- dim_date — calendario (dimensión de rol: fecha de pedido, pago,
--- envío, entrega, sesión y respuesta NPS apuntan todas acá)
+-- envío, entrega, sesión y respuesta NPS apuntan a esta tabla)
 -- ---------------------------------------------------------------------
 -- Rango: 01/01/2024 al 31/10/2025. Cubre todos los eventos de raw/
 -- (la foto es del 30/09/2025) con margen.

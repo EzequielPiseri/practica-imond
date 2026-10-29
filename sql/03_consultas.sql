@@ -3,8 +3,9 @@
 -- =====================================================================
 -- Parte A: validaciones (el modelo cuadra contra raw/).
 -- Parte B: los KPIs del tablero, calculados desde el modelo estrella con
---          las columnas de medida de 02_hechos.sql (las mismas que usa el
---          tablero con Suma, Promedio o Recuento distinto).
+--          las columnas de medida de 02_hechos.sql. Los mismos KPIs, ya
+--          materializados por período, canal y provincia, están en
+--          05_marts.sql.
 -- Parte C: consultas exploratorias para hallazgos.
 -- =====================================================================
 
@@ -42,7 +43,7 @@ JOIN (SELECT order_id, SUM(line_total) AS s FROM fact_sales_order_item GROUP BY 
 WHERE i.s <> f.subtotal;
 
 -- A5. Las columnas de medida dan lo mismo que las fórmulas de cada KPI,
---     en total y por canal (todo TRUE = el tablero puede agregarlas sin DAX)
+--     en total y por canal (todo TRUE)
 SELECT
     c.code                                                                        AS canal,
     SUM(f.sale_count) = COUNT(*) FILTER (WHERE f.is_sale)                         AS pedidos_ok,
@@ -140,17 +141,20 @@ JOIN dim_province AS p ON p.province_key = f.province_key
 GROUP BY ALL
 ORDER BY ventas_millones DESC;
 
--- B6. Ranking mensual por producto (desde el agregado)
+-- B6. Ranking mensual por producto (ventas de línea, sin IVA ni envío)
 SELECT
     d.year_month,
-    a.rank_in_month                       AS puesto,
-    p.name                                AS producto,
-    a.units                               AS unidades,
-    ROUND(a.sales_amount / 1e6, 2)        AS ventas_millones,
-    ROUND(a.share_of_month * 100, 1)      AS participacion_pct
-FROM agg_sales_product_month AS a
-JOIN dim_date    AS d ON d.date_key    = a.month_date_key
-JOIN dim_product AS p ON p.product_key = a.product_key
+    RANK() OVER (PARTITION BY d.year_month ORDER BY SUM(i.line_total) DESC) AS puesto,
+    p.name                                                          AS producto,
+    SUM(i.quantity)                                                 AS unidades,
+    ROUND(SUM(i.line_total) / 1e6, 2)                               AS ventas_millones,
+    ROUND(SUM(i.line_total) * 100.0
+          / SUM(SUM(i.line_total)) OVER (PARTITION BY d.year_month), 1) AS participacion_pct
+FROM fact_sales_order_item AS i
+JOIN dim_date    AS d ON d.date_key    = i.order_date_key
+JOIN dim_product AS p ON p.product_key = i.product_key
+WHERE i.is_sale
+GROUP BY d.year_month, p.name
 ORDER BY d.year_month, puesto;
 
 

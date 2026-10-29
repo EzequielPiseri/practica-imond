@@ -12,15 +12,14 @@
 --   fact_shipment          un envío por correo
 --   fact_web_session       una visita a la web      (KPI: Usuarios activos)
 --   fact_nps_response      una respuesta NPS        (KPI: NPS)
---   agg_sales_product_month  agregado: producto x mes con ranking
 --
 -- Las claves de fechas opcionales (pago, envío, entrega) quedan NULL
 -- cuando el evento todavía no ocurrió: un -1 ahí sería una fecha falsa.
 --
--- COLUMNAS DE MEDIDA (los KPIs se calculan en SQL, no en DAX):
--- cada KPI tiene una columna preparada para que el tablero solo use una
--- agregación estándar (Suma, Promedio o Recuento distinto) y el resultado
--- sea correcto con cualquier filtro:
+-- COLUMNAS DE MEDIDA: cada KPI tiene una columna preparada para que se
+-- calcule con una agregación estándar (SUM, AVG o COUNT DISTINCT) y el
+-- resultado sea correcto con cualquier agrupación. Los marts de
+-- 05_marts.sql se calculan a partir de estas columnas:
 --   Ventas con IVA     SUMA     fact_sales_order.sales_amount
 --   Ventas sin IVA     SUMA     fact_sales_order.sales_net_amount
 --   Pedidos válidos    SUMA     fact_sales_order.sale_count
@@ -305,42 +304,3 @@ FROM raw.nps_response   AS n
 JOIN dim_channel        AS ch ON ch.channel_id  = n.channel_id
 LEFT JOIN dim_customer  AS dc ON dc.customer_id = n.customer_id;
 
-
--- ---------------------------------------------------------------------
--- agg_sales_product_month — AGREGADO: un producto en un mes
--- ---------------------------------------------------------------------
--- Ranking mensual por producto ya calculado (solo ventas válidas).
--- Ojo: es un agregado sin canal ni provincia, así que NO responde a esos
--- filtros. Para un ranking filtrable usar fact_sales_order_item en Power BI.
-
-CREATE TABLE agg_sales_product_month (
-    month_date_key   INTEGER NOT NULL REFERENCES dim_date (date_key),   -- primer día del mes
-    product_key      INTEGER NOT NULL REFERENCES dim_product (product_key),
-    units            INTEGER NOT NULL,
-    sales_amount     DECIMAL(14, 2) NOT NULL,   -- suma de line_total (sin IVA ni envío)
-    rank_in_month    INTEGER NOT NULL,          -- 1 = el que más vendió en $ ese mes
-    share_of_month   DECIMAL(6, 4) NOT NULL,    -- participación en el mes
-    PRIMARY KEY (month_date_key, product_key)
-);
-
-INSERT INTO agg_sales_product_month
-WITH monthly AS (
-    SELECT
-        CAST(strftime(d.month_start, '%Y%m%d') AS INTEGER) AS month_date_key,
-        i.product_key,
-        SUM(i.quantity)   AS units,
-        SUM(i.line_total) AS sales_amount
-    FROM fact_sales_order_item AS i
-    JOIN dim_date AS d ON d.date_key = i.order_date_key
-    WHERE i.is_sale
-    GROUP BY ALL
-)
-SELECT
-    month_date_key,
-    product_key,
-    units,
-    sales_amount,
-    RANK() OVER (PARTITION BY month_date_key ORDER BY sales_amount DESC),
-    sales_amount / SUM(sales_amount) OVER (PARTITION BY month_date_key)
-FROM monthly
-ORDER BY month_date_key, product_key;   -- orden fijo: el CSV exportado sale igual en cada corrida
