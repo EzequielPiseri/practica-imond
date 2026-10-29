@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EcoBottle AR · Tablero comercial</title>
+  <meta name="description" content="Tablero comercial de EcoBottle AR: ventas, clientes, experiencia y crecimiento, calculados en SQL sobre el data warehouse.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='11' y='2' width='10' height='5' rx='2' fill='%231F4D3B'/%3E%3Crect x='7' y='7' width='18' height='23' rx='6' fill='%232E7D4F'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="web/styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-in">
+      <div class="marca" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="40" height="40"><rect x="11" y="2" width="10" height="5" rx="2" fill="currentColor" opacity=".7"/><rect x="7" y="7" width="18" height="23" rx="6" fill="currentColor"/><path d="M16 12c-3 3-3 8 0 12 3-4 3-9 0-12z" fill="#0f2a20" opacity=".55"/></svg>
+      </div>
+      <div>
+        <p class="eyebrow">EcoBottle AR · Tablero comercial</p>
+        <h1>¿Cómo le fue al negocio?</h1>
+        <p class="lede">Ventas, clientes y experiencia de compra de enero de 2024 a septiembre de 2025. Cada número sale de las tablas <strong>mart</strong> del data warehouse, calculadas en SQL: el tablero solo busca la fila que corresponde a los filtros y la muestra.</p>
+        <p id="estado" class="estado" role="status">Cargando datos…</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="barra" id="barra">
+    <div class="wrap barra-in">
+      <nav class="secciones" aria-label="Secciones">
+        <a href="#resumen" class="activo">Resumen</a>
+        <a href="#ventas">Ventas</a>
+        <a href="#clientes">Clientes</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#crecimiento">Crecimiento</a>
+        <a href="#hallazgos">Hallazgos</a>
+      </nav>
+      <section class="filtros" aria-label="Filtros">
+        <div class="filtro">
+          <span class="etq">Período</span>
+          <div class="seg" id="f-anio" role="group" aria-label="Año">
+            <button type="button" data-v="Todo" aria-pressed="true">Todo</button>
+            <button type="button" data-v="2024" aria-pressed="false">2024</button>
+            <button type="button" data-v="2025" aria-pressed="false">2025</button>
+          </div>
+          <label class="sr" for="f-mes">Mes</label>
+          <select id="f-mes"><option value="">Todos los meses</option></select>
+        </div>
+        <div class="filtro">
+          <span class="etq">Canal</span>
+          <div class="seg" id="f-canal" role="group" aria-label="Canal"></div>
+        </div>
+        <div class="filtro">
+          <label class="etq" for="f-prov">Provincia</label>
+          <select id="f-prov"></select>
+        </div>
+        <div class="filtro">
+          <span class="etq">Montos</span>
+          <div class="seg" id="f-iva" role="group" aria-label="Impuestos">
+            <button type="button" data-v="con" aria-pressed="true">Con IVA</button>
+            <button type="button" data-v="sin" aria-pressed="false">Sin IVA</button>
+          </div>
+        </div>
+        <button type="button" id="f-reset" class="boton-sec">Restablecer</button>
+      </section>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <!-- RESUMEN -->
+    <section id="resumen" class="sector" aria-labelledby="t-resumen">
+      <header class="sector-cab">
+        <span class="sector-num">01</span>
+        <div>
+          <h2 id="t-resumen">Resumen</h2>
+          <p class="sector-sub" id="sub-resumen">Los cinco KPIs del período elegido. La línea de fondo muestra la evolución mensual; en color, los meses del período.</p>
+        </div>
+      </header>
+      <div class="kpis" id="kpis"></div>
+    </section>
+
+    <!-- VENTAS -->
+    <section id="ventas" class="sector" aria-labelledby="t-ventas">
+      <header class="sector-cab">
+        <span class="sector-num">02</span>
+        <div>
+          <h2 id="t-ventas">Ventas</h2>
+          <p class="sector-sub">Cuánto se vendió, dónde, qué productos y qué pedidos cuentan como venta.</p>
+        </div>
+      </header>
+      <div class="grilla">
+        <article class="tarjeta ancha">
+          <header class="t-cab">
+            <h3>¿Cuánto vendimos cada mes?</h3>
+            <ul class="leyenda" id="ley-meses"></ul>
+          </header>
+          <p class="ayuda">Ventas por mes, apiladas por canal. Hacé clic en un mes para ver solo ese mes; otro clic vuelve atrás.</p>
+          <div class="grafico" id="g-meses"></div>
+          <details class="tabla-datos"><summary>Ver los datos en tabla</summary><div class="tabla-scroll"><table id="t-meses"></table></div></details>
+        </article>
+
+        <article class="tarjeta">
+          <header class="t-cab"><h3>¿Dónde vendemos más?</h3></header>
+          <p class="ayuda">Ventas por provincia de entrega. Hacé clic en una provincia para filtrar todo el tablero.</p>
+          <div class="grafico" id="g-prov"></div>
+        </article>
+
+        <article class="tarjeta">
+          <header class="t-cab"><h3>¿Cuál es el ticket promedio por canal?</h3></header>
+          <p class="ayuda">Ticket = ventas ÷ pedidos válidos, calculado en SQL. La última columna descuenta el envío, que solo se cobra en la tienda online.</p>
+          <div id="g-ticket"></div>
+        </article>
+
+        <article class="tarjeta ancha">
+          <header class="t-cab">
+            <h3>¿Qué producto vende más cada mes?</h3>
+            <ul class="leyenda" id="ley-prod"></ul>
+          </header>
+          <p class="ayuda">Ventas de línea (sin IVA ni envío) de cada producto por mes. A la derecha, el reparto en el período elegido.</p>
+          <div class="dos-col">
+            <div class="grafico" id="g-prod"></div>
+            <div id="g-prod-rep"></div>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <header class="t-cab"><h3>¿Qué pedidos cuentan como venta?</h3></header>
+          <p class="ayuda">Pedidos por estado. Solo <code>PAID</code> y <code>FULFILLED</code> tienen <code>is_sale = true</code> en <code>dim_order_status</code>.</p>
+          <div class="grafico" id="g-estados"></div>
+          <ul class="leyenda abajo">
+            <li><i class="clave si"></i>Cuenta como venta</li>
+            <li><i class="clave no"></i>No cuenta</li>
+          </ul>
+        </article>
+
+        <article class="tarjeta">
+          <header class="t-cab"><h3>¿Qué medio de pago se rechaza más?</h3></header>
+          <p class="ayuda">Porcentaje de pagos rechazados por medio de pago.</p>
+          <div class="grafico" id="g-pagos"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CLIENTES -->
+    <section id="clientes" class="sector" aria-labelledby="t-clientes">
+      <header class="sector-cab">
+        <span class="sector-num">03</span>
+        <div>
+          <h2 id="t-clientes">Clientes</h2>
+          <p class="sector-sub">Quiénes nos visitan y desde dónde. <span class="nota-filtro">Canal y provincia no aplican: todas las visitas son web y no tienen ubicación.</span></p>
+        </div>
+      </header>
+      <div class="grilla">
+        <article class="tarjeta ancha">
+          <header class="t-cab"><h3>¿Cuántos clientes nos visitan cada mes?</h3></header>
+          <p class="ayuda">Usuarios activos: clientes distintos con al menos una sesión logueada en el mes.</p>
+          <div class="mini-kpis" id="k-clientes"></div>
+          <div class="grafico" id="g-usuarios"></div>
+        </article>
+        <article class="tarjeta">
+          <header class="t-cab"><h3>¿De dónde llegan las visitas?</h3></header>
+          <p class="ayuda">Sesiones por origen de tráfico y su participación.</p>
+          <div class="grafico" id="g-origen"></div>
+        </article>
+        <article class="tarjeta">
+          <header class="t-cab"><h3>¿Desde qué dispositivo nos visitan?</h3></header>
+          <p class="ayuda">Sesiones por dispositivo y su participación.</p>
+          <div class="grafico" id="g-disp"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section id="experiencia" class="sector" aria-labelledby="t-exp">
+      <header class="sector-cab">
+        <span class="sector-num">04</span>
+        <div>
+          <h2 id="t-exp">Experiencia</h2>
+          <p class="sector-sub">Qué opinan los clientes (NPS) y cuánto tarda en llegar el pedido. <span class="nota-filtro">La provincia no filtra el NPS: la encuesta no tiene pedido asociado.</span></p>
+        </div>
+      </header>
+      <div class="grilla">
+        <article class="tarjeta">
+          <header class="t-cab"><h3>¿Qué opinan los clientes?</h3></header>
+          <p class="ayuda">Respuestas por grupo. NPS = % promotores − % detractores.</p>
+          <div class="grafico" id="g-dona"></div>
+          <ul class="leyenda abajo" id="ley-nps"></ul>
+        </article>
+        <article class="tarjeta">
+          <header class="t-cab"><h3>¿Cuánto tarda en llegar un pedido?</h3></header>
+          <p class="ayuda">Envíos entregados en el período, desde el pedido hasta la puerta del cliente.</p>
+          <div class="mini-kpis dos" id="k-entregas"></div>
+        </article>
+        <article class="tarjeta ancha">
+          <header class="t-cab">
+            <h3>¿Mejora la opinión? ¿Y la entrega?</h3>
+            <ul class="leyenda" id="ley-nps-mes"></ul>
+          </header>
+          <p class="ayuda">Arriba, el NPS de cada mes por canal (la línea punteada es 0). Abajo, los días promedio que el pedido pasa en el correo (del despacho a la entrega), con el mismo eje de meses. La franja marca julio y agosto de 2024.</p>
+          <div class="grafico" id="g-nps-mes"></div>
+          <div class="grafico" id="g-dias"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CRECIMIENTO -->
+    <section id="crecimiento" class="sector" aria-labelledby="t-crec">
+      <header class="sector-cab">
+        <span class="sector-num">05</span>
+        <div>
+          <h2 id="t-crec">Crecimiento</h2>
+          <p class="sector-sub">Enero a septiembre de 2024 contra el mismo período de 2025: los datos de 2025 terminan en septiembre, así se comparan meses equivalentes. <span class="nota-filtro">Esta sección no cambia con los filtros.</span></p>
+        </div>
+      </header>
+      <div class="crec" id="g-crec"></div>
+    </section>
+
+    <!-- HALLAZGOS -->
+    <section id="hallazgos" class="sector" aria-labelledby="t-hall">
+      <header class="sector-cab">
+        <span class="sector-num">06</span>
+        <div>
+          <h2 id="t-hall">Hallazgos</h2>
+          <p class="sector-sub">Lo que muestran los datos. Se distinguen los <strong>hechos</strong> de las <strong>interpretaciones</strong>; cada tarjeta lleva al gráfico que la respalda.</p>
+        </div>
+      </header>
+      <div class="hallazgos" id="hallazgos-lista"></div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="wrap">
+      <p><strong>Fuente:</strong> data warehouse de EcoBottle (DuckDB). Las tablas <code>data/marts/*.csv</code> las genera <code>sql/05_marts.sql</code> a partir del modelo estrella (<code>sql/01_dimensiones.sql</code> y <code>sql/02_hechos.sql</code>).</p>
+      <p><strong>Reglas:</strong> venta = pedido <code>PAID</code> o <code>FULFILLED</code>; sin IVA = total − IVA (incluye el envío); usuarios activos = clientes logueados distintos; NPS = % promotores − % detractores.</p>
+    </div>
+  </footer>
+
+  <div id="tooltip" class="tooltip" role="status" hidden></div>
+  <script src="web/app.js"></script>
+</body>
+</html>
