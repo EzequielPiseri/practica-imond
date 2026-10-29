@@ -34,7 +34,7 @@ sql/
   01_dimensiones.sql         10 dimensiones
   02_hechos.sql              6 tablas de hechos, con columnas de medida
   03_consultas.sql           validaciones, KPIs y consultas de hallazgos
-  05_marts.sql               tablas mart: KPIs calculados por período, canal y provincia
+  04_marts.sql               tablas mart: KPIs calculados por período, canal y provincia
 data/
   modelo_estrella/           dimensiones y hechos exportados en CSV
     modelo_estrella.md       diagrama completo del modelo (generado)
@@ -84,7 +84,9 @@ python -m http.server 8000     # y abrir http://localhost:8000
 
 ## Modelo estrella
 
-Diagrama simplificado (solo relaciones). El diagrama completo, con columnas y tipos, está en [`data/modelo_estrella/modelo_estrella.md`](./data/modelo_estrella/modelo_estrella.md).
+Es una **constelación de hechos** (varias estrellas que comparten dimensiones): seis tablas de hechos, cada una con su grano, alrededor de dimensiones conformadas. `dim_date`, `dim_channel`, `dim_customer` y `dim_province` son las mismas para todos los hechos, así un filtro por fecha, canal o provincia significa lo mismo en ventas, envíos, sesiones y NPS.
+
+El diagrama muestra todas las claves foráneas (las mismas que DuckDB valida al cargar). El diagrama con columnas y tipos se genera solo en [`data/modelo_estrella/modelo_estrella.md`](./data/modelo_estrella/modelo_estrella.md).
 
 ```mermaid
 erDiagram
@@ -98,8 +100,20 @@ erDiagram
 
     dim_date ||--o{ fact_sales_order_item : "order_date_key"
     dim_product ||--o{ fact_sales_order_item : "product_key"
+    dim_customer ||--o{ fact_sales_order_item : "customer_key"
     dim_channel ||--o{ fact_sales_order_item : "channel_key"
+    dim_store ||--o{ fact_sales_order_item : "store_key"
     dim_province ||--o{ fact_sales_order_item : "province_key"
+    dim_order_status ||--o{ fact_sales_order_item : "order_status_key"
+
+    dim_date ||--o{ fact_payment : "order_date_key, paid_date_key"
+    dim_channel ||--o{ fact_payment : "channel_key"
+    dim_payment_method ||--o{ fact_payment : "payment_method_key"
+
+    dim_date ||--o{ fact_shipment : "order, shipped y delivered_date_key"
+    dim_channel ||--o{ fact_shipment : "channel_key"
+    dim_store ||--o{ fact_shipment : "store_key"
+    dim_province ||--o{ fact_shipment : "province_key"
 
     dim_date ||--o{ fact_web_session : "date_key"
     dim_customer ||--o{ fact_web_session : "customer_key"
@@ -109,12 +123,9 @@ erDiagram
     dim_date ||--o{ fact_nps_response : "date_key"
     dim_customer ||--o{ fact_nps_response : "customer_key"
     dim_channel ||--o{ fact_nps_response : "channel_key"
-
-    dim_date ||--o{ fact_payment : "order_date_key / paid_date_key"
-    dim_payment_method ||--o{ fact_payment : "payment_method_key"
-    dim_date ||--o{ fact_shipment : "order / shipped / delivered"
-    dim_province ||--o{ fact_shipment : "province_key"
 ```
+
+`dim_date` es una **dimensión de rol**: la misma tabla se usa como fecha de pedido, de pago, de despacho, de entrega, de sesión y de respuesta. `order_id` queda en los hechos como **dimensión degenerada** (un identificador sin tabla propia, que sirve para trazar un pedido entre hechos).
 
 ### Tablas de hechos y su grano
 
@@ -401,7 +412,7 @@ El ticket online es más alto porque incluye el envío, que en tienda no se cobr
 
 ## Capa de marts
 
-`sql/05_marts.sql` calcula los KPIs a partir del modelo estrella y los **materializa** en tablas que el tablero consume directamente.
+`sql/04_marts.sql` calcula los KPIs a partir del modelo estrella y los **materializa** en tablas que el tablero consume directamente.
 
 **Por qué una fila por cada combinación de filtros.** Un promedio o un recuento distinto no se puede volver a agregar: el ticket de 2025 no es el promedio de los tickets de cada mes, y los usuarios del año no son la suma de los usuarios de cada mes. Por eso cada mart trae, ya calculada, cada combinación que ofrece el tablero:
 
@@ -437,7 +448,7 @@ La parte A de `03_consultas.sql` verifica que el modelo cuadre con `raw/`:
 | Pedidos cuyas líneas no suman el subtotal | ✅ 0 |
 | Claves foráneas válidas | ✅ DuckDB rechaza la carga si alguna falla |
 | Columnas de medida = fórmula de cada KPI, en total y por canal (A5) | ✅ |
-| Marts = modelo estrella: ventas, pedidos, meses que suman el total, estados, productos, usuarios, sesiones, NPS, entregas y pagos (controles de `05_marts.sql`) | ✅ 11 de 11 |
+| Marts = modelo estrella: ventas, pedidos, meses que suman el total, estados, productos, usuarios, sesiones, NPS, entregas y pagos (controles de `04_marts.sql`) | ✅ 11 de 11 |
 
 ## Tablero web
 
@@ -465,9 +476,11 @@ El tablero lee los CSV de `data/marts/`, busca la fila que corresponde a los fil
 | Período (total, año o mes) | Todo, salvo Crecimiento | Crecimiento (compara períodos fijos) |
 | Canal | Ventas, productos, estados, pagos, NPS y entregas | Usuarios y sesiones: todas las visitas son web |
 | Provincia | Ventas, productos, estados y entregas | Usuarios, sesiones, NPS y pagos: no tienen provincia |
+| Producto | El gráfico de productos y su reparto | El resto: ventas, ticket y pedidos se miden por pedido, y un pedido puede tener los dos productos |
 | Con / sin IVA | Ventas y ticket | El resto |
 
 - Cada tarjeta del Resumen indica qué filtros le aplican.
+- El año 2025 se muestra como **2025 (ene–sep)**: los datos terminan en septiembre, así que sus totales no son comparables con los de 2024 completo. Para comparar años está la sección Crecimiento, que usa enero a septiembre de ambos.
 - Las series mensuales muestran siempre todos los meses y resaltan los del período elegido.
 - Clic en un mes del gráfico de ventas: filtra ese mes. Clic en una provincia: filtra esa provincia.
 - Pasar el mouse por los gráficos muestra los valores; las ventas por mes tienen además una tabla de datos.
@@ -479,9 +492,9 @@ El tablero lee los CSV de `data/marts/`, busca la fila que corresponde a los fil
 
 Las consultas están en la parte C de `03_consultas.sql`. Se distinguen **hechos**, que salen directo de los datos, de **interpretaciones**, que son hipótesis para validar.
 
-1. **En julio y agosto de 2024 el NPS online se desplomó por la demora del correo.** *(Hecho, consulta C7)* El tiempo de despacho a entrega pasó de 3,2–3,9 días (enero a junio) a 7,4 días en julio y 8,0 en agosto. En esos mismos meses el NPS online cayó de 29,2 (junio) a −6,0 (julio) y −26,5 (agosto). Se recuperó cuando volvieron los tiempos normales: −1,9 en septiembre y 31,9 en octubre. El NPS de las tiendas físicas, que no usan envío, no cayó (46,2 en agosto). Los comentarios más repetidos de los detractores online de esos dos meses son "El envío demoró y nadie me avisó", "Tardó mucho más de lo esperado" y "Llegó con la caja dañada". Todos los envíos van por un único correo (Correo Argentino). *(Interpretación, confianza alta)* La caída se explica por la demora de entrega, no por el producto: coinciden las fechas, el canal sin envío funciona como grupo de control y los comentarios lo dicen textualmente. No se puede probar respuesta por respuesta porque la encuesta no tiene número de pedido. **Recomendación:** tener un segundo correo como alternativa y avisar al cliente cuando el envío se demora; "nadie me avisó" sugiere que la falta de aviso empeora la opinión tanto como la demora.
+1. **En julio y agosto de 2024 el NPS online se desplomó por la demora del correo.** *(Hecho, consulta C7 y `mart_delivery_kpi`)* El tiempo de despacho a entrega pasó de 3,3 días en junio a 7,4 en julio y 8,0 en agosto, y volvió a 3,3 en octubre; de enero a junio se había mantenido entre 3,2 y 3,9 días. En esos mismos meses el NPS online cayó de 29,2 (junio) a −6,0 (julio) y −26,5 (agosto). Se recuperó cuando volvieron los tiempos normales: −1,9 en septiembre y 31,9 en octubre. El NPS de las tiendas físicas, que no usan envío, no cayó (46,2 en agosto). Los comentarios más repetidos de los detractores online de esos dos meses son "El envío demoró y nadie me avisó", "Tardó mucho más de lo esperado" y "Llegó con la caja dañada". Todos los envíos van por un único correo (Correo Argentino). *(Interpretación, confianza alta)* La caída se explica por la demora de entrega, no por el producto: coinciden las fechas, el canal sin envío funciona como grupo de control y los comentarios lo dicen textualmente. No se puede probar respuesta por respuesta porque la encuesta no tiene número de pedido. **Recomendación:** tener un segundo correo como alternativa y avisar al cliente cuando el envío se demora; "nadie me avisó" sugiere que la falta de aviso empeora la opinión tanto como la demora.
 
-2. **La venta crece por más clientes, no por compras más caras, y todo el crecimiento es online.** *(Hecho, consulta C8)* Comparando enero a septiembre de cada año, las ventas subieron 16,6 % ($146,3M a $170,6M). Los pedidos válidos subieron 16,9 % (4.196 a 4.906) y los clientes identificados que compraron, 39 % (1.624 a 2.264). El ticket promedio quedó estable ($34,87K a $34,78K, −0,3 %). Las ventas online pasaron de $81,2M a $105,3M (+30 %) y las tiendas quedaron planas ($65,1M contra $65,3M). *(Interpretación)* El negocio crece captando clientes por el canal online, no subiendo precios ni el gasto por compra. Como los clientes crecieron más que los pedidos, cada cliente compró en promedio menos veces (2,6 a 2,2 pedidos), lo que es esperable si muchos son nuevos; conviene seguir la recompra. Si las tiendas justifican su costo no se puede evaluar: no hay datos de costos.
+2. **La venta crece por más clientes, no por compras más caras, y todo el crecimiento es online.** *(Hecho, consulta C8 y `mart_growth`)* Comparando enero a septiembre de cada año, las ventas subieron 16,6 % ($146,3M a $170,6M). Los pedidos válidos subieron 16,9 % (4.196 a 4.906) y los clientes identificados que compraron, 39,4 % (1.624 a 2.264). El ticket promedio quedó estable ($34,87K a $34,78K, −0,3 %). Las ventas online pasaron de $81,2M a $105,3M (+29,7 %) y las tiendas quedaron planas ($65,1M contra $65,3M, +0,3 %). *(Interpretación)* El negocio crece captando clientes por el canal online, no subiendo precios ni el gasto por compra. Como los clientes crecieron más que los pedidos, cada cliente compró en promedio menos veces (2,6 a 2,2 pedidos), lo que es esperable si muchos son nuevos; conviene seguir la recompra. Si las tiendas justifican su costo no se puede evaluar: no hay datos de costos.
 
 3. **El NPS online es más bajo que el de las tiendas y varía por provincia.** *(Hecho)* NPS del período: tiendas físicas 40,9 contra online 24,0. Por provincia del cliente, el NPS online es 35 en Buenos Aires y entre 14 y 19 en Córdoba, Mendoza y Santa Fe; Buenos Aires también tiene los envíos más rápidos (4,0 días del pedido a la puerta, contra 5,7 a 6,0 en las otras). *(Interpretación)* Por sí sola, esta es una correlación entre 4 provincias. Pero el hallazgo 1 muestra el mismo mecanismo en el tiempo, con un grupo de control, así que la hipótesis "la demora del envío baja el NPS" queda bastante respaldada.
 
